@@ -1,4 +1,4 @@
-"""Esquemas de entrada y salida de la API.
+"""Esquema de entrada de la API.
 
 La entrada coincide con la firma del modelo registrado en MLflow (31 columnas:
 13 + 2 numéricas, 8 indicadores 0/1, 5 categóricas y la clave tienda–producto–fecha).
@@ -43,8 +43,9 @@ ClusterTienda = Literal[tuple(_CAT['STORE_CLUSTER'])]
 TIENDA_MIN, TIENDA_MAX = CONTRATO['identificadores']['STORE_NBR']
 
 
-class Entrada(BaseModel):
-    """Una fila tienda–producto–día, con las features calculadas por src/pipeline.py."""
+class ProductoDia(BaseModel):
+    """Lo que se sabe de un producto en una tienda, para un día, 16 días antes:
+    las features que calcula construir_features de src/pipeline.py."""
 
     model_config = ConfigDict(extra='forbid', json_schema_extra={'example': {
         'venta_lag_16': 1.79, 'venta_lag_21': 2.08, 'venta_lag_28': 1.61, 'venta_lag_35': 1.95,
@@ -89,49 +90,14 @@ class Entrada(BaseModel):
     DATE: dt.date
 
 
-class SolicitudLote(BaseModel):
+class Lote(BaseModel):
+    """Los productos de un lote semanal, con el identificador del lote."""
     model_config = ConfigDict(extra='forbid')
-    lote: Optional[str] = Field(None, max_length=64, description='identificador del lote (simulación)')
-    filas: list[Entrada] = Field(min_length=1, max_length=50_000)
-
-
-class Prediccion(BaseModel):
-    id_prediccion: str
-    pedido_sugerido: float = Field(description='unidades a pedir (cuantil 0,75 de la venta del día)')
-    decision: Literal['reponer', 'no reponer']
-    version_modelo: Optional[str]
-    alias: Optional[str]
-    run_id: Optional[str]
-    respaldo: bool = Field(description='true si respondió la regla de negocio en lugar del modelo')
-    motivo_respaldo: Optional[str] = None
-    latencia_ms: float
-
-
-class RespuestaLote(BaseModel):
-    lote: Optional[str]
-    n: int
-    version_modelo: Optional[str]
-    respaldo: bool
-    latencia_ms: float
-    predicciones: list[Prediccion]
-
-
-class Salud(BaseModel):
-    estado: Literal['ok', 'degradado']
-    modelo_cargado: bool
-    modo_respaldo: bool
-    detalle: Optional[str] = None
-
-
-class InfoModelo(BaseModel):
-    nombre: str
-    version: Optional[str]
-    alias: Optional[str]
-    run_id: Optional[str]
-    fuente: str
-    cargado_en: Optional[str]
+    lote: Optional[str] = Field(None, max_length=64, description='identificador del lote (semana)')
+    filas: list[ProductoDia] = Field(min_length=1, max_length=50_000)
 
 
 class Interruptor(BaseModel):
+    """Encender o apagar el modo de respaldo (regla de negocio en lugar del modelo)."""
     activo: bool
     motivo: Optional[str] = Field(None, max_length=200)

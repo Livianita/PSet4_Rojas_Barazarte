@@ -21,3 +21,6 @@
 !src/__init__.py
 !src/pipeline.py
 !src/negocio.py
+!monitoreo/
+!monitoreo/__init__.py
+!monitoreo/deriva.py

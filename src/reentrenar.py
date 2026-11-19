@@ -1,6 +1,7 @@
 """Entrenamiento y registro del modelo de producción (GB-cuantil 0,75).
 
     python -m src.reentrenar inicial        # modelo de producción con corte FIN_ENTRENAMIENTO_INICIAL
+    python -m src.reentrenar archivos_api   # solo regenera api/contrato.json, respaldo.json y referencia_deriva.json
 
 Usa la misma preparación de src/pipeline.py y los hiperparámetros del tuning del
 PSet 3 (versión 2 del registro), sin repetir el tuning. Cada corrida queda en el
@@ -103,6 +104,18 @@ def contrato(X):
     }
 
 
+def archivos_api(X, y):
+    """Escribe en api/ lo que el servicio necesita del entrenamiento: el contrato de
+    entrada, la regla de respaldo y la referencia de deriva. Devuelve el contrato."""
+    from monitoreo.deriva import referencia_deriva
+
+    ReglaRespaldo().fit(X, y).guardar(RAIZ / 'api' / 'respaldo.json')
+    contrato_api = contrato(X)
+    for nombre, contenido in [('contrato.json', contrato_api), ('referencia_deriva.json', referencia_deriva(X))]:
+        (RAIZ / 'api' / nombre).write_text(json.dumps(contenido, indent=2, ensure_ascii=False), encoding='utf-8')
+    return contrato_api
+
+
 def registrar(modelo, X, y, hiper, tags, params, metricas, cv, alias, artefactos=None):
     """Registra la corrida en MLflow, crea una versión del modelo y le asigna `alias`."""
     import mlflow
@@ -159,11 +172,7 @@ def inicial(fin=FIN_ENTRENAMIENTO_INICIAL):
     inicio = time.perf_counter()
     modelo = construir_modelo(hiper).fit(X, y)
     segundos = time.perf_counter() - inicio
-    respaldo = ReglaRespaldo().fit(X, y)
-    respaldo.guardar(RAIZ / 'api' / 'respaldo.json')
-    contrato_api = contrato(X)
-    (RAIZ / 'api' / 'contrato.json').write_text(json.dumps(contrato_api, indent=2, ensure_ascii=False),
-                                               encoding='utf-8')
+    contrato_api = archivos_api(X, y)
 
     params = {'tabla_origen': meta['tabla_origen'], 'fecha_corte_snapshot': meta['fecha_corte_snapshot'],
               'huella_datos': meta['sha256'], 'n_series': meta['n_series'], 'fin_entrenamiento': fin,
@@ -193,5 +202,11 @@ if __name__ == '__main__':
     orden = sys.argv[1] if len(sys.argv) > 1 else ''
     if orden == 'inicial':
         inicial(*(sys.argv[2:3]))
+    elif orden == 'archivos_api':        # regenera api/*.json sin reentrenar
+        from src.datos import cargar_muestra
+        from src.pipeline import construir_features
+        fin = sys.argv[2] if len(sys.argv) > 2 else FIN_ENTRENAMIENTO_INICIAL
+        archivos_api(*ventana(construir_features(cargar_muestra()[0]), fin))
+        print('api/contrato.json, api/respaldo.json y api/referencia_deriva.json con datos hasta', fin)
     else:
         print(__doc__)

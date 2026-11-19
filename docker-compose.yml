@@ -170,8 +170,7 @@ services:
         condition: service_healthy
     environment:
       MLFLOW_TRACKING_URI: http://mlflow:5000
-      MODELO_NOMBRE: favorita-perecederos-modelo
-      MODELO_ALIAS: champion
+      ALIAS_MODELO: champion
       REFRESCO_SEG: '30'
       MODO_RESPALDO: ${MODO_RESPALDO:-false}
       API_TOKEN_ADMIN: ${API_TOKEN_ADMIN:-}

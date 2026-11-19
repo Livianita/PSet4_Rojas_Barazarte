@@ -45,7 +45,7 @@ jobs:
       - name: Probar el contenedor con el modelo de fixtures
         run: |
           docker run -d --name api -p 8000:8000 \
-            -e MODELO_URI=/modelo -e MODELO_VERSION_LOCAL=fixture \
+            -e MODELO_URI=/modelo -e VERSION_MODELO_LOCAL=fixture \
             -v "$PWD/tests/fixtures/modelo:/modelo:ro" favorita-api:ci
           for i in $(seq 1 30); do curl -sf localhost:8000/salud && break; sleep 2; done
           echo

@@ -5,14 +5,15 @@
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 \
-    RUTA_REGISTRO=/registros/api.db
+    RUTA_REGISTRO=/registros/predicciones.jsonl RUTA_SOLICITUDES=/registros/solicitudes.jsonl
 
 WORKDIR /app
 COPY api/requirements.txt /app/api/requirements.txt
 RUN pip install -r /app/api/requirements.txt
 
-# Solo lo que la API necesita: src (preparación y regla de negocio) y api.
+# Solo lo que la API necesita: src (preparación y regla de negocio), monitoreo (deriva) y api.
 COPY src/__init__.py src/pipeline.py src/negocio.py /app/src/
+COPY monitoreo/__init__.py monitoreo/deriva.py /app/monitoreo/
 COPY api/ /app/api/
 
 RUN useradd --create-home --uid 10001 api && mkdir -p /registros && chown api /registros
