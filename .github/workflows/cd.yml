@@ -1,0 +1,52 @@
+# Despliegue continuo del código: cuando el CI termina en verde sobre main (cada
+# merge o push a main), construye la imagen de la API y la publica en GitHub
+# Container Registry con el hash del commit como tag:
+#   ghcr.io/livianita/pset4_rojas_barazarte-api:<sha>
+# docker-compose.yml usa esa imagen con API_TAG=<sha> en .env.
+#
+# Se despliega el código, no el modelo: la imagen no lleva el modelo adentro. El
+# modelo cambia solo cuando una persona aprueba mover el alias champion en el
+# registro (flujo reentrenamiento.yml de Kestra).
+name: CD
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publicar:
+    name: Publicar la imagen en GHCR
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      IMAGEN: ghcr.io/${{ github.repository_owner }}/pset4_rojas_barazarte-api
+      SHA: ${{ github.event.workflow_run.head_sha }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Iniciar sesión en GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Construir la imagen con el hash del commit
+        run: |
+          IMAGEN=$(echo "$IMAGEN" | tr '[:upper:]' '[:lower:]')
+          echo "IMAGEN=$IMAGEN" >> "$GITHUB_ENV"
+          docker build -f api/Dockerfile \
+            --label org.opencontainers.image.source=https://github.com/${{ github.repository }} \
+            --label org.opencontainers.image.revision=$SHA \
+            -t "$IMAGEN:$SHA" .
+
+      - name: Publicar
+        run: |
+          docker push "$IMAGEN:$SHA"
+          echo "Imagen publicada: $IMAGEN:$SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo "En .env: API_TAG=$SHA" >> "$GITHUB_STEP_SUMMARY"
