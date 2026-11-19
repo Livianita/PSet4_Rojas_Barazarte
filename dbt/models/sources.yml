@@ -1,0 +1,24 @@
+version: 2
+sources:
+  - name: favorita_raw
+    database: "{{ env_var('SNOWFLAKE_DATABASE', 'PSET2_DB') }}"
+    schema: RAW
+    tables:
+      - name: items
+        identifier: ITEMS
+        description: Catálogo completo recibido del CSV, con valores de origen como texto.
+      - name: stores
+        identifier: STORES
+        description: Catálogo completo de tiendas recibido del CSV, con valores de origen como texto.
+      - name: oil
+        identifier: OIL
+        description: Precios originales de petróleo; el texto vacío se conserva en Raw.
+      - name: transactions
+        identifier: TRANSACTIONS
+        description: Conteo original de transacciones por fecha y tienda, como texto.
+      - name: holidays_events
+        identifier: HOLIDAYS_EVENTS
+        description: Eventos y feriados originales; varias filas pueden compartir fecha.
+      - name: train
+        identifier: TRAIN
+        description: Extracción Raw de ventas perecederas del período PSET1; no es todo train.csv.

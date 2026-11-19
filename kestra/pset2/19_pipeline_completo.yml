@@ -1,0 +1,43 @@
+id: pipeline_completo
+namespace: pset2
+description: CSV a RAW, build y pruebas dbt de Bronze-Silver-Gold, y OBT verificada con Spark.
+concurrency:
+  limit: 1
+  behavior: QUEUE
+tasks:
+  - id: ingesta_raw
+    type: io.kestra.plugin.core.flow.Subflow
+    namespace: pset2
+    flowId: ingesta_raw
+    wait: true
+    transmitFailed: true
+
+  - id: construir_y_probar_dbt
+    type: io.kestra.plugin.scripts.shell.Commands
+    taskRunner:
+      type: io.kestra.plugin.core.runner.Process
+    commands:
+      - /opt/pset2-venv/bin/python /workspace/snowflake/12_ejecutar_dbt.py build
+
+  - id: construir_obt_spark
+    type: io.kestra.plugin.core.flow.Subflow
+    namespace: pset2
+    flowId: spark_obt
+    wait: true
+    transmitFailed: true
+
+  - id: registrar_exito
+    type: io.kestra.plugin.core.log.Log
+    message: 'Pipeline completo: ingesta RAW, build y pruebas dbt, y publicación verificada de ANALYTICS.OBT_SALES finalizados.'
+errors:
+  - id: registrar_fallo
+    type: io.kestra.plugin.core.log.Log
+    level: ERROR
+    message: 'Falló el pipeline. Revisar la tarea o ejecución hija fallida; las etapas posteriores no se ejecutan.'
+triggers:
+  # Los CSV son históricos estáticos; habilitar solo si se desea la recarga diaria.
+  - id: diario_demostracion
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: '0 6 * * *'
+    timezone: America/Guayaquil
+    disabled: true

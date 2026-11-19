@@ -1,0 +1,11 @@
+# Extracto del log de Kestra: spark_obt, ejecución 5B1z4iaKRDD1plWxV6NPWZ
+# (subflujo de pipeline_completo 4DJy6pi6FB7PD1WgighRq6, 14/11/2026).
+# Se omiten las líneas de arranque de Spark y las de cuenta/login de Snowflake.
+2026-11-14T18:17:29.517787Z INFO Fuente leída y claves comprobadas: FCT_SALES_PANEL
+2026-11-14T18:17:35.632855Z INFO Fuente leída y claves comprobadas: DIM_DATE
+2026-11-14T18:17:38.333881Z INFO Fuente leída y claves comprobadas: DIM_ITEM
+2026-11-14T18:17:40.079058Z INFO Fuente leída y claves comprobadas: DIM_STORE
+2026-11-14T18:17:42.761085Z INFO Fuente leída y claves comprobadas: FCT_STORE_DAY_CONTEXT
+2026-11-14T18:17:44.885003Z INFO Fuente leída y claves comprobadas: FCT_OIL_DAILY
+2026-11-14T18:22:34.528293Z INFO Uniones en Spark correctas: 13,017,002 filas, 9,933,285 observadas y 3,083,717 ceros reconstruidos.
+2026-11-14T18:27:31.803767Z INFO OBT publicada y verificada: 13,017,002 filas en PSET2_DB.ANALYTICS.OBT_SALES.

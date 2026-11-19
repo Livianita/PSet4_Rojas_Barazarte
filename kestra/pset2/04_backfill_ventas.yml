@@ -1,0 +1,41 @@
+id: backfill_ventas
+namespace: pset2
+description: Repone ventas de un intervalo inclusivo dentro del alcance PSET1; no ejecutar junto a ingesta_raw.
+inputs:
+  - id: fecha_inicio
+    type: DATE
+    defaults: '2017-08-01'
+  - id: fecha_fin
+    type: DATE
+    defaults: '2017-08-02'
+concurrency:
+  limit: 1
+  behavior: QUEUE
+pluginDefaults:
+  - type: io.kestra.plugin.scripts.shell.Commands
+    values:
+      taskRunner:
+        type: io.kestra.plugin.core.runner.Process
+      retry:
+        type: constant
+        interval: PT30S
+        maxAttempts: 3
+tasks:
+  - id: extraer_intervalo
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - >-
+        /opt/pset2-venv/bin/python /workspace/snowflake/08_extraer_ventas.py
+        --inicio "{{ inputs.fecha_inicio }}" --fin "{{ inputs.fecha_fin }}"
+        --salida /workspace/data/extract/backfill
+  - id: cargar_intervalo
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - >-
+        /opt/pset2-venv/bin/python /workspace/snowflake/09_cargar_ventas.py
+        --extract-dir /workspace/data/extract/backfill --modo intervalo
+errors:
+  - id: registrar_fallo
+    type: io.kestra.plugin.core.log.Log
+    level: ERROR
+    message: 'Falló el backfill. Revisar fechas, archivos y logs. El reemplazo del intervalo usa transacción.'

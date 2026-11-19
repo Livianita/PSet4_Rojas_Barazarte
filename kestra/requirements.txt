@@ -1,0 +1,5 @@
+# Versiones utilizadas en las cargas manuales comprobadas.
+snowflake-connector-python==5.2.0
+cryptography==50.0.2
+python-dotenv==1.2.4
+duckdb==2.0.0

@@ -1,0 +1,51 @@
+{
+  "procedencia": "Resultados de las consultas de verificación y de las ejecuciones de Kestra (12/11/2026). La sección obt_despues_pipeline corresponde a la ejecución del 14/11/2026.",
+  "consulta_final": "snowflake/26_verificar_obt.sql",
+  "obt_despues_pipeline": {
+    "fecha": "2026-11-14",
+    "base": "GOLD.FCT_SALES_PANEL",
+    "filas": 13017002,
+    "claves_distintas": 13017002,
+    "observadas": 9933285,
+    "ids_distintos": 9933285,
+    "ceros_reconstruidos": 3083717,
+    "ceros_internos": 2452142,
+    "ceros_tras_ultima_venta": 631575,
+    "productos": 986,
+    "tiendas": 54,
+    "primera_fecha": "2016-08-01",
+    "ultima_fecha": "2017-08-15",
+    "devoluciones": 374,
+    "objetivos_negativos": 0,
+    "sin_precio_preparado": 0
+  },
+  "contexto_gold": {
+    "filas": 20520,
+    "claves": 20520,
+    "con_transacciones": 19971,
+    "sin_transacciones": 549
+  },
+  "petroleo_gold": {
+    "filas": 380,
+    "claves": 380,
+    "imputados": 118,
+    "sin_preparado": 0
+  },
+  "prueba_retry": {
+    "intento_correcto": 2,
+    "mensaje": "Recuperación correcta"
+  },
+  "backfill": {
+    "inicio": "2017-08-01",
+    "fin": "2017-08-02",
+    "filas_repuestas": 55247,
+    "total_posterior": 9933285,
+    "ids_distintos_posteriores": 9933285,
+    "lotes_posteriores": 2
+  },
+  "schedule": {
+    "configurado": true,
+    "habilitado": false,
+    "ejecucion_programada_observada": false
+  }
+}

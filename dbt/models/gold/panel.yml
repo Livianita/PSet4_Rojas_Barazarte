@@ -1,0 +1,55 @@
+version: 2
+models:
+  - name: fct_sales_panel
+    description: >
+      Panel fecha–tienda–producto con ceros reconstruidos (train.csv omite ventas
+      cero según Kaggle). Base para entrenar con días sin venta y para simular
+      reposición (sobrantes y faltantes). No reemplaza a fct_sales.
+    columns:
+      - name: date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: store_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_store')
+                field: store_key
+      - name: item_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_item')
+                field: item_key
+      - name: source_id
+        description: ID original; NULL solo en ceros reconstruidos.
+        data_tests:
+          - unique
+      - name: unit_sales_original
+        description: Cantidad de origen; NULL en ceros reconstruidos.
+      - name: unit_sales_target
+        description: Objetivo max(original, 0); 0 en ceros reconstruidos.
+        data_tests: [not_null]
+      - name: is_return
+        data_tests: [not_null]
+      - name: onpromotion
+        description: Promoción de origen; FALSE imputado en ceros reconstruidos.
+        data_tests: [not_null]
+      - name: is_onpromotion_imputed
+        description: Auditoría. No usar como variable (revela el objetivo).
+        data_tests: [not_null]
+      - name: is_observed
+        description: Auditoría. No usar como variable (revela el objetivo).
+        data_tests: [not_null]
+      - name: is_imputed_zero
+        description: Auditoría. No usar como variable (revela el objetivo).
+        data_tests: [not_null]
+      - name: is_after_last_sale
+        description: Diagnóstico de productos descontinuados; usa información futura.
+        data_tests: [not_null]

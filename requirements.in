@@ -1,0 +1,19 @@
+# Dependencias directas del proyecto. requirements.txt fija las versiones
+# exactas resueltas a partir de este archivo (uv pip compile).
+mlflow==3.18.0
+scikit-learn
+lightgbm
+xgboost
+optuna
+pandas
+pyarrow
+numpy
+scipy
+matplotlib
+seaborn
+snowflake-connector-python
+cryptography
+python-dotenv
+ipykernel
+nbconvert
+chronos-forecasting

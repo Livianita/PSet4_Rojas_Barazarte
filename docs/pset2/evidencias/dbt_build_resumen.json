@@ -1,0 +1,1382 @@
+{
+  "origen": "dbt/target/run_results.json (Kestra pipeline_completo 4DJy6pi6FB7PD1WgighRq6)",
+  "generated_at": "2026-11-14T18:17:07.980641Z",
+  "invocation_id": "d817d21a-1fbf-4af3-ba1a-733efc18fe5a",
+  "elapsed_seconds": 66.095,
+  "comando": "build",
+  "selector": [],
+  "conteos": {
+    "model:success": 20,
+    "test:pass": 208
+  },
+  "resultados": [
+    {
+      "unique_id": "model.pset2.brz_items",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.566
+    },
+    {
+      "unique_id": "model.pset2.brz_holidays_events",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.766
+    },
+    {
+      "unique_id": "model.pset2.brz_oil",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.666
+    },
+    {
+      "unique_id": "model.pset2.brz_stores",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.172
+    },
+    {
+      "unique_id": "model.pset2.brz_transactions",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.831
+    },
+    {
+      "unique_id": "model.pset2.brz_sales",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 5.349
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_items_has_invalid_numeric__False__False.a4b4a979f7",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.346
+    },
+    {
+      "unique_id": "model.pset2.slv_calendar",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.617
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_items_perishable__False__0__1.84dce61d5b",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.491
+    },
+    {
+      "unique_id": "test.pset2.items_conserva_filas",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.356
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_items_has_invalid_numeric.d6be5fba99",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.231
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_items_item_class.f48ff2e597",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.381
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_items_family.c00b6cc42f",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.945
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_items_item_nbr.6b55ce7712",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.269
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_items_perishable.a8397a14d4",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.285
+    },
+    {
+      "unique_id": "test.pset2.unique_brz_items_item_nbr.9bc344cc50",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.273
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_holidays_events_event_type__Holiday__Transfer__Additional__Bridge__Work_Day__Event.df5b07542a",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.419
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_holidays_events_has_invalid_date__False__False.57c642ecae",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.299
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_holidays_events_has_invalid_transferred__False__False.a1faf07e55",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.238
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_holidays_events_locale__National__Regional__Local.a7864ceb83",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.24
+    },
+    {
+      "unique_id": "test.pset2.holidays_eventos_repetidos",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.234
+    },
+    {
+      "unique_id": "test.pset2.holidays_conserva_filas",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.431
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_holidays_events_description.58b2d0f1b1",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.248
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_holidays_events_date.d1af99dadf",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.368
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_holidays_events_event_type.7445c9cdbf",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.238
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_holidays_events_has_invalid_date.7d3cb466e4",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.239
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_holidays_events_locale.bfc3e9df8e",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.221
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_holidays_events_has_invalid_transferred.1112a540db",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.268
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_holidays_events_locale_name.83209eb9c9",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.22
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_holidays_events_transferred.eb075fcabe",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.253
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_oil_has_invalid_date__False__False.8b36865b9d",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.338
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_oil_has_invalid_price__False__False.846baab8d3",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.368
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_oil_date.edded91a8c",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.23
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_oil_has_invalid_date.bb5768c828",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.346
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_oil_has_invalid_price.4315ce51c5",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.227
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_oil_is_price_missing.2ae22bd7ac",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.27
+    },
+    {
+      "unique_id": "test.pset2.oil_conserva_filas_y_ausencias",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.409
+    },
+    {
+      "unique_id": "test.pset2.unique_brz_oil_date.5c2042ca83",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.28
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_stores_has_invalid_numeric__False__False.33bde262e9",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.337
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_stores_store_type__A__B__C__D__E.041cd20836",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.453
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_stores_city.cd0a9bd472",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.224
+    },
+    {
+      "unique_id": "test.pset2.holidays_ubicaciones_validas",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.611
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_stores_has_invalid_numeric.bda1e5ae99",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.237
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_stores_state.bc17dd7d44",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.211
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_stores_store_cluster.062552beb4",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.244
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_stores_store_nbr.3acfbb16e7",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.207
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_stores_store_type.6016d5a8ea",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.228
+    },
+    {
+      "unique_id": "test.pset2.stores_conserva_filas",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.299
+    },
+    {
+      "unique_id": "test.pset2.unique_brz_stores_store_nbr.f660ee9100",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.305
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_transactions_has_invalid_date__False__False.67ca6e59e6",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.333
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_transactions_date.ce41baff7a",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.305
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_transactions_has_invalid_numeric__False__False.7c8bc2769f",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.697
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_transactions_has_invalid_date.3e1c00e217",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.224
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_transactions_has_invalid_numeric.fc5e0908e2",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.241
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_transactions_store_nbr.c0c3d97485",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.224
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_transactions_transactions.d8e227f83f",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.228
+    },
+    {
+      "unique_id": "test.pset2.relationships_brz_transactions_store_nbr__store_nbr__ref_brz_stores_.10a5078ab2",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.318
+    },
+    {
+      "unique_id": "test.pset2.transactions_clave_compuesta_unica",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.232
+    },
+    {
+      "unique_id": "test.pset2.transactions_conserva_filas",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.224
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_sales_has_invalid_date__False__False.8e93831e6b",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.313
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_sales_has_invalid_numeric__False__False.a0b944a756",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.351
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_brz_sales_has_invalid_promotion__False__False.21d8484281",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.288
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_sales_date.9e64d3f69c",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.357
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_sales_has_invalid_date.13d8e21c37",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.286
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_sales_has_invalid_numeric.8090239e94",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.249
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_sales_has_invalid_promotion.17877e4d93",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.285
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_sales_id.cdbe79221a",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.296
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_sales_item_nbr.52c834f60f",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.24
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_sales_onpromotion.a24b08f9d2",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.361
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_sales_store_nbr.3b6a21f404",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.306
+    },
+    {
+      "unique_id": "test.pset2.not_null_brz_sales_unit_sales.796c7b5833",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.249
+    },
+    {
+      "unique_id": "test.pset2.relationships_brz_sales_item_nbr__item_nbr__ref_brz_items_.e6c20dfd4d",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.433
+    },
+    {
+      "unique_id": "test.pset2.relationships_brz_sales_store_nbr__store_nbr__ref_brz_stores_.8d5eea68a1",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.301
+    },
+    {
+      "unique_id": "test.pset2.sales_alcance_pset1",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.3
+    },
+    {
+      "unique_id": "test.pset2.sales_clave_compuesta_unica",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.463
+    },
+    {
+      "unique_id": "test.pset2.sales_conserva_observaciones",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.445
+    },
+    {
+      "unique_id": "test.pset2.unique_brz_sales_id.20ae8d04b2",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.418
+    },
+    {
+      "unique_id": "test.pset2.calendar_periodo_completo",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.383
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_calendar_date.9f29ce64d8",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.339
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_calendar_is_payday_proxy.92aeabc601",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.319
+    },
+    {
+      "unique_id": "test.pset2.unique_slv_calendar_date.12ead18ed5",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.237
+    },
+    {
+      "unique_id": "model.pset2.slv_items",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 0.962
+    },
+    {
+      "unique_id": "model.pset2.slv_stores",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 0.975
+    },
+    {
+      "unique_id": "model.pset2.dim_date",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.248
+    },
+    {
+      "unique_id": "model.pset2.slv_oil_daily",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.548
+    },
+    {
+      "unique_id": "model.pset2.slv_sales",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 3.325
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_slv_items_perishable__False__0__1.42a21ab6db",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.347
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_items_family.6b6e2cde7a",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.307
+    },
+    {
+      "unique_id": "model.pset2.slv_store_day_events",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.143
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_items_item_class.5b8103ac8c",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.218
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_items_perishable.b310f6780e",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.495
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_items_item_nbr.8fd72e1565",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.622
+    },
+    {
+      "unique_id": "test.pset2.unique_slv_items_item_nbr.2e5b7ff339",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.255
+    },
+    {
+      "unique_id": "test.pset2.silver_items_conserva_catalogo",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.289
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_stores_city.aa5a88b06d",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.314
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_slv_stores_store_type__A__B__C__D__E.afc2e24df8",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.48
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_stores_state.48333cdf66",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.325
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_stores_store_cluster.b04bd95455",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.213
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_stores_store_nbr.6fba891136",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.352
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_stores_store_type.d9aedf97c6",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.334
+    },
+    {
+      "unique_id": "test.pset2.unique_slv_stores_store_nbr.cfe2439a26",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.271
+    },
+    {
+      "unique_id": "test.pset2.silver_stores_conserva_catalogo",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.319
+    },
+    {
+      "unique_id": "test.pset2.gold_dim_date_conserva_calendario",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.406
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_date_date.78f11e7735",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.535
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_date_date_key.881d0a31b6",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.251
+    },
+    {
+      "unique_id": "test.pset2.unique_dim_date_date.dd069a8d31",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.274
+    },
+    {
+      "unique_id": "test.pset2.unique_dim_date_date_key.0869fd48f9",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.292
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_oil_daily_date.5f66808266",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.344
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_oil_daily_has_source_row.c63a0d53a0",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.796
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_oil_daily_is_imputed.064701afd6",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.578
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_oil_daily_is_source_price_missing.925ef7ffbf",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.228
+    },
+    {
+      "unique_id": "test.pset2.oil_silver_cubre_calendario",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.237
+    },
+    {
+      "unique_id": "test.pset2.oil_silver_conserva_observaciones",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.577
+    },
+    {
+      "unique_id": "test.pset2.relationships_slv_oil_daily_date__date__ref_slv_calendar_.0f1be363ef",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.3
+    },
+    {
+      "unique_id": "test.pset2.oil_silver_referencia_causal",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.43
+    },
+    {
+      "unique_id": "test.pset2.unique_slv_oil_daily_date.eb1afc5f5a",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.23
+    },
+    {
+      "unique_id": "test.pset2.relationships_slv_oil_daily_price_reference_date__date__ref_brz_oil_.5ea506a654",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.296
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_sales_id.a3547f2564",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.286
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_sales_date.47edce4e41",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.307
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_sales_item_nbr.372e8796c5",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.292
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_sales_is_return.3caf741276",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.311
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_sales_store_nbr.9c0593c143",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.237
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_sales_onpromotion.cbfa4ac406",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.254
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_sales_unit_sales_original.38d32c4dd3",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.206
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_sales_unit_sales_target.72b7ab0686",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.231
+    },
+    {
+      "unique_id": "test.pset2.relationships_slv_sales_item_nbr__item_nbr__ref_brz_items_.c195bf6b94",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.345
+    },
+    {
+      "unique_id": "test.pset2.relationships_slv_sales_store_nbr__store_nbr__ref_brz_stores_.a2f9686f52",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.41
+    },
+    {
+      "unique_id": "test.pset2.silver_sales_clave_compuesta_unica",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.608
+    },
+    {
+      "unique_id": "test.pset2.silver_sales_regla_objetivo",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.343
+    },
+    {
+      "unique_id": "test.pset2.unique_slv_sales_id.502b216069",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.664
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_events_active_holiday_count.2512746129",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.304
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_events_applicable_event_count.880a8984a9",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.33
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_events_date.a61aaf5251",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.214
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_events_has_transferred_holiday.f383d9df2c",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.228
+    },
+    {
+      "unique_id": "test.pset2.silver_sales_conserva_originales",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 3.501
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_events_is_holiday.4648f05b34",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.852
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_events_is_work_day.4a92170f65",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.27
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_events_store_nbr.b41198ea37",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.3
+    },
+    {
+      "unique_id": "test.pset2.relationships_slv_store_day_events_date__date__ref_slv_calendar_.8708bfdbc2",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.281
+    },
+    {
+      "unique_id": "test.pset2.relationships_slv_store_day_events_store_nbr__store_nbr__ref_brz_stores_.c89b0b31a3",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.404
+    },
+    {
+      "unique_id": "test.pset2.store_day_events_calendario_completo",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.216
+    },
+    {
+      "unique_id": "test.pset2.store_day_events_clave_unica",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.239
+    },
+    {
+      "unique_id": "test.pset2.store_day_events_casos_negocio",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.403
+    },
+    {
+      "unique_id": "model.pset2.dim_item",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 0.857
+    },
+    {
+      "unique_id": "model.pset2.dim_store",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 0.81
+    },
+    {
+      "unique_id": "model.pset2.fct_oil_daily",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 0.949
+    },
+    {
+      "unique_id": "model.pset2.slv_store_day_context",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.221
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_dim_item_perishable__False__0__1.eecb8f9f19",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.426
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_item_family.46258ef014",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.377
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_item_item_class.5d60ef22fd",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.26
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_item_item_key.8c7ae8e329",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.271
+    },
+    {
+      "unique_id": "test.pset2.gold_dim_item_conserva_catalogo",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 1.015
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_item_item_nbr.f4a5df8df7",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.27
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_item_perishable.98a5e87cb0",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.309
+    },
+    {
+      "unique_id": "test.pset2.unique_dim_item_item_key.18db21a9e3",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.32
+    },
+    {
+      "unique_id": "test.pset2.unique_dim_item_item_nbr.3258f5ff78",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.273
+    },
+    {
+      "unique_id": "test.pset2.accepted_values_dim_store_store_type__A__B__C__D__E.8a30af70c5",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.374
+    },
+    {
+      "unique_id": "test.pset2.gold_dim_store_conserva_catalogo",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.436
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_store_city.440f188ad8",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.23
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_store_state.258c75ee29",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.227
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_store_store_cluster.990cd1cf47",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.243
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_store_store_key.507238c054",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.204
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_store_store_nbr.0b2ec03df6",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.225
+    },
+    {
+      "unique_id": "test.pset2.not_null_dim_store_store_type.ceeeba260b",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.29
+    },
+    {
+      "unique_id": "test.pset2.unique_dim_store_store_key.9baa94554a",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.22
+    },
+    {
+      "unique_id": "test.pset2.unique_dim_store_store_nbr.8ee1224dec",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.252
+    },
+    {
+      "unique_id": "test.pset2.gold_oil_conserva_silver",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.402
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_oil_daily_date_key.5c3de0e9c9",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.304
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_oil_daily_is_imputed.e06acb3e74",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.213
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_oil_daily_has_source_row.acd5af1cbe",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.343
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_oil_daily_is_source_price_missing.c2f6437a4f",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.206
+    },
+    {
+      "unique_id": "test.pset2.unique_fct_oil_daily_date_key.58319d46a7",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.223
+    },
+    {
+      "unique_id": "test.pset2.relationships_fct_oil_daily_date_key__date_key__ref_dim_date_.5c78766f51",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.426
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_context_date.3f85a164a9",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.305
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_context_has_transactions.f726409efe",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.314
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_context_is_transactions_missing.c8559dc922",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.214
+    },
+    {
+      "unique_id": "test.pset2.not_null_slv_store_day_context_store_nbr.233640b059",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.208
+    },
+    {
+      "unique_id": "test.pset2.relationships_slv_store_day_context_date__date__ref_slv_calendar_.f394e91da7",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.278
+    },
+    {
+      "unique_id": "test.pset2.relationships_slv_store_day_context_store_nbr__store_nbr__ref_brz_stores_.3b0eebf9b9",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.358
+    },
+    {
+      "unique_id": "test.pset2.store_day_context_clave_unica",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.216
+    },
+    {
+      "unique_id": "test.pset2.store_day_context_conserva_filas",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.234
+    },
+    {
+      "unique_id": "test.pset2.store_day_context_transacciones",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.282
+    },
+    {
+      "unique_id": "model.pset2.fct_store_day_context",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 1.426
+    },
+    {
+      "unique_id": "test.pset2.gold_context_store_day_clave_unica",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.801
+    },
+    {
+      "unique_id": "test.pset2.gold_context_store_day_conserva_silver",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.459
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_store_day_context_active_holiday_count.bcb440cdb9",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.282
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_store_day_context_applicable_event_count.fcabfb7e33",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.325
+    },
+    {
+      "unique_id": "model.pset2.fct_sales",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 3.718
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_store_day_context_date_key.4e71f8e979",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.328
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_store_day_context_has_transactions.8f829666ab",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.233
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_store_day_context_is_holiday.4a3d9950e9",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.234
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_store_day_context_is_transactions_missing.c08ab447a1",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.222
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_store_day_context_store_key.81106ca207",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.202
+    },
+    {
+      "unique_id": "test.pset2.relationships_fct_store_day_context_date_key__date_key__ref_dim_date_.0fc3e4cec7",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.281
+    },
+    {
+      "unique_id": "test.pset2.relationships_fct_store_day_context_store_key__store_key__ref_dim_store_.46d189094a",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.284
+    },
+    {
+      "unique_id": "test.pset2.gold_fct_sales_grano_unico",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 1.708
+    },
+    {
+      "unique_id": "test.pset2.gold_fct_sales_reglas_negocio",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.528
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_date_key.2cf9468f5b",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.282
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_id.61651e8f73",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.247
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_is_return.6ee6b6e362",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.217
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_item_key.8cd05f44ff",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.212
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_onpromotion.5a2576f109",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.201
+    },
+    {
+      "unique_id": "test.pset2.gold_fct_sales_conserva_silver",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 3.56
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_store_key.3f9911ea0c",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.234
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_unit_sales_original.4ccbdacbbf",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.205
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_unit_sales_target.3f2ccc431a",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.21
+    },
+    {
+      "unique_id": "test.pset2.relationships_fct_sales_date_key__date_key__ref_dim_date_.21988f731a",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.294
+    },
+    {
+      "unique_id": "test.pset2.relationships_fct_sales_item_key__item_key__ref_dim_item_.cd8eaabb18",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.29
+    },
+    {
+      "unique_id": "test.pset2.relationships_fct_sales_store_key__store_key__ref_dim_store_.ca503d693c",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.334
+    },
+    {
+      "unique_id": "test.pset2.unique_fct_sales_id.17fcbcc6cb",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.435
+    },
+    {
+      "unique_id": "model.pset2.fct_sales_panel",
+      "status": "success",
+      "failures": null,
+      "execution_seconds": 5.653
+    },
+    {
+      "unique_id": "test.pset2.gold_panel_grano_unico",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.718
+    },
+    {
+      "unique_id": "test.pset2.gold_panel_conserva_ventas",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.763
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_panel_date_key.9f9e13419f",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.632
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_panel_is_after_last_sale.892d3815fd",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.264
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_panel_is_imputed_zero.31bba6a3ae",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.41
+    },
+    {
+      "unique_id": "test.pset2.gold_panel_reglas_ceros",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 1.565
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_panel_is_observed.1ca5b9472d",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.229
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_panel_is_onpromotion_imputed.99475b9285",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.333
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_panel_is_return.ef62bc67c7",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.317
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_panel_item_key.b6f5a73c6d",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.297
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_panel_onpromotion.ce540aa932",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.3
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_panel_store_key.1df3841242",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.243
+    },
+    {
+      "unique_id": "test.pset2.not_null_fct_sales_panel_unit_sales_target.ec92ae8003",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.232
+    },
+    {
+      "unique_id": "test.pset2.relationships_fct_sales_panel_date_key__date_key__ref_dim_date_.26166e3e90",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.333
+    },
+    {
+      "unique_id": "test.pset2.relationships_fct_sales_panel_item_key__item_key__ref_dim_item_.64b79cd797",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.443
+    },
+    {
+      "unique_id": "test.pset2.unique_fct_sales_panel_source_id.2fb586ac91",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.472
+    },
+    {
+      "unique_id": "test.pset2.relationships_fct_sales_panel_store_key__store_key__ref_dim_store_.5676f3c406",
+      "status": "pass",
+      "failures": 0,
+      "execution_seconds": 0.597
+    }
+  ]
+}

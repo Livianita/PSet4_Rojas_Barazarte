@@ -1,0 +1,233 @@
+{
+  "numericas": {
+    "venta_lag_16": {
+      "min": 0.0,
+      "max": 11.51,
+      "admite_nulo": true
+    },
+    "venta_lag_21": {
+      "min": 0.0,
+      "max": 11.51,
+      "admite_nulo": true
+    },
+    "venta_lag_28": {
+      "min": 0.0,
+      "max": 11.51,
+      "admite_nulo": true
+    },
+    "venta_lag_35": {
+      "min": 0.0,
+      "max": 11.51,
+      "admite_nulo": true
+    },
+    "venta_lag_42": {
+      "min": 0.0,
+      "max": 11.51,
+      "admite_nulo": true
+    },
+    "media_mismo_dia_4": {
+      "min": 0.0,
+      "max": 11.51,
+      "admite_nulo": true
+    },
+    "media_7_desde_16": {
+      "min": 0.0,
+      "max": 11.51,
+      "admite_nulo": true
+    },
+    "media_28_desde_16": {
+      "min": 0.0,
+      "max": 11.51,
+      "admite_nulo": true
+    },
+    "std_28_desde_16": {
+      "min": 0.0,
+      "max": 6.0,
+      "admite_nulo": true
+    },
+    "frac_ceros_28_desde_16": {
+      "min": 0.0,
+      "max": 1.0,
+      "admite_nulo": true
+    },
+    "dias_sin_venta_16": {
+      "min": 0.0,
+      "max": 90.0,
+      "admite_nulo": true
+    },
+    "nivel_serie_16": {
+      "min": 0.0,
+      "max": 11.51,
+      "admite_nulo": true
+    },
+    "transacciones_lag_16": {
+      "min": 0.0,
+      "max": 12.0,
+      "admite_nulo": true
+    },
+    "DAY_OF_MONTH": {
+      "min": 1,
+      "max": 31,
+      "admite_nulo": false
+    },
+    "APPLICABLE_EVENT_COUNT": {
+      "min": 0,
+      "max": 10,
+      "admite_nulo": false
+    }
+  },
+  "ya_listas": [
+    "IS_PAYDAY_PROXY",
+    "IS_MONTH_END",
+    "IS_HOLIDAY",
+    "IS_TRANSFER_DAY",
+    "IS_ADDITIONAL_DAY",
+    "IS_BRIDGE_DAY",
+    "IS_WORK_DAY",
+    "HAS_SPECIAL_EVENT"
+  ],
+  "categoricas": {
+    "DAY_OF_WEEK_ISO": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "FAMILY": [
+      "DELI",
+      "EGGS",
+      "DAIRY",
+      "MEATS",
+      "POULTRY",
+      "PRODUCE",
+      "SEAFOOD",
+      "BREAD/BAKERY",
+      "PREPARED FOODS"
+    ],
+    "ITEM_CLASS": [
+      "2002",
+      "2004",
+      "2006",
+      "2008",
+      "2010",
+      "2012",
+      "2014",
+      "2016",
+      "2018",
+      "2020",
+      "2022",
+      "2024",
+      "2026",
+      "2028",
+      "2030",
+      "2032",
+      "2034",
+      "2070",
+      "2074",
+      "2102",
+      "2104",
+      "2108",
+      "2112",
+      "2114",
+      "2116",
+      "2124",
+      "2128",
+      "2130",
+      "2142",
+      "2152",
+      "2156",
+      "2162",
+      "2164",
+      "2166",
+      "2168",
+      "2170",
+      "2172",
+      "2174",
+      "2178",
+      "2302",
+      "2304",
+      "2306",
+      "2340",
+      "2372",
+      "2412",
+      "2416",
+      "2420",
+      "2502",
+      "2504",
+      "2506",
+      "2630",
+      "2632",
+      "2636",
+      "2640",
+      "2642",
+      "2644",
+      "2646",
+      "2650",
+      "2652",
+      "2654",
+      "2662",
+      "2664",
+      "2690",
+      "2702",
+      "2704",
+      "2708",
+      "2712",
+      "2714",
+      "2716",
+      "2718",
+      "2720",
+      "2722",
+      "2752",
+      "2756",
+      "2782",
+      "2786",
+      "2802",
+      "2806",
+      "2850",
+      "2854",
+      "2864",
+      "2904",
+      "2956",
+      "2960",
+      "2962",
+      "2966",
+      "2980",
+      "2986"
+    ],
+    "STORE_TYPE": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "STORE_CLUSTER": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17"
+    ]
+  },
+  "identificadores": {
+    "STORE_NBR": [
+      1,
+      54
+    ]
+  }
+}

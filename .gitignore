@@ -1,0 +1,39 @@
+# Credenciales y entornos locales: nunca se suben.
+.env
+.env.*
+!.env.example
+.secrets/
+*.p8
+*.pem
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Datos de origen y muestras: se obtienen o regeneran según el README.
+data/
+/*.csv
+exploracion/.duckdb_tmp/
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/profiles/.user.yml
+
+# MLflow local fuera de Docker (no debería crearse si MLFLOW_TRACKING_URI está definido).
+mlruns/
+mlartifacts/
+
+# Logs descargados de Kestra: incluyen cuenta y login de Snowflake.
+kestra-execution-*.log
+
+# Material del curso: no se redistribuye.
+clases/
+CD_PSet_*.pdf
+CD-PSet-*.pdf
+
+# Borradores y archivos de editor: se entregan los PDF.
+docs/*.docx
+~$*
+.vscode/

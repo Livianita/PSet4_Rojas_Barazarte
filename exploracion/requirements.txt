@@ -1,0 +1,3 @@
+# Diagnóstico previo de calidad (se ejecuta antes de dbt, sobre los CSV de la raíz).
+pandas==3.0.5
+duckdb==2.0.0

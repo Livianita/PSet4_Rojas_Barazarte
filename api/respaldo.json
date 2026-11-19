@@ -1,0 +1,15 @@
+{
+  "regla": "media_28_desde_16 + SS aditivo por familia",
+  "cuantil": 0.75,
+  "ss_por_familia": {
+    "BREAD/BAKERY": 2.4374,
+    "DAIRY": 2.0167,
+    "DELI": 1.7773,
+    "EGGS": 2.4727,
+    "MEATS": 2.6168,
+    "POULTRY": 3.7356,
+    "PREPARED FOODS": 1.962,
+    "PRODUCE": 3.6119,
+    "SEAFOOD": 2.0299
+  }
+}

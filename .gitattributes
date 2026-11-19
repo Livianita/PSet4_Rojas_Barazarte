@@ -1,0 +1,9 @@
+# Texto con LF: los scripts se montan en contenedores Linux.
+* text=auto eol=lf
+*.ps1 text eol=crlf
+# Binarios: no tocar saltos de línea.
+*.pdf binary
+*.png binary
+*.svg text eol=lf
+*.skops binary
+*.parquet binary

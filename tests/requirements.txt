@@ -1,0 +1,5 @@
+# Pruebas: dependencias de la API + pytest. Es lo que instala ci.yml.
+-r ../api/requirements.txt
+pytest==9.0.1
+httpx==0.28.1
+pyarrow==26.0.1

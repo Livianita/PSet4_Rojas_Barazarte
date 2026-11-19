@@ -1,0 +1,23 @@
+# Lista blanca: al contexto de construcción solo entra lo que cada imagen copia.
+# Nunca entran .env, .secrets/, datos ni notebooks.
+**
+# Kestra (PSet 2)
+!kestra/
+!kestra/Dockerfile
+!kestra/requirements.txt
+!snowflake/
+!snowflake/*.py
+!snowflake/*.sql
+!dbt/
+!dbt/requirements.txt
+!spark/
+!spark/descargar_conectores.py
+# API
+!api/
+!api/*.py
+!api/*.json
+!api/requirements.txt
+!src/
+!src/__init__.py
+!src/pipeline.py
+!src/negocio.py

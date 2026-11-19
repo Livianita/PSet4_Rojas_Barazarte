@@ -1,0 +1,52 @@
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.12.14
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.1
+    skops_trusted_types:
+    - numpy.dtype
+    - sklearn.ensemble._hist_gradient_boosting.predictor.TreePredictor
+is_signature_from_type_hint: false
+mlflow_version: 3.18.0
+model_id: null
+model_size_bytes: 13563524
+model_uuid: 70d53edf8a864486b3f22fcf02526a47
+prompts: null
+signature:
+  inputs: '[{"type": "double", "name": "venta_lag_16", "required": true}, {"type":
+    "double", "name": "venta_lag_21", "required": true}, {"type": "double", "name":
+    "venta_lag_28", "required": true}, {"type": "double", "name": "venta_lag_35",
+    "required": true}, {"type": "double", "name": "venta_lag_42", "required": true},
+    {"type": "double", "name": "media_mismo_dia_4", "required": true}, {"type": "double",
+    "name": "media_7_desde_16", "required": true}, {"type": "double", "name": "media_28_desde_16",
+    "required": true}, {"type": "double", "name": "std_28_desde_16", "required": true},
+    {"type": "double", "name": "frac_ceros_28_desde_16", "required": true}, {"type":
+    "double", "name": "dias_sin_venta_16", "required": true}, {"type": "double", "name":
+    "nivel_serie_16", "required": true}, {"type": "double", "name": "transacciones_lag_16",
+    "required": true}, {"type": "integer", "name": "DAY_OF_MONTH", "required": true},
+    {"type": "integer", "name": "APPLICABLE_EVENT_COUNT", "required": true}, {"type":
+    "integer", "name": "IS_PAYDAY_PROXY", "required": true}, {"type": "integer", "name":
+    "IS_MONTH_END", "required": true}, {"type": "integer", "name": "IS_HOLIDAY", "required":
+    true}, {"type": "integer", "name": "IS_TRANSFER_DAY", "required": true}, {"type":
+    "integer", "name": "IS_ADDITIONAL_DAY", "required": true}, {"type": "integer",
+    "name": "IS_BRIDGE_DAY", "required": true}, {"type": "integer", "name": "IS_WORK_DAY",
+    "required": true}, {"type": "integer", "name": "HAS_SPECIAL_EVENT", "required":
+    true}, {"type": "string", "name": "DAY_OF_WEEK_ISO", "required": true}, {"type":
+    "string", "name": "FAMILY", "required": true}, {"type": "string", "name": "ITEM_CLASS",
+    "required": true}, {"type": "string", "name": "STORE_TYPE", "required": true},
+    {"type": "string", "name": "STORE_CLUSTER", "required": true}, {"type": "integer",
+    "name": "STORE_NBR", "required": true}, {"type": "integer", "name": "ITEM_NBR",
+    "required": true}, {"type": "datetime", "name": "DATE", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-11-19 13:27:54.491694'

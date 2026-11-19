@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="480" height="200" preserveAspectRatio="xMinYMin meet" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="480" height="200"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-200)" style="clip-path: url(#clip)">
+		<g transform="">
+			<path d="M 70,148 L 120,100 Z" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="120 100, 118.2583 104.6868, 115.246 101.549" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(6%,41%,40%); fill-rule: evenodd;"/>
+			<path d="M 240,148 L 240,123 Z" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="240 123, 242.1748 127.5022, 237.8252 127.5022" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(6%,41%,40%); fill-rule: evenodd;"/>
+			<path d="M 410,148 L 360,100 Z" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="360 100, 364.754 101.549, 361.7417 104.6868" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(6%,41%,40%); fill-rule: evenodd;"/>
+			<path d="M 20,148 L 20,49 Z" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 2;"/>
+			<polygon points="20 49, 22.17483 53.50224, 17.82517 53.50224" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(6%,41%,40%); fill-rule: evenodd;"/>
+			<path d="M 20,62 L 300,62 Z" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 2;"/>
+			<path d="M 300,62 L 300,49 Z" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 2;"/>
+			<polygon points="300 49, 302.1748 53.50224, 297.8252 53.50224" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(6%,41%,40%); fill-rule: evenodd;"/>
+			<path d="M 460,148 L 460,49 Z" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 2;"/>
+			<polygon points="460 49, 462.1748 53.50224, 457.8252 53.50224" style="stroke: rgb(6%,41%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(6%,41%,40%); fill-rule: evenodd;"/>
+			<text x="320.423" y="66" style="font-family: Helvetica; font-size: 7px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,132) scale(1,-1)">Punteado: claves de los hechos de apoyo</text>
+			<rect x="0" y="148" width="140" height="40" rx="4" ry="4" style="stroke: rgb(7%,21%,32%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,95%); fill-rule: evenodd;"/>
+			<text x="49.556" y="171.0" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,342) scale(1,-1)">DIM_DATE</text>
+			<text x="47.04" y="159.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,318) scale(1,-1)">380 / date_key</text>
+			<rect x="170" y="148" width="140" height="40" rx="4" ry="4" style="stroke: rgb(7%,21%,32%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,95%); fill-rule: evenodd;"/>
+			<text x="220.888" y="171.0" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,342) scale(1,-1)">DIM_ITEM</text>
+			<text x="214.3205" y="159.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,318) scale(1,-1)">4.100 / item_key</text>
+			<rect x="340" y="148" width="140" height="40" rx="4" ry="4" style="stroke: rgb(7%,21%,32%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,95%); fill-rule: evenodd;"/>
+			<text x="386.664" y="171.0" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,342) scale(1,-1)">DIM_STORE</text>
+			<text x="388.0165" y="159.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,318) scale(1,-1)">54 / store_key</text>
+			<rect x="120" y="76" width="240" height="47" rx="4" ry="4" style="stroke: rgb(7%,21%,32%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,95%); fill-rule: evenodd;"/>
+			<text x="172.192" y="102.5" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,205) scale(1,-1)">FCT_SALES / 9.933.285 observadas</text>
+			<text x="169.96499999999997" y="90.5" style="font-family: Helvetica; font-size: 7px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,181) scale(1,-1)">FCT_SALES_PANEL / 13.017.002 con ceros</text>
+			<rect x="0" y="5" width="225" height="43" rx="4" ry="4" style="stroke: rgb(7%,21%,32%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,95%); fill-rule: evenodd;"/>
+			<text x="71.6" y="29.5" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,59) scale(1,-1)">FCT_OIL_DAILY / 380</text>
+			<text x="98.297" y="17.5" style="font-family: Helvetica; font-size: 7px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,35) scale(1,-1)">date_key</text>
+			<rect x="255" y="5" width="225" height="43" rx="4" ry="4" style="stroke: rgb(7%,21%,32%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(91%,94%,95%); fill-rule: evenodd;"/>
+			<text x="296.148" y="29.5" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,59) scale(1,-1)">FCT_STORE_DAY_CONTEXT / 20.520</text>
+			<text x="334.1345" y="17.5" style="font-family: Helvetica; font-size: 7px;fill: rgb(7%,21%,32%); stroke:none;" transform="translate(0,35) scale(1,-1)">date_key + store_key</text>
+		</g>
+	</g>
+</svg>

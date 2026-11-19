@@ -1,0 +1,19 @@
+id: probar_reintentos
+namespace: pset2
+description: Prueba controlada; falla el primer intento y se recupera sin tocar datos ni Snowflake.
+tasks:
+  - id: fallo_transitorio_simulado
+    type: io.kestra.plugin.scripts.shell.Commands
+    taskRunner:
+      type: io.kestra.plugin.core.runner.Process
+    commands:
+      - >-
+        /opt/pset2-venv/bin/python -c
+        "import sys; intento = {{ taskrun.attemptsCount }};
+        print('Número de intento:', intento + 1);
+        print('Fallo intencional de prueba' if intento == 0 else 'Recuperación correcta');
+        sys.exit(1 if intento == 0 else 0)"
+    retry:
+      type: constant
+      interval: PT5S
+      maxAttempts: 3

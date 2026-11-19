@@ -1,0 +1,46 @@
+version: 2
+models:
+  - name: dim_date
+    description: Una fila por fecha del histórico PSET1; clave numérica YYYYMMDD estable.
+    columns:
+      - name: date_key
+        data_tests: [not_null, unique]
+      - name: date
+        data_tests: [not_null, unique]
+  - name: dim_item
+    description: Una fila por producto del catálogo completo; item_key reutiliza la clave natural item_nbr.
+    columns:
+      - name: item_key
+        data_tests: [not_null, unique]
+      - name: item_nbr
+        data_tests: [not_null, unique]
+      - name: family
+        data_tests: [not_null]
+      - name: item_class
+        data_tests: [not_null]
+      - name: perishable
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [0, 1]
+                quote: false
+  - name: dim_store
+    description: Una fila por tienda del catálogo; store_key reutiliza store_nbr, sin historia de cambios reconstruida.
+    columns:
+      - name: store_key
+        data_tests: [not_null, unique]
+      - name: store_nbr
+        data_tests: [not_null, unique]
+      - name: city
+        data_tests: [not_null]
+      - name: state
+        data_tests: [not_null]
+      - name: store_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A', 'B', 'C', 'D', 'E']
+      - name: store_cluster
+        data_tests: [not_null]

@@ -1,0 +1,16 @@
+pset2:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE', 'PSET2_ROLE') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', 'PSET2_WH') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE', 'PSET2_DB') }}"
+      schema: BRONZE
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_FILE') }}"
+      private_key_passphrase: "{{ env_var('DBT_ENV_SECRET_KEY_PASSPHRASE') }}"
+      threads: 2
+      client_session_keep_alive: false
+      query_tag: PSET2_DBT

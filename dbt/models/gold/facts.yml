@@ -1,0 +1,83 @@
+version: 2
+models:
+  - name: fct_store_day_context
+    description: Hecho de contexto con una fila por fecha–tienda; no sumar transacciones tras repetirlas por producto en una OBT.
+    columns:
+      - name: date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: store_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_store')
+                field: store_key
+      - name: has_transactions
+        data_tests: [not_null]
+      - name: is_transactions_missing
+        data_tests: [not_null]
+      - name: is_holiday
+        data_tests: [not_null]
+      - name: applicable_event_count
+        data_tests: [not_null]
+      - name: active_holiday_count
+        data_tests: [not_null]
+  - name: fct_oil_daily
+    description: Contexto diario de petróleo observado/preparado y su procedencia; una fecha.
+    columns:
+      - name: date_key
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: has_source_row
+        data_tests: [not_null]
+      - name: is_source_price_missing
+        data_tests: [not_null]
+      - name: is_imputed
+        data_tests: [not_null]
+  - name: fct_sales
+    description: Hecho de ventas; una fecha–tienda–producto observado, con cantidades originales y objetivo separado.
+    columns:
+      - name: id
+        description: Identificador original de observación; no es predictor.
+        data_tests: [not_null, unique]
+      - name: date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: store_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_store')
+                field: store_key
+      - name: item_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_item')
+                field: item_key
+      - name: unit_sales_original
+        description: Cantidad original con su signo; negativos permitidos.
+        data_tests: [not_null]
+      - name: unit_sales_target
+        description: Objetivo transformado no negativo; no reemplaza al original para analizar devoluciones.
+        data_tests: [not_null]
+      - name: is_return
+        data_tests: [not_null]
+      - name: onpromotion
+        data_tests: [not_null]

@@ -1,0 +1,14 @@
+{
+  "modelo": "favorita-perecederos-modelo",
+  "version": "3",
+  "run_id": "fb661c6c722a41a0988861d3488a6e7a",
+  "metrica": "perdida_cuantil_muestra_fija",
+  "valor": 1.511916676245613,
+  "cuantil": 0.75,
+  "filas": 3000,
+  "semilla": 42,
+  "ventana": [
+    "2017-05-13",
+    "2017-05-28"
+  ]
+}

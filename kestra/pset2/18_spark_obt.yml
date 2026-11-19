@@ -1,0 +1,13 @@
+id: spark_obt
+namespace: pset2
+description: Une las seis tablas Gold en Spark local y publica la OBT verificada en ANALYTICS.
+concurrency:
+  limit: 1
+  behavior: QUEUE
+tasks:
+  - id: construir_y_verificar_obt
+    type: io.kestra.plugin.scripts.shell.Commands
+    taskRunner:
+      type: io.kestra.plugin.core.runner.Process
+    commands:
+      - /opt/pset2-venv/bin/python /workspace/snowflake/25_ejecutar_spark.py

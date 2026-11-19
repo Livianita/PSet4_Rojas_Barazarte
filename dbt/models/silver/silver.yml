@@ -1,0 +1,155 @@
+version: 2
+models:
+  - name: slv_items
+    description: Catálogo completo de productos listo para Gold; no se filtran productos no perecederos.
+    columns:
+      - name: item_nbr
+        data_tests: [not_null, unique]
+      - name: family
+        data_tests: [not_null]
+      - name: item_class
+        data_tests: [not_null]
+      - name: perishable
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [0, 1]
+                quote: false
+  - name: slv_stores
+    description: Catálogo de tiendas listo para Gold; no reconstruye un historial de cambios inexistente.
+    columns:
+      - name: store_nbr
+        data_tests: [not_null, unique]
+      - name: city
+        data_tests: [not_null]
+      - name: state
+        data_tests: [not_null]
+      - name: store_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A', 'B', 'C', 'D', 'E']
+      - name: store_cluster
+        data_tests: [not_null]
+  - name: slv_store_day_events
+    description: Una fecha–tienda de calendario, con todos los eventos aplicables agregados y traslados interpretados.
+    columns:
+      - name: date
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_calendar')
+                field: date
+      - name: store_nbr
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('brz_stores')
+                field: store_nbr
+      - name: applicable_event_count
+        data_tests: [not_null]
+      - name: active_holiday_count
+        data_tests: [not_null]
+      - name: is_holiday
+        description: Holiday no trasladado, Transfer, Additional o Bridge aplicable; no prueba cierre de tienda.
+        data_tests: [not_null]
+      - name: has_transferred_holiday
+        data_tests: [not_null]
+      - name: is_work_day
+        data_tests: [not_null]
+  - name: slv_store_day_context
+    description: Una fecha–tienda con eventos agregados y transacciones observadas, sin imputarlas a cero.
+    columns:
+      - name: date
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_calendar')
+                field: date
+      - name: store_nbr
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('brz_stores')
+                field: store_nbr
+      - name: transactions_observed
+        description: NULL cuando no hay registro; no equivale a cero transacciones ni prueba cierre.
+      - name: has_transactions
+        data_tests: [not_null]
+      - name: is_transactions_missing
+        data_tests: [not_null]
+  - name: slv_calendar
+    description: Calendario completo de 380 días del histórico PSET1, no de fechas de test.
+    columns:
+      - name: date
+        data_tests: [not_null, unique]
+      - name: is_payday_proxy
+        description: Día 15 o último día del mes; no prueba que un pago real haya ocurrido.
+        data_tests: [not_null]
+  - name: slv_oil_daily
+    description: Precio diario observado y último conocido; conserva procedencia e imputación sin mirar fechas futuras.
+    columns:
+      - name: date
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('slv_calendar')
+                field: date
+      - name: oil_price_observed
+        description: NULL si no hay fila o el precio de la fila está vacío; consultar los indicadores.
+      - name: oil_price_prepared
+        description: Último precio observado hasta ese día; queda NULL si no existe ninguno previo.
+      - name: has_source_row
+        data_tests: [not_null]
+      - name: is_source_price_missing
+        data_tests: [not_null]
+      - name: is_imputed
+        data_tests: [not_null]
+      - name: price_reference_date
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('brz_oil')
+                field: date
+  - name: slv_sales
+    description: Ventas observadas con original numérico, indicador de devolución y objetivo no negativo separado.
+    columns:
+      - name: id
+        data_tests: [not_null, unique]
+      - name: date
+        data_tests: [not_null]
+      - name: store_nbr
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('brz_stores')
+                field: store_nbr
+      - name: item_nbr
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('brz_items')
+                field: item_nbr
+      - name: unit_sales_original
+        description: Venta original numérica, incluidas las devoluciones; no es el texto de origen.
+        data_tests: [not_null]
+      - name: unit_sales_source_text
+        description: Texto original de la cantidad, conservado desde Raw a través de Bronze.
+      - name: unit_sales_target
+        description: Mayor entre venta original y cero; un cero transformado no prueba venta cero observada.
+        data_tests: [not_null]
+      - name: is_return
+        description: Etiqueta histórica derivada de la venta, no predictor disponible para el día futuro.
+        data_tests: [not_null]
+      - name: onpromotion
+        data_tests: [not_null]

@@ -1,0 +1,3 @@
+# Entorno separado de los cargadores: dbt resuelve su propio conector compatible.
+dbt-core==1.10.15
+dbt-snowflake==1.10.2

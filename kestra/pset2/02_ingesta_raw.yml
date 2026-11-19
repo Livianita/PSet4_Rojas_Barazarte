@@ -1,0 +1,59 @@
+id: ingesta_raw
+namespace: pset2
+description: Recarga histórica completa del alcance PSET1 y de las fuentes complementarias.
+concurrency:
+  limit: 1
+  behavior: QUEUE
+pluginDefaults:
+  - type: io.kestra.plugin.scripts.shell.Commands
+    values:
+      taskRunner:
+        type: io.kestra.plugin.core.runner.Process
+      retry:
+        type: constant
+        interval: PT30S
+        maxAttempts: 3
+tasks:
+  - id: comprobar_conexion
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - /opt/pset2-venv/bin/python /workspace/snowflake/03_probar_conexion.py
+  - id: cargar_items
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - /opt/pset2-venv/bin/python /workspace/snowflake/04_cargar_items.py
+  - id: cargar_stores
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - /opt/pset2-venv/bin/python /workspace/snowflake/05_cargar_stores.py
+  - id: cargar_oil
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - /opt/pset2-venv/bin/python /workspace/snowflake/06_cargar_complementarias.py oil
+  - id: cargar_transactions
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - /opt/pset2-venv/bin/python /workspace/snowflake/06_cargar_complementarias.py transactions
+  - id: cargar_holidays_events
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - /opt/pset2-venv/bin/python /workspace/snowflake/06_cargar_complementarias.py holidays_events
+  - id: extraer_ventas
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - /opt/pset2-venv/bin/python /workspace/snowflake/08_extraer_ventas.py
+  - id: cargar_ventas
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - /opt/pset2-venv/bin/python /workspace/snowflake/09_cargar_ventas.py
+errors:
+  - id: registrar_fallo
+    type: io.kestra.plugin.core.log.Log
+    level: ERROR
+    message: 'Falló la ingesta Raw. Revisar la tarea fallida y su log; no se ejecutan las tareas posteriores.'
+triggers:
+  - id: diario_demostracion
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: '0 6 * * *'
+    timezone: America/Guayaquil
+    disabled: true

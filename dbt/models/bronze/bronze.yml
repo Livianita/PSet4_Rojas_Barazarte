@@ -1,0 +1,186 @@
+version: 2
+models:
+  - name: brz_sales
+    description: Ventas observadas del alcance PSET1; conserva cantidades negativas y trazabilidad de extracción.
+    columns:
+      - name: id
+        data_tests: [not_null, unique]
+      - name: date
+        data_tests: [not_null]
+      - name: store_nbr
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('brz_stores')
+                field: store_nbr
+      - name: item_nbr
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('brz_items')
+                field: item_nbr
+      - name: unit_sales
+        description: Venta decimal original tipada; negativos permitidos porque representan devoluciones.
+        data_tests: [not_null]
+      - name: onpromotion
+        description: Obligatoria en este subconjunto diagnosticado; no se sustituyen ausencias por False.
+        data_tests: [not_null]
+      - name: has_invalid_date
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
+      - name: has_invalid_numeric
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
+      - name: has_invalid_promotion
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
+  - name: brz_holidays_events
+    description: Una fila por evento del CSV; conserva fechas compartidas y eventos trasladados.
+    columns:
+      - name: date
+        description: No es única; puede haber varios eventos en una fecha.
+        data_tests: [not_null]
+      - name: event_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Holiday', 'Transfer', 'Additional', 'Bridge', 'Work Day', 'Event']
+      - name: locale
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['National', 'Regional', 'Local']
+      - name: locale_name
+        data_tests: [not_null]
+      - name: description
+        data_tests: [not_null]
+      - name: transferred
+        data_tests: [not_null]
+      - name: has_invalid_date
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
+      - name: has_invalid_transferred
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
+  - name: brz_transactions
+    description: Una fila por fecha y tienda; conteos enteros no negativos, sin imputación ni agregación.
+    columns:
+      - name: date
+        data_tests: [not_null]
+      - name: store_nbr
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('brz_stores')
+                field: store_nbr
+      - name: transactions
+        data_tests: [not_null]
+      - name: has_invalid_date
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
+      - name: has_invalid_numeric
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
+  - name: brz_oil
+    description: Una fila por fecha del CSV; precio decimal nullable, sin imputación ni generación de fechas.
+    columns:
+      - name: date
+        data_tests: [not_null, unique]
+      - name: dcoilwtico
+        description: Precio NUMBER(18,6); NULL permitido si el valor de origen está vacío.
+      - name: is_price_missing
+        data_tests: [not_null]
+      - name: has_invalid_date
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
+      - name: has_invalid_price
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
+  - name: brz_items
+    description: Una fila por producto; catálogo tipado sin filtrar perecederos.
+    columns:
+      - name: item_nbr
+        data_tests: [not_null, unique]
+      - name: family
+        data_tests: [not_null]
+      - name: item_class
+        data_tests: [not_null]
+      - name: perishable
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [0, 1]
+                quote: false
+      - name: has_invalid_numeric
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
+  - name: brz_stores
+    description: Una fila por tienda; ubicación y categorías normalizadas, con originales y trazabilidad.
+    columns:
+      - name: store_nbr
+        data_tests: [not_null, unique]
+      - name: city
+        data_tests: [not_null]
+      - name: state
+        data_tests: [not_null]
+      - name: store_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A', 'B', 'C', 'D', 'E']
+      - name: store_cluster
+        data_tests: [not_null]
+      - name: has_invalid_numeric
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [false]
+                quote: false
