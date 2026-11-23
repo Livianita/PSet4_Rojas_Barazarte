@@ -1,0 +1,69 @@
+id: monitoreo
+namespace: proyecto_final
+description: |
+  Monitoreo de un paso de la simulación (sección 6 del PSet 4). Corre después de cada lote
+  (lo llama el flujo simulacion, a continuación de produccion_lotes):
+  métricas de sistema, de modelo y de datos del lote recién predicho, desempeño de los lotes
+  cuyo target llegó en este paso, diagnóstico de la deriva, tabla PRODUCCION.MONITOREO y
+  registro PRODUCCION.ALERTAS. Las alertas quedan en el log de Kestra (nivel WARN). Si toca
+  reentrenar (por desempeño o por calendario), lo informa en sus outputs.
+  El código está en monitoreo/alertas.py y monitoreo/deriva.py.
+
+inputs:
+  - id: lote
+    type: INT
+    description: Paso de la simulación (el mismo de produccion_lotes).
+    defaults: 1
+
+concurrency:
+  limit: 1
+  behavior: QUEUE
+
+tasks:
+  - id: monitorear
+    type: io.kestra.plugin.scripts.shell.Commands
+    taskRunner:
+      type: io.kestra.plugin.core.runner.Process
+    retry:
+      type: constant
+      interval: PT30S
+      maxAttempts: 3
+    commands:
+      - cd /workspace && /opt/proyecto-venv/bin/python -m monitoreo.alertas {{ inputs.lote }}
+
+  - id: avisar_alertas
+    type: io.kestra.plugin.core.flow.If
+    condition: '{{ outputs.monitorear.vars.alertas > 0 }}'
+    then:
+      - id: log_alertas
+        type: io.kestra.plugin.core.log.Log
+        level: WARN
+        message: >-
+          Paso {{ inputs.lote }}: {{ outputs.monitorear.vars.alertas }} alerta(s). El detalle está en el
+          log de la tarea monitorear y en PRODUCCION.ALERTAS.
+
+  - id: avisar_reentrenamiento
+    type: io.kestra.plugin.core.flow.If
+    condition: '{{ outputs.monitorear.vars.reentrenar }}'
+    then:
+      - id: log_reentrenamiento
+        type: io.kestra.plugin.core.log.Log
+        level: WARN
+        message: 'Paso {{ inputs.lote }}: corresponde reentrenar. Motivo: {{ outputs.monitorear.vars.motivo }}'
+
+outputs:
+  - id: alertas
+    type: INT
+    value: '{{ outputs.monitorear.vars.alertas }}'
+  - id: reentrenar
+    type: BOOLEAN
+    value: '{{ outputs.monitorear.vars.reentrenar }}'
+  - id: motivo
+    type: STRING
+    value: '{{ outputs.monitorear.vars.motivo }}'
+
+errors:
+  - id: registrar_fallo
+    type: io.kestra.plugin.core.log.Log
+    level: ERROR
+    message: 'Falló el monitoreo del paso {{ inputs.lote }}. El paso puede repetirse: reemplaza sus filas.'

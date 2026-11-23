@@ -6,12 +6,27 @@ La referencia (api/referencia_deriva.json) guarda, por feature, las casillas y l
 proporciones de entrenamiento: los deciles para una numérica y cada categoría para
 una categórica. La usan el servicio (ruta /deriva, con los últimos `ventana`
 productos que recibió) y el flujo de monitoreo de Kestra (cada lote completo).
+
+La alerta se decide con el PSI. Las pruebas de Kolmogorov-Smirnov (numéricas) y de
+chi-cuadrado (categóricas) son el respaldo: comparan el lote con una muestra de
+entrenamiento (monitoreo/referencia_muestra.parquet). Con 14.000 filas por lote rechazan
+la igualdad incluso en semanas normales (p-valores de 1e-7 a 1e-21 en los lotes 1 y 3),
+por eso no deciden la alerta: confirman la dirección de un PSI alto y dan un estadístico
+que no depende de las casillas.
+
+calidad_datos cuenta, contra el contrato de la API (api/contrato.json), los faltantes por
+feature, los valores fuera de rango y las categorías no vistas en el entrenamiento.
 """
+
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
 MINIMO = 0.0001
+UMBRAL_PSI = 0.20             # en los lotes sin alterar el PSI máximo es ≤ 0,043
+UMBRAL_PSI_MODERADO = 0.10
+RUTA_MUESTRA_REFERENCIA = Path(__file__).parent / 'referencia_muestra.parquet'
 
 # Features vigiladas: las de mayor importancia por permutación del modelo de producción
 # (nivel_serie_16 y media_mismo_dia_4 mandan), la actividad de la tienda y la mezcla de
@@ -85,7 +100,7 @@ class MonitorDeDeriva:
     distribución con la de entrenamiento. Una ventana es una semana de pedidos:
     2.000 tienda–producto × 7 días = 14.000 filas."""
 
-    def __init__(self, referencia, ventana=14_000, umbral=0.25):
+    def __init__(self, referencia, ventana=14_000, umbral=UMBRAL_PSI):
         self.referencia = referencia
         self.ventana = ventana
         self.umbral = umbral
@@ -106,3 +121,56 @@ class MonitorDeDeriva:
         llena = len(self.filas) >= self.ventana
         return {'filas_en_ventana': len(self.filas), 'umbral': self.umbral, 'psi': valores,
                 'alerta': bool(llena and max(valores.values()) > self.umbral)}
+
+
+def muestra_referencia(X, n=20_000, semilla=0, numericas=NUMERICAS_VIGILADAS, categoricas=CATEGORICAS_VIGILADAS):
+    """Muestra de entrenamiento de las features vigiladas, para las pruebas estadísticas."""
+    muestra = X[numericas + categoricas].sample(min(n, len(X)), random_state=semilla).reset_index(drop=True)
+    muestra[categoricas] = muestra[categoricas].astype(str)
+    return muestra
+
+
+def pruebas_estadisticas(muestra, datos, numericas=NUMERICAS_VIGILADAS, categoricas=CATEGORICAS_VIGILADAS):
+    """KS de dos muestras para cada numérica y chi-cuadrado de homogeneidad (tabla 2 × categorías,
+    con las categorías nuevas incluidas) para cada categórica, contra `muestra`."""
+    from scipy.stats import chi2_contingency, ks_2samp
+
+    datos = pd.DataFrame(datos)
+    resultado = {}
+    for columna in numericas:
+        referencia = pd.to_numeric(muestra[columna], errors='coerce').dropna()
+        actual = pd.to_numeric(datos[columna], errors='coerce').dropna()
+        prueba = ks_2samp(referencia, actual)
+        resultado[columna] = {'prueba': 'ks', 'estadistico': round(float(prueba.statistic), 4),
+                              'p_valor': float(prueba.pvalue)}
+    for columna in categoricas:
+        tabla = pd.concat([muestra[columna].astype(str).value_counts().rename('referencia'),
+                           datos[columna].astype(str).value_counts().rename('lote')], axis=1).fillna(0)
+        estadistico, p_valor, _, _ = chi2_contingency(tabla.T.to_numpy())
+        resultado[columna] = {'prueba': 'chi2', 'estadistico': round(float(estadistico), 4),
+                              'p_valor': float(p_valor)}
+    return resultado
+
+
+def calidad_datos(contrato, datos):
+    """Faltantes por feature (proporción), valores fuera de rango y categorías no vistas,
+    contra el contrato de entrada de la API."""
+    datos = pd.DataFrame(datos)
+    columnas = list(contrato['numericas']) + contrato['ya_listas'] + list(contrato['categoricas'])
+    faltantes = {c: round(float(datos[c].isna().mean()), 6) for c in columnas}
+    fuera_de_rango = {}
+    for c, rango in contrato['numericas'].items():
+        valores = pd.to_numeric(datos[c], errors='coerce')
+        fuera_de_rango[c] = int(((valores < rango['min']) | (valores > rango['max'])).sum())
+    for c in contrato['ya_listas']:
+        fuera_de_rango[c] = int((datos[c].notna() & ~datos[c].isin([0, 1])).sum())
+    no_vistas = {c: int((datos[c].notna() & ~datos[c].astype(str).isin(permitidas)).sum())
+                 for c, permitidas in contrato['categoricas'].items()}
+    # Faltantes que el contrato no admite (las numéricas de historia sí admiten nulo: series jóvenes).
+    obligatorias = ([c for c, r in contrato['numericas'].items() if not r['admite_nulo']]
+                    + contrato['ya_listas'] + list(contrato['categoricas']))
+    return {'filas': len(datos), 'faltantes': faltantes, 'fuera_de_rango': fuera_de_rango,
+            'categorias_no_vistas': no_vistas, 'faltantes_max': max(faltantes.values()),
+            'faltantes_obligatorios': int(datos[obligatorias].isna().sum().sum()),
+            'fuera_de_rango_total': sum(fuera_de_rango.values()),
+            'categorias_no_vistas_total': sum(no_vistas.values())}

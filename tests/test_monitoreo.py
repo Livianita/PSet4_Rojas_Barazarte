@@ -29,6 +29,14 @@ def test_metricas_cuentan_peticiones_y_errores(cliente):
     assert len(leer_registro(servicio.RUTA_SOLICITUDES)) == 2
 
 
+def test_un_lote_rechazado_queda_atribuido_a_su_lote(cliente):
+    invalido = {**PRODUCTO, 'FAMILY': 'JUGUETES'}
+    respuesta = cliente.post('/predecir/lote', json={'lote': 'lote-3-prueba', 'filas': [PRODUCTO, invalido]})
+    assert respuesta.status_code == 422 and 'filas[1].FAMILY' in respuesta.json()['error']
+    solicitud = leer_registro(servicio.RUTA_SOLICITUDES)[-1]
+    assert solicitud['codigo'] == 422 and solicitud['lote'] == 'lote-3-prueba'
+
+
 def test_psi_es_cero_si_las_distribuciones_son_iguales():
     assert psi([0.5, 0.5], [0.5, 0.5]) == 0
     assert psi([0.5, 0.5], [0.9, 0.1]) > 0.25

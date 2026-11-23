@@ -1,0 +1,69 @@
+id: simulacion
+namespace: proyecto_final
+description: |
+  Simulación de producción completa (secciones 5 a 7 del PSet 4): un paso por semana, en orden.
+  Cada paso corre produccion_lotes (predice el lote y evalúa los que ya tienen target), después
+  monitoreo (métricas, alertas y diagnóstico) y, si monitoreo lo pide, reentrenamiento, que
+  queda en pausa hasta la aprobación humana: la simulación espera la decisión antes de seguir,
+  para que el lote siguiente ya use el champion que se decidió.
+  Pasos 1 a 10: un lote cada uno. Pasos 11 y 12: solo llegan los targets de los lotes 9 y 10.
+
+inputs:
+  - id: desde
+    type: INT
+    defaults: 1
+  - id: hasta
+    type: INT
+    defaults: 12
+
+concurrency:
+  limit: 1
+  behavior: QUEUE
+
+tasks:
+  - id: pasos
+    type: io.kestra.plugin.core.flow.ForEach
+    values: '{{ range(inputs.desde, inputs.hasta) }}'
+    concurrencyLimit: 1
+    tasks:
+      - id: produccion
+        type: io.kestra.plugin.core.flow.Subflow
+        namespace: proyecto_final
+        flowId: produccion_lotes
+        inputs:
+          lote: '{{ taskrun.value }}'
+        wait: true
+        transmitFailed: true
+
+      - id: monitorear
+        type: io.kestra.plugin.core.flow.Subflow
+        namespace: proyecto_final
+        flowId: monitoreo
+        inputs:
+          lote: '{{ taskrun.value }}'
+        wait: true
+        transmitFailed: true
+
+      - id: reentrenar_si_corresponde
+        type: io.kestra.plugin.core.flow.If
+        condition: '{{ outputs.monitorear[taskrun.value].outputs.reentrenar }}'
+        then:
+          - id: reentrenar
+            type: io.kestra.plugin.core.flow.Subflow
+            namespace: proyecto_final
+            flowId: reentrenamiento
+            inputs:
+              lote: '{{ parent.taskrun.value }}'
+              motivo: '{{ outputs.monitorear[parent.taskrun.value].outputs.motivo }}'
+            wait: true
+            transmitFailed: true
+
+  - id: registrar_fin
+    type: io.kestra.plugin.core.log.Log
+    message: 'Simulación terminada: pasos {{ inputs.desde }} a {{ inputs.hasta }}.'
+
+errors:
+  - id: registrar_fallo
+    type: io.kestra.plugin.core.log.Log
+    level: ERROR
+    message: 'La simulación se detuvo. Revisar la ejecución hija fallida; se puede retomar con desde = el paso fallido.'

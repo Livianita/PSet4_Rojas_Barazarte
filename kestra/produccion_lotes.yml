@@ -1,0 +1,70 @@
+id: produccion_lotes
+namespace: proyecto_final
+description: |
+  Un paso de la simulación de producción (patrón batch, sección 5 del PSet 4).
+  Pasos 1 a 10: lee el lote de PRODUCCION.LOTES, lo manda a la API (/predecir/lote) y carga en
+  PRODUCCION.PREDICCIONES el registro de auditoría de la API. En todos los pasos (también 11 y 12,
+  que no predicen): une con su target los lotes cuyo target ya llegó a la fecha del paso (el
+  target de un lote llega dos pasos después de predecirlo) y guarda su desempeño en
+  PRODUCCION.DESEMPENO. El código está en src/produccion.py.
+
+inputs:
+  - id: lote
+    type: INT
+    description: Paso de la simulación. 1 a 10 predicen ese lote; 11 y 12 solo evalúan los lotes 9 y 10.
+    defaults: 1
+
+concurrency:
+  limit: 1
+  behavior: QUEUE
+
+pluginDefaults:
+  - type: io.kestra.plugin.scripts.shell.Commands
+    values:
+      taskRunner:
+        type: io.kestra.plugin.core.runner.Process
+
+tasks:
+  - id: predecir_y_cargar
+    type: io.kestra.plugin.core.flow.If
+    condition: '{{ inputs.lote <= 10 }}'
+    then:
+      # Sin reintentos: un reintento mandaría otra vez las filas ya aceptadas.
+      - id: predecir
+        type: io.kestra.plugin.scripts.shell.Commands
+        commands:
+          - cd /workspace && /opt/proyecto-venv/bin/python -m src.produccion predecir {{ inputs.lote }} {{ execution.id }}
+
+      # La carga borra primero las filas de esta ejecución: se puede repetir sin duplicar.
+      - id: cargar_predicciones
+        type: io.kestra.plugin.scripts.shell.Commands
+        retry:
+          type: constant
+          interval: PT30S
+          maxAttempts: 3
+        commands:
+          - cd /workspace && /opt/proyecto-venv/bin/python -m src.produccion cargar {{ inputs.lote }} {{ execution.id }}
+
+  - id: evaluar_lotes_con_target
+    type: io.kestra.plugin.scripts.shell.Commands
+    retry:
+      type: constant
+      interval: PT30S
+      maxAttempts: 3
+    commands:
+      - cd /workspace && /opt/proyecto-venv/bin/python -m src.produccion evaluar {{ inputs.lote }}
+
+  - id: registrar_exito
+    type: io.kestra.plugin.core.log.Log
+    message: 'Paso {{ inputs.lote }} de la simulación terminado (ejecución {{ execution.id }}).'
+
+outputs:
+  - id: lote
+    type: INT
+    value: '{{ inputs.lote }}'
+
+errors:
+  - id: registrar_fallo
+    type: io.kestra.plugin.core.log.Log
+    level: ERROR
+    message: 'Falló el paso {{ inputs.lote }} de la simulación. Revisar la tarea fallida; el lote puede repetirse.'

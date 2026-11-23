@@ -1,0 +1,72 @@
+{
+  "fin_entrenamiento": "2017-05-28",
+  "pliegues": 5,
+  "perdida_cuantil": {
+    "media": 1.69015388731601,
+    "desviacion": 0.062449381932938385
+  },
+  "perdida_cuantil_relativa": {
+    "media": 0.21615847390735587,
+    "desviacion": 0.012690226673171214
+  },
+  "rmsle": {
+    "media": 0.8751274566331635,
+    "desviacion": 0.0438930855708399
+  },
+  "ahorro_vs_regla_pct": {
+    "media": 22.037015298256552,
+    "desviacion": 2.7816894211461807
+  },
+  "por_pliegue": [
+    {
+      "pliegue": 1,
+      "perdida_cuantil": 1.576165,
+      "venta_media": 8.009134,
+      "perdida_cuantil_relativa": 0.196796,
+      "rmsle": 0.803515,
+      "costo": 191907.596689,
+      "costo_regla": 248754.226734,
+      "ahorro_vs_regla_pct": 22.852528
+    },
+    {
+      "pliegue": 2,
+      "perdida_cuantil": 1.730986,
+      "venta_media": 8.140557,
+      "perdida_cuantil_relativa": 0.212637,
+      "rmsle": 0.883176,
+      "costo": 211748.03025,
+      "costo_regla": 275063.421679,
+      "ahorro_vs_regla_pct": 23.01847
+    },
+    {
+      "pliegue": 3,
+      "perdida_cuantil": 1.736034,
+      "venta_media": 7.363866,
+      "perdida_cuantil_relativa": 0.23575,
+      "rmsle": 0.941346,
+      "costo": 214920.992638,
+      "costo_regla": 257515.393187,
+      "ahorro_vs_regla_pct": 16.540526
+    },
+    {
+      "pliegue": 4,
+      "perdida_cuantil": 1.738158,
+      "venta_media": 7.844065,
+      "perdida_cuantil_relativa": 0.221589,
+      "rmsle": 0.878879,
+      "costo": 219091.351564,
+      "costo_regla": 288057.253841,
+      "ahorro_vs_regla_pct": 23.941734
+    },
+    {
+      "pliegue": 5,
+      "perdida_cuantil": 1.669426,
+      "venta_media": 7.800335,
+      "perdida_cuantil_relativa": 0.21402,
+      "rmsle": 0.868722,
+      "costo": 212391.086823,
+      "costo_regla": 278844.894042,
+      "ahorro_vs_regla_pct": 23.831818
+    }
+  ]
+}

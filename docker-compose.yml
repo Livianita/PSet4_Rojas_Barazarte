@@ -95,6 +95,7 @@ services:
       - ./spark:/workspace/spark:ro
       - ./src:/workspace/src:ro
       - ./monitoreo:/workspace/monitoreo:ro
+      - ./api:/workspace/api:ro
       - ./data:/workspace/data
       - ${DATA_DIR:-.}/items.csv:/input/items.csv:ro
       - ${DATA_DIR:-.}/stores.csv:/input/stores.csv:ro

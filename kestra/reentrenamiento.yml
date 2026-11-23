@@ -1,0 +1,99 @@
+id: reentrenamiento
+namespace: proyecto_final
+description: |
+  Reentrenamiento con aprobación humana (sección 7.2 del PSet 4). Lo dispara el flujo
+  simulacion cuando monitoreo lo pide (alerta de desempeño en 2 lotes seguidos, o calendario
+  cada 4 lotes); también se puede correr a mano.
+  1. Arma la ventana: histórico de la OBT hasta el corte del champion + lotes de producción cuyo
+     target ya llegó, con peso 3. El lote etiquetado más reciente queda fuera: ahí se comparan.
+  2. Reentrena con src/pipeline.py y los hiperparámetros del champion (sin tuning).
+  3. Registra la corrida en MLflow (fase=reentrenamiento, motivo) y la versión con alias challenger.
+  4. Compara champion y challenger en el mismo lote y aplica la regla de promoción: el
+     challenger se recomienda si su ahorro vs la regla supera al del champion por más de 1
+     desviación de la CV (2,78 puntos porcentuales).
+  5. Se detiene en pausa hasta que una persona apruebe o rechace (Resume, con su motivo).
+  6. Si se aprueba, mueve el alias champion y la API lo carga sin reconstruir la imagen. Si se
+     rechaza, el champion queda intacto. La decisión queda en MLflow y en PRODUCCION.REENTRENAMIENTOS.
+
+inputs:
+  - id: lote
+    type: INT
+    description: Paso de la simulación en que se dispara (define qué lotes ya tienen target).
+  - id: motivo
+    type: STRING
+    defaults: manual
+    description: Motivo del disparo (lo escribe monitoreo).
+
+concurrency:
+  limit: 1
+  behavior: QUEUE
+
+pluginDefaults:
+  - type: io.kestra.plugin.scripts.shell.Commands
+    values:
+      taskRunner:
+        type: io.kestra.plugin.core.runner.Process
+
+tasks:
+  - id: entrenar_challenger
+    type: io.kestra.plugin.scripts.shell.Commands
+    env:
+      MOTIVO: '{{ inputs.motivo }}'
+    commands:
+      - cd /workspace && /opt/proyecto-venv/bin/python -m src.reentrenar reentrenar {{ inputs.lote }} {{ execution.id }}
+
+  - id: mostrar_comparacion
+    type: io.kestra.plugin.core.log.Log
+    level: WARN
+    message: >-
+      Challenger v{{ outputs.entrenar_challenger.vars.version_challenger }} contra champion
+      v{{ outputs.entrenar_challenger.vars.version_champion }}. {{ outputs.entrenar_challenger.vars.resumen }}.
+      Esperando la decisión de una persona (Resume: aprobar y motivo_decision).
+
+  - id: esperar_aprobacion
+    type: io.kestra.plugin.core.flow.Pause
+    description: >-
+      Revisar la comparación del log anterior y la corrida en MLflow. aprobar = true mueve el alias
+      champion al challenger; false deja el champion como está. Escribir el motivo en ambos casos.
+    onResume:
+      - id: aprobar
+        type: BOOL
+        defaults: false
+        description: true para promover el challenger a champion.
+      - id: motivo_decision
+        type: STRING
+        defaults: sin motivo
+        description: Por qué se aprueba o se rechaza.
+
+  - id: aplicar_decision
+    type: io.kestra.plugin.scripts.shell.Commands
+    env:
+      MOTIVO_DECISION: '{{ outputs.esperar_aprobacion.onResume.motivo_decision }}'
+    commands:
+      - cd /workspace && /opt/proyecto-venv/bin/python -m src.reentrenar decidir {{ inputs.lote }} {{ outputs.esperar_aprobacion.onResume.aprobar }}
+
+  # La API revisa el alias cada 30 s; esta llamada lo hace en el acto, antes del lote siguiente.
+  - id: recargar_api
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - 'curl -sf -X POST -H "x-token-admin: $API_TOKEN_ADMIN" $API_URL/modelo/recargar'
+
+  - id: registrar_decision
+    type: io.kestra.plugin.core.log.Log
+    message: >-
+      Paso {{ inputs.lote }}: challenger {{ outputs.aplicar_decision.vars.decision }}; la API sirve la
+      versión {{ outputs.aplicar_decision.vars.champion }}.
+
+outputs:
+  - id: decision
+    type: STRING
+    value: '{{ outputs.aplicar_decision.vars.decision }}'
+  - id: champion
+    type: STRING
+    value: '{{ outputs.aplicar_decision.vars.champion }}'
+
+errors:
+  - id: registrar_fallo
+    type: io.kestra.plugin.core.log.Log
+    level: ERROR
+    message: 'Falló el reentrenamiento del paso {{ inputs.lote }}. El champion no cambió.'

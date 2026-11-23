@@ -25,3 +25,7 @@ COPY --from=spark_runtime /opt/spark /opt/spark
 COPY --from=spark_runtime /opt/java/openjdk /opt/spark-java
 COPY spark/descargar_conectores.py /opt/descargar_conectores.py
 RUN /opt/pset2-venv/bin/python /opt/descargar_conectores.py
+# PSet 4: entorno de los flujos de producción, monitoreo y reentrenamiento (src/ y monitoreo/).
+COPY kestra/requirements_proyecto.txt /opt/proyecto-requirements.txt
+RUN /opt/bootstrap/bin/uv venv --python 3.12.12 /opt/proyecto-venv \
+    && /opt/bootstrap/bin/uv pip install --python /opt/proyecto-venv/bin/python -r /opt/proyecto-requirements.txt

@@ -212,6 +212,10 @@ async def entrada_invalida(request: Request, exc: RequestValidationError):
         campos.append({'campo': campo, 'mensaje': error['msg'], 'tipo': error['type'],
                        'valor': None if isinstance(valor, dict) else valor})
     nombres = ', '.join(dict.fromkeys(c['campo'] for c in campos))
+    # La ruta no llegó a correr: el lote se toma del cuerpo para que el 422 quede atribuido a
+    # su lote en RUTA_SOLICITUDES (el middleware lee request.state después de responder).
+    if isinstance(exc.body, dict):
+        request.state.lote = exc.body.get('lote') if isinstance(exc.body.get('lote'), str) else None
     return JSONResponse(status_code=422, content={'error': f'entrada inválida en: {nombres}', 'campos': campos})
 
 
