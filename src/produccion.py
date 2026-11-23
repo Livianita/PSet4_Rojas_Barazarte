@@ -3,6 +3,7 @@
     python -m src.produccion predecir <lote> <ejecucion>   # el lote de Snowflake → API /predecir/lote
     python -m src.produccion cargar <lote> <ejecucion>     # registro de la API → PRODUCCION.PREDICCIONES
     python -m src.produccion evaluar <paso>                # une con su target los lotes que ya lo tienen
+    python -m src.produccion reiniciar                     # vacía las tablas de resultados para repetir la simulación
 
 Patrón batch: el pedido de la semana se decide en la reunión del lunes, así que el lote
 completo se manda a la API una vez por semana (ver src/lotes.py para el calendario).
@@ -246,11 +247,26 @@ def evaluar(paso):
     return filas
 
 
+TABLAS_RESULTADOS = ['PREDICCIONES', 'DESEMPENO', 'MONITOREO', 'ALERTAS', 'REENTRENAMIENTOS']
+
+
+def reiniciar():
+    """Vacía las tablas de resultados de la simulación (no toca LOTES ni LOTES_TARGET). El registro
+    de la API (/registros/*.jsonl) se vacía aparte: ver el README."""
+    from src.datos import conectar
+    with conectar('PSET4_REINICIAR') as con, con.cursor() as cur:
+        for tabla in TABLAS_RESULTADOS:
+            cur.execute(f'TRUNCATE TABLE {ESQUEMA}.{tabla}')
+            print(f'{ESQUEMA}.{tabla} vacía')
+
+
 if __name__ == '__main__':
     import warnings
     warnings.filterwarnings('ignore')
     orden = sys.argv[1] if len(sys.argv) > 1 else ''
-    if orden == 'predecir':
+    if orden == 'reiniciar':
+        reiniciar()
+    elif orden == 'predecir':
         predecir(int(sys.argv[2]), sys.argv[3])
     elif orden == 'cargar':
         cargar(int(sys.argv[2]), sys.argv[3])

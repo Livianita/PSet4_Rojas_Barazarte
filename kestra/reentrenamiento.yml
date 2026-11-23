@@ -65,12 +65,14 @@ tasks:
         defaults: sin motivo
         description: Por qué se aprueba o se rechaza.
 
+  # Si se reanuda sin llenar el formulario (p. ej. desde la lista de ejecuciones), no hay
+  # decisión: se toma como rechazo y el champion queda intacto.
   - id: aplicar_decision
     type: io.kestra.plugin.scripts.shell.Commands
     env:
-      MOTIVO_DECISION: '{{ outputs.esperar_aprobacion.onResume.motivo_decision }}'
+      MOTIVO_DECISION: "{{ outputs.esperar_aprobacion.onResume.motivo_decision ?? 'reanudado sin formulario: se mantiene el champion' }}"
     commands:
-      - cd /workspace && /opt/proyecto-venv/bin/python -m src.reentrenar decidir {{ inputs.lote }} {{ outputs.esperar_aprobacion.onResume.aprobar }}
+      - cd /workspace && /opt/proyecto-venv/bin/python -m src.reentrenar decidir {{ inputs.lote }} {{ outputs.esperar_aprobacion.onResume.aprobar ?? false }}
 
   # La API revisa el alias cada 30 s; esta llamada lo hace en el acto, antes del lote siguiente.
   - id: recargar_api
