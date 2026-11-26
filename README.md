@@ -285,7 +285,7 @@ uv pip install -r tests/requirements.txt --python .venv\Scripts\python.exe
 | `tablero/` | Tablero de Streamlit y su Dockerfile |
 | `tests/` | Pruebas y el modelo de fixtures |
 | `mlflow/` | Imagen del servidor de MLflow |
-| `docs/` | CSV exportados, `cambios.md`, evidencias de Kestra, diagramas y entregables; `docs/historial/` guarda los entregables de los PSets 1 a 3 y las versiones corregidas |
+| `docs/` | CSV exportados, `cambios.md`, evidencias de Kestra, diagramas (`arquitectura.png` y `modelo_dimensional.png`, generados con `docs/diagramas/`) y entregables; `docs/historial/` guarda los entregables de los PSets 1 a 3 y las versiones corregidas |
 
 ## 7. Uso de IA
 
