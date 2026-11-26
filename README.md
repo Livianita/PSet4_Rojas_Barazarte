@@ -4,6 +4,9 @@ Proyecto de ciencia de datos de punta a punta (PSets 1 a 4). Cada lunes sugiere 
 producto perecedero en cada tienda para la semana siguiente. Opera con monitoreo, alertas, reentrenamiento con
 aprobación humana y un interruptor de respaldo.
 
+La raíz de este repositorio corresponde a la carpeta `proyecto_final/` del enunciado del PSet 4. Los workflows de
+GitHub Actions deben estar en `.github/workflows/` de la raíz para ejecutarse.
+
 ```
 CSV de Kaggle → RAW → Bronze → Silver → Gold → OBT → EDA y modelo → registro (MLflow) → API
              → simulación semanal → monitoreo y alertas → reentrenamiento con aprobación
@@ -11,7 +14,7 @@ CSV de Kaggle → RAW → Bronze → Silver → Gold → OBT → EDA y modelo �
 
 **Resultado:** en 10 semanas simuladas con ventas reales que el modelo no vio, el pedido sugerido costó **22,3 % menos**
 que la regla de negocio actual (media de 28 días más un stock de seguridad por familia), con 29 % menos faltantes y
-la misma merma. El modelo le ganó a la regla en las 10 semanas. La excepción es la familia de comida preparada, donde
+prácticamente la misma merma (+1 %). El modelo le ganó a la regla en las 10 semanas. La excepción es la familia de comida preparada, donde
 quedó peor que la regla. El detalle está en `notebooks/06_simulacion_produccion.ipynb` y
 `notebooks/07_analisis_monitoreo.ipynb`.
 
