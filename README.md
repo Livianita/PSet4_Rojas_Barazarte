@@ -161,6 +161,8 @@ y **Run All**:
 | `04_tuning.ipynb` | Optuna sobre los 3 mejores (90 corridas) | 8 h |
 | `05_seleccion.ipynb` | Selección por costo de negocio, prueba y Model Registry | 1,3 h |
 | `05b_reproducir_champion.ipynb` | Carga la versión 1 del registro (champion del PSet 3) y reproduce exactamente su RMSLE y su costo de prueba | 1 min |
+| `06_simulacion_produccion.ipynb` | Después de la simulación (§4.5): lotes, resultado de negocio lote por lote, efecto de los reentrenamientos, independencia y trazabilidad | 3 min |
+| `07_analisis_monitoreo.ipynb` | Después de la simulación (§4.6): métricas de sistema, modelo y datos, deriva, alertas, reentrenamientos y ética | 2 min |
 
 Los notebooks 03 a 05b son los del PSet 3 y no hace falta repetirlos para operar el sistema: sus corridas ya están en
 MLflow (`docs/corridas.csv`).
