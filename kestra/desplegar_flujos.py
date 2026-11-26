@@ -1,7 +1,10 @@
 """Carga (o actualiza) en Kestra los flujos de la carpeta kestra/, sin pasar por la interfaz.
 
-    python kestra/desplegar_flujos.py                 # los flujos del PSet 4 (kestra/*.yml)
-    python kestra/desplegar_flujos.py --con-pset2     # también los del PSet 2 (kestra/pset2/*.yml)
+    python kestra/desplegar_flujos.py                 # los flujos de kestra/*.yml
+    python kestra/desplegar_flujos.py --con-pset2     # antes, los subflujos del PSet 2 (kestra/pset2/*.yml)
+
+kestra/ingesta.yml llama a los subflujos ingesta_raw y spark_obt de kestra/pset2/: en un Kestra nuevo se
+despliega con --con-pset2, que carga primero esos subflujos.
 
 Usa la API de Kestra en KESTRA_URL (por defecto http://localhost:8080) con el usuario y la
 contraseña de .env (KESTRA_USERNAME y KESTRA_PASSWORD). Si el flujo ya existe, lo reemplaza
@@ -38,8 +41,7 @@ def desplegar(ruta):
 
 
 if __name__ == '__main__':
-    archivos = sorted((RAIZ / 'kestra').glob('*.yml'))
-    if '--con-pset2' in sys.argv:
-        archivos += sorted((RAIZ / 'kestra' / 'pset2').glob('*.yml'))
+    archivos = sorted((RAIZ / 'kestra' / 'pset2').glob('*.yml')) if '--con-pset2' in sys.argv else []
+    archivos += sorted((RAIZ / 'kestra').glob('*.yml'))
     for archivo in archivos:
         desplegar(archivo)

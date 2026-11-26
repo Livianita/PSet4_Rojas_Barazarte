@@ -123,7 +123,8 @@ por la API de Kestra; Kestra guarda la revisión anterior:
 
 ### 4.1 Fuente → RAW → Bronze → Silver → Gold → OBT
 
-En Kestra: **Flows → pset2 → pipeline_completo → Execute** (unos 18 minutos).
+En Kestra: **Flows → pset2 → pipeline_completo → Execute** (unos 18 minutos). El flujo está en `kestra/ingesta.yml`;
+conserva el id y el namespace del PSet 2 para no perder su historial de ejecuciones.
 
 | Etapa | Qué hace | Archivo |
 |---|---|---|
@@ -272,8 +273,8 @@ uv pip install -r tests/requirements.txt --python .venv\Scripts\python.exe
 | Ruta | Contenido |
 |---|---|
 | `docker-compose.yml` | Kestra, Spark, MLflow, la API y el tablero |
-| `kestra/` | Imagen de Kestra y flujos: `produccion_lotes.yml`, `monitoreo.yml`, `reentrenamiento.yml`, `simulacion.yml`; `desplegar_flujos.py` y `evidencia.py` |
-| `kestra/pset2/` | Flujos de datos del PSet 2: ingesta (`02_ingesta_raw.yml`), reintentos, backfill, OBT y pipeline completo |
+| `kestra/` | Imagen de Kestra y flujos: `ingesta.yml` (CSV a OBT, trigger diario), `produccion_lotes.yml`, `monitoreo.yml`, `reentrenamiento.yml`, `simulacion.yml`; `desplegar_flujos.py` y `evidencia.py` |
+| `kestra/pset2/` | Subflujos de datos del PSet 2 que llama `ingesta.yml`: carga a RAW (`02_ingesta_raw.yml`) y OBT (`18_spark_obt.yml`); además, reintentos y backfill |
 | `snowflake/` | Preparación de Snowflake, claves, carga de CSV, ejecución de dbt y Spark, verificación de la OBT y tablas de producción |
 | `dbt/` | Modelos Bronze, Silver y Gold con sus pruebas |
 | `spark/` | Construcción y validación de la OBT |

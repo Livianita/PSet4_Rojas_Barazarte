@@ -1,5 +1,8 @@
 id: pipeline_completo
 namespace: pset2
+# Ingesta de punta a punta: CSV a RAW, dbt (Bronze, Silver y Gold con pruebas) y OBT verificada con Spark.
+# Es el flujo pipeline_completo del PSet 2 (namespace pset2): se conservan el id y el namespace para no perder
+# su historial de ejecuciones. Llama a los subflujos ingesta_raw y spark_obt, que están en kestra/pset2/.
 description: CSV a RAW, build y pruebas dbt de Bronze-Silver-Gold, y OBT verificada con Spark.
 concurrency:
   limit: 1
