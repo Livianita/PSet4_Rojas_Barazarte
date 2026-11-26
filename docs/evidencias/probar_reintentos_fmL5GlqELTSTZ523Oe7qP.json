@@ -1,0 +1,77 @@
+{
+  "ejecucion": "fmL5GlqELTSTZ523Oe7qP",
+  "flujo": "pset2.probar_reintentos",
+  "revision_flujo": 1,
+  "estado": "SUCCESS",
+  "inicio_utc": "2026-11-25T22:06:01.559249Z",
+  "fin_utc": "2026-11-25T22:06:08.331307Z",
+  "duracion": "PT6.772058S",
+  "origen": "manual",
+  "inputs": null,
+  "etiquetas": {
+    "system.from": "api",
+    "system.correlationId": "fmL5GlqELTSTZ523Oe7qP"
+  },
+  "tareas": [
+    {
+      "tarea": "fallo_transitorio_simulado",
+      "estado": "SUCCESS",
+      "intentos": [
+        {
+          "intento": 1,
+          "estado": "FAILED",
+          "inicio_utc": "2026-11-25T22:06:02.180274Z"
+        },
+        {
+          "intento": 2,
+          "estado": "SUCCESS",
+          "inicio_utc": "2026-11-25T22:06:08.187839Z"
+        }
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "hora_utc": "2026-11-25T22:06:02.713825Z",
+      "tarea": "fallo_transitorio_simulado",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Número de intento: 1"
+    },
+    {
+      "hora_utc": "2026-11-25T22:06:02.717485Z",
+      "tarea": "fallo_transitorio_simulado",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Fallo intencional de prueba"
+    },
+    {
+      "hora_utc": "2026-11-25T22:06:02.761892Z",
+      "tarea": "fallo_transitorio_simulado",
+      "intento": 1,
+      "nivel": "ERROR",
+      "mensaje": "io.kestra.core.models.tasks.runners.TaskException: Command failed with exit code 1"
+    },
+    {
+      "hora_utc": "2026-11-25T22:06:02.761892Z",
+      "tarea": "fallo_transitorio_simulado",
+      "intento": 1,
+      "nivel": "ERROR",
+      "mensaje": "Command failed with exit code 1"
+    },
+    {
+      "hora_utc": "2026-11-25T22:06:08.270189Z",
+      "tarea": "fallo_transitorio_simulado",
+      "intento": 2,
+      "nivel": "INFO",
+      "mensaje": "Número de intento: 2"
+    },
+    {
+      "hora_utc": "2026-11-25T22:06:08.271451Z",
+      "tarea": "fallo_transitorio_simulado",
+      "intento": 2,
+      "nivel": "INFO",
+      "mensaje": "Recuperación correcta"
+    }
+  ]
+}

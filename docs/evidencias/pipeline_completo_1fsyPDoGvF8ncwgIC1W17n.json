@@ -1,0 +1,3364 @@
+{
+  "ejecucion": "1fsyPDoGvF8ncwgIC1W17n",
+  "flujo": "pset2.pipeline_completo",
+  "revision_flujo": 2,
+  "estado": "SUCCESS",
+  "inicio_utc": "2026-11-25T22:15:01.572623Z",
+  "fin_utc": "2026-11-25T22:33:23.469988Z",
+  "duracion": "PT18M21.897365S",
+  "origen": {
+    "trigger": "diario",
+    "tipo": "io.kestra.plugin.core.trigger.Schedule",
+    "fecha_programada": "2026-11-25T17:15:00-05:00"
+  },
+  "inputs": null,
+  "etiquetas": {
+    "system.from": "trigger",
+    "system.correlationId": "1fsyPDoGvF8ncwgIC1W17n"
+  },
+  "tareas": [
+    {
+      "tarea": "ingesta_raw",
+      "estado": "SUCCESS",
+      "intentos": [
+        {
+          "intento": 1,
+          "estado": "SUCCESS",
+          "inicio_utc": "2026-11-25T22:15:02.190483Z"
+        }
+      ]
+    },
+    {
+      "tarea": "construir_y_probar_dbt",
+      "estado": "SUCCESS",
+      "intentos": [
+        {
+          "intento": 1,
+          "estado": "SUCCESS",
+          "inicio_utc": "2026-11-25T22:19:58.021461Z"
+        }
+      ]
+    },
+    {
+      "tarea": "construir_obt_spark",
+      "estado": "SUCCESS",
+      "intentos": [
+        {
+          "intento": 1,
+          "estado": "SUCCESS",
+          "inicio_utc": "2026-11-25T22:21:20.691772Z"
+        }
+      ]
+    },
+    {
+      "tarea": "registrar_exito",
+      "estado": "SUCCESS",
+      "intentos": [
+        {
+          "intento": 1,
+          "estado": "SUCCESS",
+          "inicio_utc": "2026-11-25T22:33:23.352240Z"
+        }
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "hora_utc": "2026-11-25T22:15:02.190483Z",
+      "tarea": "ingesta_raw",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Created new execution [[link execution=\"6ntPPUo49zQqULj50DoHTB\" flowId=\"ingesta_raw\" namespace=\"pset2\"]]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:02.928814Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:02  Running with dbt=1.10.15"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:04.556098Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:04  Registered adapter: snowflake=1.10.2"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:07.833583Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:07  Found 20 models, 208 data tests, 6 sources, 522 macros"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:07.864194Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:07  "
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:07.865852Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:07  Concurrency: 2 threads (target='dev')"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:07.868578Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:07  "
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:13.348779Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:13  1 of 228 START sql table model BRONZE.brz_holidays_events ...................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:13.352173Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:13  2 of 228 START sql table model BRONZE.brz_items ................................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:14.487124Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:14  2 of 228 OK created sql table model BRONZE.brz_items ........................... [\u001b[32mSUCCESS 1\u001b[0m in 1.12s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:14.495614Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:14  3 of 228 START sql table model BRONZE.brz_oil .................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:15.028505Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:15  1 of 228 OK created sql table model BRONZE.brz_holidays_events ................. [\u001b[32mSUCCESS 1\u001b[0m in 1.67s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:15.035446Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:15  4 of 228 START sql table model BRONZE.brz_sales ................................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:15.513335Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:15  3 of 228 OK created sql table model BRONZE.brz_oil ............................. [\u001b[32mSUCCESS 1\u001b[0m in 1.01s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:15.528139Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:15  5 of 228 START sql table model BRONZE.brz_stores ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:16.818181Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:16  5 of 228 OK created sql table model BRONZE.brz_stores .......................... [\u001b[32mSUCCESS 1\u001b[0m in 1.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:16.830453Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:16  6 of 228 START sql table model BRONZE.brz_transactions ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:18.149124Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:18  6 of 228 OK created sql table model BRONZE.brz_transactions .................... [\u001b[32mSUCCESS 1\u001b[0m in 1.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:18.160139Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:18  7 of 228 START sql table model SILVER.slv_calendar ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:18.975058Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:18  7 of 228 OK created sql table model SILVER.slv_calendar ........................ [\u001b[32mSUCCESS 1\u001b[0m in 0.81s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:18.982211Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:18  8 of 228 START test accepted_values_brz_items_has_invalid_numeric__False__False  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:19.377031Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:19  8 of 228 PASS accepted_values_brz_items_has_invalid_numeric__False__False ...... [\u001b[32mPASS\u001b[0m in 0.39s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:19.391426Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:19  9 of 228 START test accepted_values_brz_items_perishable__False__0__1 .......... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:19.808735Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:19  9 of 228 PASS accepted_values_brz_items_perishable__False__0__1 ................ [\u001b[32mPASS\u001b[0m in 0.41s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:19.820506Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:19  10 of 228 START test items_conserva_filas ...................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:20.090716Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:20  10 of 228 PASS items_conserva_filas ............................................ [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:20.098428Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:20  11 of 228 START test not_null_brz_items_family ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:20.389075Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:20  11 of 228 PASS not_null_brz_items_family ....................................... [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:20.397566Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:20  12 of 228 START test not_null_brz_items_has_invalid_numeric .................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:20.463510Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:20  4 of 228 OK created sql table model BRONZE.brz_sales ........................... [\u001b[32mSUCCESS 1\u001b[0m in 5.42s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:20.471723Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:20  13 of 228 START test not_null_brz_items_item_class ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:20.679478Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:20  12 of 228 PASS not_null_brz_items_has_invalid_numeric .......................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:20.692193Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:20  14 of 228 START test not_null_brz_items_item_nbr ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:20.760976Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:20  13 of 228 PASS not_null_brz_items_item_class ................................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:20.809004Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:20  15 of 228 START test not_null_brz_items_perishable ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:21.022536Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:21  14 of 228 PASS not_null_brz_items_item_nbr ..................................... [\u001b[32mPASS\u001b[0m in 0.33s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:21.034305Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:21  16 of 228 START test unique_brz_items_item_nbr ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:21.102852Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:21  15 of 228 PASS not_null_brz_items_perishable ................................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:21.126697Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:21  17 of 228 START test accepted_values_brz_holidays_events_event_type__Holiday__Transfer__Additional__Bridge__Work_Day__Event  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:21.443764Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:21  16 of 228 PASS unique_brz_items_item_nbr ....................................... [\u001b[32mPASS\u001b[0m in 0.41s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:21.449986Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:21  18 of 228 START test accepted_values_brz_holidays_events_has_invalid_date__False__False  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:21.490344Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:21  17 of 228 PASS accepted_values_brz_holidays_events_event_type__Holiday__Transfer__Additional__Bridge__Work_Day__Event  [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:21.511716Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:21  19 of 228 START test accepted_values_brz_holidays_events_has_invalid_transferred__False__False  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.013492Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  19 of 228 PASS accepted_values_brz_holidays_events_has_invalid_transferred__False__False  [\u001b[32mPASS\u001b[0m in 0.50s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.022857Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  20 of 228 START test accepted_values_brz_holidays_events_locale__National__Regional__Local  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.036314Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  18 of 228 PASS accepted_values_brz_holidays_events_has_invalid_date__False__False  [\u001b[32mPASS\u001b[0m in 0.58s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.049449Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  21 of 228 START test holidays_conserva_filas ................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.443067Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  21 of 228 PASS holidays_conserva_filas ......................................... [\u001b[32mPASS\u001b[0m in 0.39s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.448656Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  22 of 228 START test holidays_eventos_repetidos ................................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.644571Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  20 of 228 PASS accepted_values_brz_holidays_events_locale__National__Regional__Local  [\u001b[32mPASS\u001b[0m in 0.61s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.654586Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  23 of 228 START test not_null_brz_holidays_events_date ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.717320Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  22 of 228 PASS holidays_eventos_repetidos ...................................... [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.729294Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  24 of 228 START test not_null_brz_holidays_events_description .................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.962854Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  23 of 228 PASS not_null_brz_holidays_events_date ............................... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.972272Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  25 of 228 START test not_null_brz_holidays_events_event_type ................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:22.999107Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:22  24 of 228 PASS not_null_brz_holidays_events_description ........................ [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.011776Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  26 of 228 START test not_null_brz_holidays_events_has_invalid_date ............. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.264569Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  25 of 228 PASS not_null_brz_holidays_events_event_type ......................... [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.274039Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  27 of 228 START test not_null_brz_holidays_events_has_invalid_transferred ...... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.292651Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  26 of 228 PASS not_null_brz_holidays_events_has_invalid_date ................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.301038Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  28 of 228 START test not_null_brz_holidays_events_locale ....................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.556224Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  27 of 228 PASS not_null_brz_holidays_events_has_invalid_transferred ............ [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.564898Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  29 of 228 START test not_null_brz_holidays_events_locale_name .................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.568309Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  28 of 228 PASS not_null_brz_holidays_events_locale ............................. [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.584997Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  30 of 228 START test not_null_brz_holidays_events_transferred .................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.851271Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  29 of 228 PASS not_null_brz_holidays_events_locale_name ........................ [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.859884Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  30 of 228 PASS not_null_brz_holidays_events_transferred ........................ [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.867371Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  31 of 228 START test accepted_values_brz_oil_has_invalid_date__False__False .... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:23.872967Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:23  32 of 228 START test accepted_values_brz_oil_has_invalid_price__False__False ... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:24.257976Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:24  32 of 228 PASS accepted_values_brz_oil_has_invalid_price__False__False ......... [\u001b[32mPASS\u001b[0m in 0.38s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:24.279510Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:24  33 of 228 START test not_null_brz_oil_date ..................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:24.289355Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:24  31 of 228 PASS accepted_values_brz_oil_has_invalid_date__False__False .......... [\u001b[32mPASS\u001b[0m in 0.42s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:24.319414Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:24  34 of 228 START test not_null_brz_oil_has_invalid_date ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:24.642456Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:24  33 of 228 PASS not_null_brz_oil_date ........................................... [\u001b[32mPASS\u001b[0m in 0.35s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:24.653572Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:24  35 of 228 START test not_null_brz_oil_has_invalid_price ........................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:24.715670Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:24  34 of 228 PASS not_null_brz_oil_has_invalid_date ............................... [\u001b[32mPASS\u001b[0m in 0.39s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:24.726723Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:24  36 of 228 START test not_null_brz_oil_is_price_missing ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:24.976458Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:24  35 of 228 PASS not_null_brz_oil_has_invalid_price .............................. [\u001b[32mPASS\u001b[0m in 0.32s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:24.983400Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:24  37 of 228 START test oil_conserva_filas_y_ausencias ............................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:25.041371Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:25  36 of 228 PASS not_null_brz_oil_is_price_missing ............................... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:25.056058Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:25  38 of 228 START test unique_brz_oil_date ....................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:25.387Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:25  37 of 228 PASS oil_conserva_filas_y_ausencias .................................. [\u001b[32mPASS\u001b[0m in 0.40s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:25.395829Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:25  38 of 228 PASS unique_brz_oil_date ............................................. [\u001b[32mPASS\u001b[0m in 0.33s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:25.424227Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:25  39 of 228 START test accepted_values_brz_stores_has_invalid_numeric__False__False  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:25.430241Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:25  40 of 228 START test accepted_values_brz_stores_store_type__A__B__C__D__E ...... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:25.809916Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:25  39 of 228 PASS accepted_values_brz_stores_has_invalid_numeric__False__False .... [\u001b[32mPASS\u001b[0m in 0.38s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:25.814402Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:25  40 of 228 PASS accepted_values_brz_stores_store_type__A__B__C__D__E ............ [\u001b[32mPASS\u001b[0m in 0.38s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:25.826437Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:25  41 of 228 START test holidays_ubicaciones_validas .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:25.828509Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:25  42 of 228 START test not_null_brz_stores_city .................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:26.282753Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:26  41 of 228 PASS holidays_ubicaciones_validas .................................... [\u001b[32mPASS\u001b[0m in 0.45s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:26.287666Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:26  43 of 228 START test not_null_brz_stores_has_invalid_numeric ................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:26.581548Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:26  43 of 228 PASS not_null_brz_stores_has_invalid_numeric ......................... [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:26.586717Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:26  44 of 228 START test not_null_brz_stores_state ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:26.883379Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:26  44 of 228 PASS not_null_brz_stores_state ....................................... [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:26.889804Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:26  45 of 228 START test not_null_brz_stores_store_cluster ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.051120Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  42 of 228 PASS not_null_brz_stores_city ........................................ [\u001b[32mPASS\u001b[0m in 1.22s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.060893Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  46 of 228 START test not_null_brz_stores_store_nbr ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.165066Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  45 of 228 PASS not_null_brz_stores_store_cluster ............................... [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.184179Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  47 of 228 START test not_null_brz_stores_store_type ............................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.358480Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  46 of 228 PASS not_null_brz_stores_store_nbr ................................... [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.370400Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  48 of 228 START test stores_conserva_filas ..................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.487617Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  47 of 228 PASS not_null_brz_stores_store_type .................................. [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.499143Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  49 of 228 START test unique_brz_stores_store_nbr ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.725321Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  48 of 228 PASS stores_conserva_filas ........................................... [\u001b[32mPASS\u001b[0m in 0.35s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.740476Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  50 of 228 START test accepted_values_brz_transactions_has_invalid_date__False__False  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.798630Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  49 of 228 PASS unique_brz_stores_store_nbr ..................................... [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:27.805090Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:27  51 of 228 START test accepted_values_brz_transactions_has_invalid_numeric__False__False  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.139028Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  50 of 228 PASS accepted_values_brz_transactions_has_invalid_date__False__False . [\u001b[32mPASS\u001b[0m in 0.39s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.147595Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  52 of 228 START test not_null_brz_transactions_date ............................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.212311Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  51 of 228 PASS accepted_values_brz_transactions_has_invalid_numeric__False__False  [\u001b[32mPASS\u001b[0m in 0.40s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.234291Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  53 of 228 START test not_null_brz_transactions_has_invalid_date ................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.485300Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  52 of 228 PASS not_null_brz_transactions_date .................................. [\u001b[32mPASS\u001b[0m in 0.34s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.492740Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  54 of 228 START test not_null_brz_transactions_has_invalid_numeric ............. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.673972Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  53 of 228 PASS not_null_brz_transactions_has_invalid_date ...................... [\u001b[32mPASS\u001b[0m in 0.44s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.679580Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  55 of 228 START test not_null_brz_transactions_store_nbr ....................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.802304Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  54 of 228 PASS not_null_brz_transactions_has_invalid_numeric ................... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.807194Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  56 of 228 START test not_null_brz_transactions_transactions .................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.959310Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  55 of 228 PASS not_null_brz_transactions_store_nbr ............................. [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:28.965346Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:28  57 of 228 START test relationships_brz_transactions_store_nbr__store_nbr__ref_brz_stores_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:29.053327Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:29  56 of 228 PASS not_null_brz_transactions_transactions .......................... [\u001b[32mPASS\u001b[0m in 0.24s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:29.063923Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:29  58 of 228 START test transactions_clave_compuesta_unica ........................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:29.309377Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:29  57 of 228 PASS relationships_brz_transactions_store_nbr__store_nbr__ref_brz_stores_  [\u001b[32mPASS\u001b[0m in 0.34s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:29.325057Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:29  59 of 228 START test transactions_conserva_filas ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:29.350873Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:29  58 of 228 PASS transactions_clave_compuesta_unica .............................. [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:29.355589Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:29  60 of 228 START test calendar_periodo_completo ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:29.745169Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:29  60 of 228 PASS calendar_periodo_completo ....................................... [\u001b[32mPASS\u001b[0m in 0.39s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:29.753222Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:29  59 of 228 PASS transactions_conserva_filas ..................................... [\u001b[32mPASS\u001b[0m in 0.42s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:29.773435Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:29  61 of 228 START test not_null_slv_calendar_date ................................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:29.777825Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:29  62 of 228 START test not_null_slv_calendar_is_payday_proxy ..................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.113325Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  61 of 228 PASS not_null_slv_calendar_date ...................................... [\u001b[32mPASS\u001b[0m in 0.33s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.120723Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  62 of 228 PASS not_null_slv_calendar_is_payday_proxy ........................... [\u001b[32mPASS\u001b[0m in 0.34s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.135174Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  63 of 228 START test unique_slv_calendar_date .................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.137939Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  64 of 228 START test accepted_values_brz_sales_has_invalid_date__False__False .. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.420892Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  63 of 228 PASS unique_slv_calendar_date ........................................ [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.426037Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  65 of 228 START test accepted_values_brz_sales_has_invalid_numeric__False__False  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.556357Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  64 of 228 PASS accepted_values_brz_sales_has_invalid_date__False__False ........ [\u001b[32mPASS\u001b[0m in 0.41s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.564697Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  66 of 228 START test accepted_values_brz_sales_has_invalid_promotion__False__False  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.737189Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  65 of 228 PASS accepted_values_brz_sales_has_invalid_numeric__False__False ..... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.741583Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  67 of 228 START test not_null_brz_sales_date ................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.955079Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  66 of 228 PASS accepted_values_brz_sales_has_invalid_promotion__False__False ... [\u001b[32mPASS\u001b[0m in 0.39s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:30.965643Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:30  68 of 228 START test not_null_brz_sales_has_invalid_date ....................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.041234Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  67 of 228 PASS not_null_brz_sales_date ......................................... [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.051982Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  69 of 228 START test not_null_brz_sales_has_invalid_numeric .................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.253200Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  68 of 228 PASS not_null_brz_sales_has_invalid_date ............................. [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.262818Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  70 of 228 START test not_null_brz_sales_has_invalid_promotion .................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.339379Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  69 of 228 PASS not_null_brz_sales_has_invalid_numeric .......................... [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.346902Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  71 of 228 START test not_null_brz_sales_id ..................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.543246Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  70 of 228 PASS not_null_brz_sales_has_invalid_promotion ........................ [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.550467Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  72 of 228 START test not_null_brz_sales_item_nbr ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.605325Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  71 of 228 PASS not_null_brz_sales_id ........................................... [\u001b[32mPASS\u001b[0m in 0.26s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.610882Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  73 of 228 START test not_null_brz_sales_onpromotion ............................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.829047Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  72 of 228 PASS not_null_brz_sales_item_nbr ..................................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.840306Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  74 of 228 START test not_null_brz_sales_store_nbr .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.904883Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  73 of 228 PASS not_null_brz_sales_onpromotion .................................. [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:31.910648Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:31  75 of 228 START test not_null_brz_sales_unit_sales ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:32.127706Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:32  74 of 228 PASS not_null_brz_sales_store_nbr .................................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:32.149904Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:32  76 of 228 START test relationships_brz_sales_item_nbr__item_nbr__ref_brz_items_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:32.194574Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:32  75 of 228 PASS not_null_brz_sales_unit_sales ................................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:32.202825Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:32  77 of 228 START test relationships_brz_sales_store_nbr__store_nbr__ref_brz_stores_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:32.528966Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:32  77 of 228 PASS relationships_brz_sales_store_nbr__store_nbr__ref_brz_stores_ ... [\u001b[32mPASS\u001b[0m in 0.32s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:32.537534Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:32  78 of 228 START test sales_alcance_pset1 ....................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:32.556386Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:32  76 of 228 PASS relationships_brz_sales_item_nbr__item_nbr__ref_brz_items_ ...... [\u001b[32mPASS\u001b[0m in 0.40s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:32.562714Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:32  79 of 228 START test sales_clave_compuesta_unica ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:33.084596Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:33  79 of 228 PASS sales_clave_compuesta_unica ..................................... [\u001b[32mPASS\u001b[0m in 0.52s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:33.097725Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:33  80 of 228 START test sales_conserva_observaciones .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:33.597187Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:33  78 of 228 PASS sales_alcance_pset1 ............................................. [\u001b[32mPASS\u001b[0m in 1.06s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:33.602712Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:33  81 of 228 START test unique_brz_sales_id ....................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:33.615378Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:33  80 of 228 PASS sales_conserva_observaciones .................................... [\u001b[32mPASS\u001b[0m in 0.52s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:33.621981Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:33  82 of 228 START sql table model SILVER.slv_items ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:34.090275Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:34  81 of 228 PASS unique_brz_sales_id ............................................. [\u001b[32mPASS\u001b[0m in 0.49s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:34.099747Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:34  83 of 228 START sql table model SILVER.slv_stores .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:34.473490Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:34  82 of 228 OK created sql table model SILVER.slv_items .......................... [\u001b[32mSUCCESS 1\u001b[0m in 0.85s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:34.481609Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:34  84 of 228 START sql table model GOLD.dim_date .................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:34.956046Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:34  83 of 228 OK created sql table model SILVER.slv_stores ......................... [\u001b[32mSUCCESS 1\u001b[0m in 0.85s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:34.964678Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:34  85 of 228 START sql table model SILVER.slv_oil_daily ........................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:35.336380Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:35  84 of 228 OK created sql table model GOLD.dim_date ............................. [\u001b[32mSUCCESS 1\u001b[0m in 0.85s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:35.345437Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:35  86 of 228 START sql table model SILVER.slv_store_day_events .................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:36.005130Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:36  85 of 228 OK created sql table model SILVER.slv_oil_daily ...................... [\u001b[32mSUCCESS 1\u001b[0m in 1.04s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:36.023321Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:36  87 of 228 START sql table model SILVER.slv_sales ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:36.621847Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:36  86 of 228 OK created sql table model SILVER.slv_store_day_events ............... [\u001b[32mSUCCESS 1\u001b[0m in 1.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:36.633160Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:36  88 of 228 START test accepted_values_slv_items_perishable__False__0__1 ......... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:37.103446Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:37  88 of 228 PASS accepted_values_slv_items_perishable__False__0__1 ............... [\u001b[32mPASS\u001b[0m in 0.47s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:37.113748Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:37  89 of 228 START test not_null_slv_items_family ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:37.473075Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:37  89 of 228 PASS not_null_slv_items_family ....................................... [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:37.480159Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:37  90 of 228 START test not_null_slv_items_item_class ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:38.009720Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:38  90 of 228 PASS not_null_slv_items_item_class ................................... [\u001b[32mPASS\u001b[0m in 0.53s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:38.019322Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:38  91 of 228 START test not_null_slv_items_item_nbr ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:38.330877Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:38  91 of 228 PASS not_null_slv_items_item_nbr ..................................... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:38.340201Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:38  92 of 228 START test not_null_slv_items_perishable ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:38.655744Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:38  92 of 228 PASS not_null_slv_items_perishable ................................... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:38.668598Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:38  93 of 228 START test silver_items_conserva_catalogo ............................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:39.044786Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:39  93 of 228 PASS silver_items_conserva_catalogo .................................. [\u001b[32mPASS\u001b[0m in 0.37s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:39.050930Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:39  94 of 228 START test unique_slv_items_item_nbr ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:39.351088Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:39  87 of 228 OK created sql table model SILVER.slv_sales .......................... [\u001b[32mSUCCESS 1\u001b[0m in 3.32s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:39.355635Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:39  95 of 228 START test accepted_values_slv_stores_store_type__A__B__C__D__E ...... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:39.370015Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:39  94 of 228 PASS unique_slv_items_item_nbr ....................................... [\u001b[32mPASS\u001b[0m in 0.32s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:39.376102Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:39  96 of 228 START test not_null_slv_stores_city .................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:39.718322Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:39  95 of 228 PASS accepted_values_slv_stores_store_type__A__B__C__D__E ............ [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:39.730573Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:39  97 of 228 START test not_null_slv_stores_state ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:39.751503Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:39  96 of 228 PASS not_null_slv_stores_city ........................................ [\u001b[32mPASS\u001b[0m in 0.37s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:39.763917Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:39  98 of 228 START test not_null_slv_stores_store_cluster ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.048689Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  98 of 228 PASS not_null_slv_stores_store_cluster ............................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.062464Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  99 of 228 START test not_null_slv_stores_store_nbr ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.129051Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  97 of 228 PASS not_null_slv_stores_state ....................................... [\u001b[32mPASS\u001b[0m in 0.40s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.133822Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  100 of 228 START test not_null_slv_stores_store_type ........................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.352223Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  99 of 228 PASS not_null_slv_stores_store_nbr ................................... [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.358887Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  101 of 228 START test silver_stores_conserva_catalogo .......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.586980Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  100 of 228 PASS not_null_slv_stores_store_type ................................. [\u001b[32mPASS\u001b[0m in 0.45s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.599202Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  102 of 228 START test unique_slv_stores_store_nbr .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.744113Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  101 of 228 PASS silver_stores_conserva_catalogo ................................ [\u001b[32mPASS\u001b[0m in 0.38s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.755171Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  103 of 228 START test gold_dim_date_conserva_calendario ........................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.954300Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  102 of 228 PASS unique_slv_stores_store_nbr .................................... [\u001b[32mPASS\u001b[0m in 0.35s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:40.960271Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:40  104 of 228 START test not_null_dim_date_date ................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:41.213369Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:41  103 of 228 PASS gold_dim_date_conserva_calendario .............................. [\u001b[32mPASS\u001b[0m in 0.45s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:41.226914Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:41  105 of 228 START test not_null_dim_date_date_key ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:41.234379Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:41  104 of 228 PASS not_null_dim_date_date ......................................... [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:41.277039Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:41  106 of 228 START test unique_dim_date_date ..................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:41.550611Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:41  105 of 228 PASS not_null_dim_date_date_key ..................................... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:41.562053Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:41  107 of 228 START test unique_dim_date_date_key ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:41.654007Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:41  106 of 228 PASS unique_dim_date_date ........................................... [\u001b[32mPASS\u001b[0m in 0.37s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:41.658515Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:41  108 of 228 START test not_null_slv_oil_daily_date .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:41.861836Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:41  107 of 228 PASS unique_dim_date_date_key ....................................... [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:41.869994Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:41  109 of 228 START test not_null_slv_oil_daily_has_source_row .................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.065510Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  108 of 228 PASS not_null_slv_oil_daily_date .................................... [\u001b[32mPASS\u001b[0m in 0.40s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.078462Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  110 of 228 START test not_null_slv_oil_daily_is_imputed ........................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.155943Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  109 of 228 PASS not_null_slv_oil_daily_has_source_row .......................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.170155Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  111 of 228 START test not_null_slv_oil_daily_is_source_price_missing ........... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.452003Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  110 of 228 PASS not_null_slv_oil_daily_is_imputed .............................. [\u001b[32mPASS\u001b[0m in 0.37s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.457134Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  112 of 228 START test oil_silver_conserva_observaciones ........................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.474124Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  111 of 228 PASS not_null_slv_oil_daily_is_source_price_missing ................. [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.487281Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  113 of 228 START test oil_silver_cubre_calendario .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.792999Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  113 of 228 PASS oil_silver_cubre_calendario .................................... [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.802631Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  112 of 228 PASS oil_silver_conserva_observaciones .............................. [\u001b[32mPASS\u001b[0m in 0.34s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.809013Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  114 of 228 START test oil_silver_referencia_causal ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:42.814988Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:42  115 of 228 START test relationships_slv_oil_daily_date__date__ref_slv_calendar_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.252710Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  114 of 228 PASS oil_silver_referencia_causal ................................... [\u001b[32mPASS\u001b[0m in 0.44s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.259906Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  116 of 228 START test relationships_slv_oil_daily_price_reference_date__date__ref_brz_oil_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.275584Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  115 of 228 PASS relationships_slv_oil_daily_date__date__ref_slv_calendar_ ...... [\u001b[32mPASS\u001b[0m in 0.46s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.283324Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  117 of 228 START test unique_slv_oil_daily_date ................................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.568892Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  117 of 228 PASS unique_slv_oil_daily_date ...................................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.574030Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  118 of 228 START test not_null_slv_store_day_events_active_holiday_count ....... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.622933Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  116 of 228 PASS relationships_slv_oil_daily_price_reference_date__date__ref_brz_oil_  [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.628547Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  119 of 228 START test not_null_slv_store_day_events_applicable_event_count ..... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.944433Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  119 of 228 PASS not_null_slv_store_day_events_applicable_event_count ........... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.953051Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  118 of 228 PASS not_null_slv_store_day_events_active_holiday_count ............. [\u001b[32mPASS\u001b[0m in 0.38s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.967985Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  120 of 228 START test not_null_slv_store_day_events_date ....................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:43.978688Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:43  121 of 228 START test not_null_slv_store_day_events_has_transferred_holiday .... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:44.307848Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:44  121 of 228 PASS not_null_slv_store_day_events_has_transferred_holiday .......... [\u001b[32mPASS\u001b[0m in 0.32s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:44.314961Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:44  122 of 228 START test not_null_slv_store_day_events_is_holiday ................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:44.323414Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:44  120 of 228 PASS not_null_slv_store_day_events_date ............................. [\u001b[32mPASS\u001b[0m in 0.35s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:44.341426Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:44  123 of 228 START test not_null_slv_store_day_events_is_work_day ................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:44.625284Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:44  123 of 228 PASS not_null_slv_store_day_events_is_work_day ...................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:44.633584Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:44  124 of 228 START test not_null_slv_store_day_events_store_nbr .................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:44.680009Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:44  122 of 228 PASS not_null_slv_store_day_events_is_holiday ....................... [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:44.691703Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:44  125 of 228 START test relationships_slv_store_day_events_date__date__ref_slv_calendar_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:44.939032Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:44  124 of 228 PASS not_null_slv_store_day_events_store_nbr ........................ [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:44.951652Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:44  126 of 228 START test relationships_slv_store_day_events_store_nbr__store_nbr__ref_brz_stores_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:45.052247Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:45  125 of 228 PASS relationships_slv_store_day_events_date__date__ref_slv_calendar_  [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:45.073929Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:45  127 of 228 START test store_day_events_calendario_completo ..................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:45.398547Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:45  127 of 228 PASS store_day_events_calendario_completo ........................... [\u001b[32mPASS\u001b[0m in 0.32s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:45.409986Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:45  128 of 228 START test store_day_events_casos_negocio ........................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:45.420648Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:45  126 of 228 PASS relationships_slv_store_day_events_store_nbr__store_nbr__ref_brz_stores_  [\u001b[32mPASS\u001b[0m in 0.46s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:45.446777Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:45  129 of 228 START test store_day_events_clave_unica ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:45.716297Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:45  129 of 228 PASS store_day_events_clave_unica ................................... [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:45.722889Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:45  130 of 228 START test not_null_slv_sales_date .................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:45.849887Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:45  128 of 228 PASS store_day_events_casos_negocio ................................. [\u001b[32mPASS\u001b[0m in 0.42s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:45.858956Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:45  131 of 228 START test not_null_slv_sales_id .................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.026197Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  130 of 228 PASS not_null_slv_sales_date ........................................ [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.033367Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  132 of 228 START test not_null_slv_sales_is_return ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.143431Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  131 of 228 PASS not_null_slv_sales_id .......................................... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.149519Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  133 of 228 START test not_null_slv_sales_item_nbr .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.356784Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  132 of 228 PASS not_null_slv_sales_is_return ................................... [\u001b[32mPASS\u001b[0m in 0.32s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.361472Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  134 of 228 START test not_null_slv_sales_onpromotion ........................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.453116Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  133 of 228 PASS not_null_slv_sales_item_nbr .................................... [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.462272Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  135 of 228 START test not_null_slv_sales_store_nbr ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.662640Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  134 of 228 PASS not_null_slv_sales_onpromotion ................................. [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.670094Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  136 of 228 START test not_null_slv_sales_unit_sales_original ................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.766760Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  135 of 228 PASS not_null_slv_sales_store_nbr ................................... [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:46.784231Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:46  137 of 228 START test not_null_slv_sales_unit_sales_target ..................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:47.030520Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:47  136 of 228 PASS not_null_slv_sales_unit_sales_original ......................... [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:47.042521Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:47  138 of 228 START test relationships_slv_sales_item_nbr__item_nbr__ref_brz_items_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:47.087879Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:47  137 of 228 PASS not_null_slv_sales_unit_sales_target ........................... [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:47.094279Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:47  139 of 228 START test relationships_slv_sales_store_nbr__store_nbr__ref_brz_stores_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:47.454147Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:47  139 of 228 PASS relationships_slv_sales_store_nbr__store_nbr__ref_brz_stores_ .. [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:47.463881Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:47  140 of 228 START test silver_sales_clave_compuesta_unica ....................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:47.546334Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:47  138 of 228 PASS relationships_slv_sales_item_nbr__item_nbr__ref_brz_items_ ..... [\u001b[32mPASS\u001b[0m in 0.50s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:47.553775Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:47  141 of 228 START test silver_sales_conserva_originales ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:48.393161Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:48  140 of 228 PASS silver_sales_clave_compuesta_unica ............................. [\u001b[32mPASS\u001b[0m in 0.93s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:48.400999Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:48  142 of 228 START test silver_sales_regla_objetivo .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:48.819940Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:48  142 of 228 PASS silver_sales_regla_objetivo .................................... [\u001b[32mPASS\u001b[0m in 0.42s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:48.830303Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:48  143 of 228 START test unique_slv_sales_id ...................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:49.597450Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:49  143 of 228 PASS unique_slv_sales_id ............................................ [\u001b[32mPASS\u001b[0m in 0.76s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:49.602101Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:49  144 of 228 START sql table model GOLD.dim_item ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:50.360952Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:50  141 of 228 PASS silver_sales_conserva_originales ............................... [\u001b[32mPASS\u001b[0m in 2.80s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:50.366106Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:50  145 of 228 START sql table model GOLD.dim_store ................................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:50.491170Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:50  144 of 228 OK created sql table model GOLD.dim_item ............................ [\u001b[32mSUCCESS 1\u001b[0m in 0.89s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:50.496796Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:50  146 of 228 START sql table model GOLD.fct_oil_daily ............................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:51.121652Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:51  145 of 228 OK created sql table model GOLD.dim_store ........................... [\u001b[32mSUCCESS 1\u001b[0m in 0.75s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:51.130097Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:51  147 of 228 START sql table model SILVER.slv_store_day_context .................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:51.405148Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:51  146 of 228 OK created sql table model GOLD.fct_oil_daily ....................... [\u001b[32mSUCCESS 1\u001b[0m in 0.90s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:51.417190Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:51  148 of 228 START test accepted_values_dim_item_perishable__False__0__1 ......... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:51.805461Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:51  148 of 228 PASS accepted_values_dim_item_perishable__False__0__1 ............... [\u001b[32mPASS\u001b[0m in 0.38s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:51.821333Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:51  149 of 228 START test gold_dim_item_conserva_catalogo .......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.122649Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  147 of 228 OK created sql table model SILVER.slv_store_day_context ............. [\u001b[32mSUCCESS 1\u001b[0m in 0.99s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.124976Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  149 of 228 PASS gold_dim_item_conserva_catalogo ................................ [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.134006Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  150 of 228 START test not_null_dim_item_family ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.135377Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  151 of 228 START test not_null_dim_item_item_class ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.396814Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  151 of 228 PASS not_null_dim_item_item_class ................................... [\u001b[32mPASS\u001b[0m in 0.26s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.401756Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  152 of 228 START test not_null_dim_item_item_key ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.751285Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  152 of 228 PASS not_null_dim_item_item_key ..................................... [\u001b[32mPASS\u001b[0m in 0.35s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.756238Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  153 of 228 START test not_null_dim_item_item_nbr ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.878363Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  150 of 228 PASS not_null_dim_item_family ....................................... [\u001b[32mPASS\u001b[0m in 0.74s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.885535Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  154 of 228 START test not_null_dim_item_perishable ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:52.998329Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:52  153 of 228 PASS not_null_dim_item_item_nbr ..................................... [\u001b[32mPASS\u001b[0m in 0.24s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.002497Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  155 of 228 START test unique_dim_item_item_key ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.154438Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  154 of 228 PASS not_null_dim_item_perishable ................................... [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.159102Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  156 of 228 START test unique_dim_item_item_nbr ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.293453Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  155 of 228 PASS unique_dim_item_item_key ....................................... [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.298242Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  157 of 228 START test accepted_values_dim_store_store_type__A__B__C__D__E ...... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.446486Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  156 of 228 PASS unique_dim_item_item_nbr ....................................... [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.458940Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  158 of 228 START test gold_dim_store_conserva_catalogo ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.915897Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  157 of 228 PASS accepted_values_dim_store_store_type__A__B__C__D__E ............ [\u001b[32mPASS\u001b[0m in 0.62s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.924525Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  158 of 228 PASS gold_dim_store_conserva_catalogo ............................... [\u001b[32mPASS\u001b[0m in 0.46s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.936320Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  159 of 228 START test not_null_dim_store_city .................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:53.938319Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:53  160 of 228 START test not_null_dim_store_state ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:54.238520Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:54  160 of 228 PASS not_null_dim_store_state ....................................... [\u001b[32mPASS\u001b[0m in 0.30s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:54.246417Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:54  161 of 228 START test not_null_dim_store_store_cluster ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:54.325872Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:54  159 of 228 PASS not_null_dim_store_city ........................................ [\u001b[32mPASS\u001b[0m in 0.38s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:54.339536Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:54  162 of 228 START test not_null_dim_store_store_key ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:54.604353Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:54  161 of 228 PASS not_null_dim_store_store_cluster ............................... [\u001b[32mPASS\u001b[0m in 0.35s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:54.613619Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:54  163 of 228 START test not_null_dim_store_store_nbr ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:54.652329Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:54  162 of 228 PASS not_null_dim_store_store_key ................................... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:54.671582Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:54  164 of 228 START test not_null_dim_store_store_type ............................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:54.958233Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:54  163 of 228 PASS not_null_dim_store_store_nbr ................................... [\u001b[32mPASS\u001b[0m in 0.34s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:54.971214Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:54  165 of 228 START test unique_dim_store_store_key ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:55.004200Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:55  164 of 228 PASS not_null_dim_store_store_type .................................. [\u001b[32mPASS\u001b[0m in 0.33s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:55.012369Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:55  166 of 228 START test unique_dim_store_store_nbr ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:55.324777Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:55  165 of 228 PASS unique_dim_store_store_key ..................................... [\u001b[32mPASS\u001b[0m in 0.35s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:55.337169Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:55  166 of 228 PASS unique_dim_store_store_nbr ..................................... [\u001b[32mPASS\u001b[0m in 0.32s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:55.348023Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:55  167 of 228 START test gold_oil_conserva_silver ................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:55.360517Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:55  168 of 228 START test not_null_fct_oil_daily_date_key .......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:55.798881Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:55  167 of 228 PASS gold_oil_conserva_silver ....................................... [\u001b[32mPASS\u001b[0m in 0.44s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:55.803443Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:55  169 of 228 START test not_null_fct_oil_daily_has_source_row .................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.054651Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  168 of 228 PASS not_null_fct_oil_daily_date_key ................................ [\u001b[32mPASS\u001b[0m in 0.69s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.058133Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  170 of 228 START test not_null_fct_oil_daily_is_imputed ........................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.162629Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  169 of 228 PASS not_null_fct_oil_daily_has_source_row .......................... [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.168061Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  171 of 228 START test not_null_fct_oil_daily_is_source_price_missing ........... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.332392Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  170 of 228 PASS not_null_fct_oil_daily_is_imputed .............................. [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.346438Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  172 of 228 START test relationships_fct_oil_daily_date_key__date_key__ref_dim_date_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.483686Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  171 of 228 PASS not_null_fct_oil_daily_is_source_price_missing ................. [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.489932Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  173 of 228 START test unique_fct_oil_daily_date_key ............................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.691969Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  172 of 228 PASS relationships_fct_oil_daily_date_key__date_key__ref_dim_date_ .. [\u001b[32mPASS\u001b[0m in 0.34s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.699169Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  174 of 228 START test not_null_slv_store_day_context_date ...................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.821111Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  173 of 228 PASS unique_fct_oil_daily_date_key .................................. [\u001b[32mPASS\u001b[0m in 0.33s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:56.859686Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:56  175 of 228 START test not_null_slv_store_day_context_has_transactions .......... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.071390Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  174 of 228 PASS not_null_slv_store_day_context_date ............................ [\u001b[32mPASS\u001b[0m in 0.37s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.075971Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  176 of 228 START test not_null_slv_store_day_context_is_transactions_missing ... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.255342Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  175 of 228 PASS not_null_slv_store_day_context_has_transactions ................ [\u001b[32mPASS\u001b[0m in 0.39s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.260075Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  177 of 228 START test not_null_slv_store_day_context_store_nbr ................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.326007Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  176 of 228 PASS not_null_slv_store_day_context_is_transactions_missing ......... [\u001b[32mPASS\u001b[0m in 0.25s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.330417Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  178 of 228 START test relationships_slv_store_day_context_date__date__ref_slv_calendar_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.518730Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  177 of 228 PASS not_null_slv_store_day_context_store_nbr ....................... [\u001b[32mPASS\u001b[0m in 0.26s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.526842Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  179 of 228 START test relationships_slv_store_day_context_store_nbr__store_nbr__ref_brz_stores_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.657884Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  178 of 228 PASS relationships_slv_store_day_context_date__date__ref_slv_calendar_  [\u001b[32mPASS\u001b[0m in 0.33s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.664037Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  180 of 228 START test store_day_context_clave_unica ............................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.835718Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  179 of 228 PASS relationships_slv_store_day_context_store_nbr__store_nbr__ref_brz_stores_  [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.840628Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  181 of 228 START test store_day_context_conserva_filas ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.938079Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  180 of 228 PASS store_day_context_clave_unica .................................. [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:57.945835Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:57  182 of 228 START test store_day_context_transacciones .......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:58.109353Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:58  181 of 228 PASS store_day_context_conserva_filas ............................... [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:58.115009Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:58  183 of 228 START sql table model GOLD.fct_sales ................................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:58.301408Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:58  182 of 228 PASS store_day_context_transacciones ................................ [\u001b[32mPASS\u001b[0m in 0.35s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:58.306286Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:58  184 of 228 START sql table model GOLD.fct_store_day_context .................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:59.288964Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:59  184 of 228 OK created sql table model GOLD.fct_store_day_context ............... [\u001b[32mSUCCESS 1\u001b[0m in 0.98s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:59.296518Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:59  185 of 228 START test gold_context_store_day_clave_unica ....................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:59.660284Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:59  185 of 228 PASS gold_context_store_day_clave_unica ............................. [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:20:59.666442Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:20:59  186 of 228 START test gold_context_store_day_conserva_silver ................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:00.213581Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:00  186 of 228 PASS gold_context_store_day_conserva_silver ......................... [\u001b[32mPASS\u001b[0m in 0.54s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:00.218092Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:00  187 of 228 START test not_null_fct_store_day_context_active_holiday_count ...... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:00.578112Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:00  187 of 228 PASS not_null_fct_store_day_context_active_holiday_count ............ [\u001b[32mPASS\u001b[0m in 0.36s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:00.582566Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:00  188 of 228 START test not_null_fct_store_day_context_applicable_event_count .... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:00.868273Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:00  188 of 228 PASS not_null_fct_store_day_context_applicable_event_count .......... [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:00.873388Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:00  189 of 228 START test not_null_fct_store_day_context_date_key .................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:01.188298Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:01  189 of 228 PASS not_null_fct_store_day_context_date_key ........................ [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:01.195783Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:01  190 of 228 START test not_null_fct_store_day_context_has_transactions .......... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:01.479276Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:01  190 of 228 PASS not_null_fct_store_day_context_has_transactions ................ [\u001b[32mPASS\u001b[0m in 0.28s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:01.487428Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:01  191 of 228 START test not_null_fct_store_day_context_is_holiday ................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:01.860490Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:01  191 of 228 PASS not_null_fct_store_day_context_is_holiday ...................... [\u001b[32mPASS\u001b[0m in 0.37s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:01.866780Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:01  192 of 228 START test not_null_fct_store_day_context_is_transactions_missing ... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:02.132893Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:02  192 of 228 PASS not_null_fct_store_day_context_is_transactions_missing ......... [\u001b[32mPASS\u001b[0m in 0.26s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:02.141616Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:02  193 of 228 START test not_null_fct_store_day_context_store_key ................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:02.267173Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:02  183 of 228 OK created sql table model GOLD.fct_sales ........................... [\u001b[32mSUCCESS 1\u001b[0m in 4.15s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:02.271462Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:02  194 of 228 START test relationships_fct_store_day_context_date_key__date_key__ref_dim_date_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:02.411903Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:02  193 of 228 PASS not_null_fct_store_day_context_store_key ....................... [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:02.416371Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:02  195 of 228 START test relationships_fct_store_day_context_store_key__store_key__ref_dim_store_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:02.697555Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:02  194 of 228 PASS relationships_fct_store_day_context_date_key__date_key__ref_dim_date_  [\u001b[32mPASS\u001b[0m in 0.42s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:02.705131Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:02  196 of 228 START test gold_fct_sales_conserva_silver ........................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:02.800288Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:02  195 of 228 PASS relationships_fct_store_day_context_store_key__store_key__ref_dim_store_  [\u001b[32mPASS\u001b[0m in 0.38s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:02.809553Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:02  197 of 228 START test gold_fct_sales_grano_unico ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:03.537226Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:03  197 of 228 PASS gold_fct_sales_grano_unico ..................................... [\u001b[32mPASS\u001b[0m in 0.72s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:03.544293Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:03  198 of 228 START test gold_fct_sales_reglas_negocio ............................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:04.078546Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:04  198 of 228 PASS gold_fct_sales_reglas_negocio .................................. [\u001b[32mPASS\u001b[0m in 0.53s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:04.090708Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:04  199 of 228 START test not_null_fct_sales_date_key .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:04.466671Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:04  199 of 228 PASS not_null_fct_sales_date_key .................................... [\u001b[32mPASS\u001b[0m in 0.37s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:04.479794Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:04  200 of 228 START test not_null_fct_sales_id .................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:04.789806Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:04  200 of 228 PASS not_null_fct_sales_id .......................................... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:04.795625Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:04  201 of 228 START test not_null_fct_sales_is_return ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:05.250480Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:05  201 of 228 PASS not_null_fct_sales_is_return ................................... [\u001b[32mPASS\u001b[0m in 0.45s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:05.261856Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:05  202 of 228 START test not_null_fct_sales_item_key .............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:05.615523Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:05  202 of 228 PASS not_null_fct_sales_item_key .................................... [\u001b[32mPASS\u001b[0m in 0.35s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:05.627893Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:05  203 of 228 START test not_null_fct_sales_onpromotion ........................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:05.920864Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:05  203 of 228 PASS not_null_fct_sales_onpromotion ................................. [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:05.928646Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:05  204 of 228 START test not_null_fct_sales_store_key ............................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:06.197681Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:06  204 of 228 PASS not_null_fct_sales_store_key ................................... [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:06.210839Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:06  205 of 228 START test not_null_fct_sales_unit_sales_original ................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:06.270625Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:06  196 of 228 PASS gold_fct_sales_conserva_silver ................................. [\u001b[32mPASS\u001b[0m in 3.56s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:06.281793Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:06  206 of 228 START test not_null_fct_sales_unit_sales_target ..................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:06.543480Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:06  205 of 228 PASS not_null_fct_sales_unit_sales_original ......................... [\u001b[32mPASS\u001b[0m in 0.33s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:06.550433Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:06  207 of 228 START test relationships_fct_sales_date_key__date_key__ref_dim_date_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:06.602116Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:06  206 of 228 PASS not_null_fct_sales_unit_sales_target ........................... [\u001b[32mPASS\u001b[0m in 0.32s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:06.613552Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:06  208 of 228 START test relationships_fct_sales_item_key__item_key__ref_dim_item_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:06.970791Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:06  207 of 228 PASS relationships_fct_sales_date_key__date_key__ref_dim_date_ ...... [\u001b[32mPASS\u001b[0m in 0.42s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:06.983237Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:06  209 of 228 START test relationships_fct_sales_store_key__store_key__ref_dim_store_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:07.111750Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:07  208 of 228 PASS relationships_fct_sales_item_key__item_key__ref_dim_item_ ...... [\u001b[32mPASS\u001b[0m in 0.50s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:07.117759Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:07  210 of 228 START test unique_fct_sales_id ...................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:07.297415Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:07  209 of 228 PASS relationships_fct_sales_store_key__store_key__ref_dim_store_ ... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:07.563139Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:07  210 of 228 PASS unique_fct_sales_id ............................................ [\u001b[32mPASS\u001b[0m in 0.44s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:07.572381Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:07  211 of 228 START sql table model GOLD.fct_sales_panel .......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:13.174417Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:13  211 of 228 OK created sql table model GOLD.fct_sales_panel ..................... [\u001b[32mSUCCESS 1\u001b[0m in 5.59s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:13.194944Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:13  212 of 228 START test gold_panel_conserva_ventas ............................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:13.196143Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:13  213 of 228 START test gold_panel_grano_unico ................................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:13.943973Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:13  213 of 228 PASS gold_panel_grano_unico ......................................... [\u001b[32mPASS\u001b[0m in 0.74s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:13.948724Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:13  214 of 228 START test gold_panel_reglas_ceros .................................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:14.705784Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:14  214 of 228 PASS gold_panel_reglas_ceros ........................................ [\u001b[32mPASS\u001b[0m in 0.75s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:14.717437Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:14  215 of 228 START test not_null_fct_sales_panel_date_key ........................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:15.011011Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:15  215 of 228 PASS not_null_fct_sales_panel_date_key .............................. [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:15.017244Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:15  216 of 228 START test not_null_fct_sales_panel_is_after_last_sale .............. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:15.314636Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:15  216 of 228 PASS not_null_fct_sales_panel_is_after_last_sale .................... [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:15.328735Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:15  217 of 228 START test not_null_fct_sales_panel_is_imputed_zero ................. [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:15.645251Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:15  217 of 228 PASS not_null_fct_sales_panel_is_imputed_zero ....................... [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:15.649775Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:15  218 of 228 START test not_null_fct_sales_panel_is_observed ..................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:15.924535Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:15  218 of 228 PASS not_null_fct_sales_panel_is_observed ........................... [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:15.932703Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:15  219 of 228 START test not_null_fct_sales_panel_is_onpromotion_imputed .......... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.025776Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  212 of 228 PASS gold_panel_conserva_ventas ..................................... [\u001b[32mPASS\u001b[0m in 2.83s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.036144Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  220 of 228 START test not_null_fct_sales_panel_is_return ....................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.230572Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  219 of 228 PASS not_null_fct_sales_panel_is_onpromotion_imputed ................ [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.237914Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  221 of 228 START test not_null_fct_sales_panel_item_key ........................ [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.324404Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  220 of 228 PASS not_null_fct_sales_panel_is_return ............................. [\u001b[32mPASS\u001b[0m in 0.29s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.332357Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  222 of 228 START test not_null_fct_sales_panel_onpromotion ..................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.550244Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  221 of 228 PASS not_null_fct_sales_panel_item_key .............................. [\u001b[32mPASS\u001b[0m in 0.31s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.555712Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  223 of 228 START test not_null_fct_sales_panel_store_key ....................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.602742Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  222 of 228 PASS not_null_fct_sales_panel_onpromotion ........................... [\u001b[32mPASS\u001b[0m in 0.27s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.609223Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  224 of 228 START test not_null_fct_sales_panel_unit_sales_target ............... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.933894Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  224 of 228 PASS not_null_fct_sales_panel_unit_sales_target ..................... [\u001b[32mPASS\u001b[0m in 0.32s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.938382Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  223 of 228 PASS not_null_fct_sales_panel_store_key ............................. [\u001b[32mPASS\u001b[0m in 0.38s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.946470Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  225 of 228 START test relationships_fct_sales_panel_date_key__date_key__ref_dim_date_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:16.948229Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:16  226 of 228 START test relationships_fct_sales_panel_item_key__item_key__ref_dim_item_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:17.324284Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:17  225 of 228 PASS relationships_fct_sales_panel_date_key__date_key__ref_dim_date_  [\u001b[32mPASS\u001b[0m in 0.37s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:17.342701Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:17  227 of 228 START test relationships_fct_sales_panel_store_key__store_key__ref_dim_store_  [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:17.379658Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:17  226 of 228 PASS relationships_fct_sales_panel_item_key__item_key__ref_dim_item_  [\u001b[32mPASS\u001b[0m in 0.43s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:17.385487Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:17  228 of 228 START test unique_fct_sales_panel_source_id ......................... [RUN]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:17.766905Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:17  227 of 228 PASS relationships_fct_sales_panel_store_key__store_key__ref_dim_store_  [\u001b[32mPASS\u001b[0m in 0.42s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:17.864807Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:17  228 of 228 PASS unique_fct_sales_panel_source_id ............................... [\u001b[32mPASS\u001b[0m in 0.48s]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:18.492627Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:18  "
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:18.494818Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:18  Finished running 20 table models, 208 data tests in 0 hours 1 minutes and 10.62 seconds (70.62s)."
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:18.786383Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:18  "
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:18.787895Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:18  \u001b[32mCompleted successfully\u001b[0m"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:18.789182Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:18  "
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:18.790896Z",
+      "tarea": "construir_y_probar_dbt",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "\u001b[0m22:21:18  Done. PASS=228 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=228"
+    },
+    {
+      "hora_utc": "2026-11-25T22:21:20.691772Z",
+      "tarea": "construir_obt_spark",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Created new execution [[link execution=\"4QJvraQxwTZIvqrOQ8KnXH\" flowId=\"spark_obt\" namespace=\"pset2\"]]"
+    },
+    {
+      "hora_utc": "2026-11-25T22:33:23.395135Z",
+      "tarea": "registrar_exito",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Pipeline completo: ingesta RAW, build y pruebas dbt, y publicación verificada de ANALYTICS.OBT_SALES finalizados."
+    }
+  ]
+}

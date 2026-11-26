@@ -1,0 +1,163 @@
+{
+  "ejecucion": "4AyR3ApHLqRHU0jUFr4nFN",
+  "flujo": "pset2.backfill_ventas",
+  "revision_flujo": 1,
+  "estado": "SUCCESS",
+  "inicio_utc": "2026-11-25T22:33:54.302169Z",
+  "fin_utc": "2026-11-25T22:35:13.636115Z",
+  "duracion": "PT1M19.333946S",
+  "origen": "manual",
+  "inputs": {
+    "fecha_fin": "2017-08-02",
+    "fecha_inicio": "2017-08-01"
+  },
+  "etiquetas": {
+    "system.from": "api",
+    "system.correlationId": "4AyR3ApHLqRHU0jUFr4nFN"
+  },
+  "tareas": [
+    {
+      "tarea": "extraer_intervalo",
+      "estado": "SUCCESS",
+      "intentos": [
+        {
+          "intento": 1,
+          "estado": "SUCCESS",
+          "inicio_utc": "2026-11-25T22:33:54.908851Z"
+        }
+      ]
+    },
+    {
+      "tarea": "cargar_intervalo",
+      "estado": "SUCCESS",
+      "intentos": [
+        {
+          "intento": 1,
+          "estado": "SUCCESS",
+          "inicio_utc": "2026-11-25T22:34:58.467462Z"
+        }
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "hora_utc": "2026-11-25T22:33:57.597647Z",
+      "tarea": "extraer_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Extrayendo perecederos del período a CSV comprimido..."
+    },
+    {
+      "hora_utc": "2026-11-25T22:34:57.332876Z",
+      "tarea": "extraer_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Extracción correcta: 55,247 filas."
+    },
+    {
+      "hora_utc": "2026-11-25T22:34:57.334694Z",
+      "tarea": "extraer_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Fechas: 2017-08-01 a 2017-08-02"
+    },
+    {
+      "hora_utc": "2026-11-25T22:34:57.337917Z",
+      "tarea": "extraer_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Archivo: /workspace/data/extract/backfill/train_alcance.csv.gz"
+    },
+    {
+      "hora_utc": "2026-11-25T22:34:57.340884Z",
+      "tarea": "extraer_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Tamaño comprimido: 0.40 MiB"
+    },
+    {
+      "hora_utc": "2026-11-25T22:34:57.342939Z",
+      "tarea": "extraer_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Manifiesto: /workspace/data/extract/backfill/train_alcance.manifest.json"
+    },
+    {
+      "hora_utc": "2026-11-25T22:34:58.779727Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Archivo y huella verificados: 55,247 filas esperadas."
+    },
+    {
+      "hora_utc": "2026-11-25T22:34:59.973862Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Cuenta utilizada: ***"
+    },
+    {
+      "hora_utc": "2026-11-25T22:34:59.974839Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Login utilizado: ***"
+    },
+    {
+      "hora_utc": "2026-11-25T22:34:59.979073Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Huella pública local: SHA256:CnYvr/tG5x9dMJOPbHktOGsUVnkGbYnELAMqwUuuYaY="
+    },
+    {
+      "hora_utc": "2026-11-25T22:35:03.191640Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Subiendo archivo comprimido al stage temporal..."
+    },
+    {
+      "hora_utc": "2026-11-25T22:35:05.021438Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Cargando tabla temporal con COPY INTO..."
+    },
+    {
+      "hora_utc": "2026-11-25T22:35:11.003574Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Fuera del intervalo: conteo y hash de datos/lotes sin cambios."
+    },
+    {
+      "hora_utc": "2026-11-25T22:35:13.392260Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Carga correcta: 55,247 filas en PSET2_DB.RAW.TRAIN."
+    },
+    {
+      "hora_utc": "2026-11-25T22:35:13.392752Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Lote: a3f0408b-3cdc-4d9f-bed6-f94909eecae7"
+    },
+    {
+      "hora_utc": "2026-11-25T22:35:13.393037Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "Modo: intervalo; intervalo inclusivo: 2017-08-01 a 2017-08-02"
+    },
+    {
+      "hora_utc": "2026-11-25T22:35:13.393101Z",
+      "tarea": "cargar_intervalo",
+      "intento": 1,
+      "nivel": "INFO",
+      "mensaje": "SOURCE_ROW_NUMBER corresponde al archivo extraído, no a la posición en train.csv."
+    }
+  ]
+}

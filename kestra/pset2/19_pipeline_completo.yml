@@ -35,9 +35,10 @@ errors:
     level: ERROR
     message: 'Falló el pipeline. Revisar la tarea o ejecución hija fallida; las etapas posteriores no se ejecutan.'
 triggers:
-  # Los CSV son históricos estáticos; habilitar solo si se desea la recarga diaria.
-  - id: diario_demostracion
+  # Recarga diaria a las 06:00 de Ecuador, antes de la jornada: RAW, dbt y la OBT quedan al día
+  # sin intervención. Las fuentes son CSV históricos, así que cada corrida reconstruye lo mismo;
+  # el trigger demuestra la operación automática (comentario del PSet 2).
+  - id: diario
     type: io.kestra.plugin.core.trigger.Schedule
     cron: '0 6 * * *'
     timezone: America/Guayaquil
-    disabled: true

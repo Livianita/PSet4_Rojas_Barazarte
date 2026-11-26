@@ -24,3 +24,6 @@
 !monitoreo/
 !monitoreo/__init__.py
 !monitoreo/deriva.py
+# Tablero
+!tablero/
+!tablero/requirements.txt

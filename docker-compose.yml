@@ -97,6 +97,7 @@ services:
       - ./monitoreo:/workspace/monitoreo:ro
       - ./api:/workspace/api:ro
       - ./data:/workspace/data
+      - ./docs:/workspace/docs
       - ${DATA_DIR:-.}/items.csv:/input/items.csv:ro
       - ${DATA_DIR:-.}/stores.csv:/input/stores.csv:ro
       - ${DATA_DIR:-.}/oil.csv:/input/oil.csv:ro
@@ -179,6 +180,29 @@ services:
       - '127.0.0.1:8000:8000'
     volumes:
       - registros:/registros
+    mem_limit: 1g
+    restart: unless-stopped
+
+  # --------------------------------------------------------------- Tablero
+  # Monitoreo lote por lote (sección 6.4). Lee PRODUCCION en Snowflake; si no
+  # responde, usa los CSV de docs/.
+  tablero:
+    build:
+      context: .
+      dockerfile: tablero/Dockerfile
+    image: proyecto-final-tablero:1.0
+    environment:
+      <<: *snowflake
+      SNOWFLAKE_SCHEMA: PRODUCCION
+    secrets:
+      - snowflake_private_key
+      - snowflake_passphrase
+    ports:
+      - '127.0.0.1:8501:8501'
+    volumes:
+      - ./tablero:/app/tablero:ro
+      - ./src:/app/src:ro
+      - ./docs:/app/docs:ro
     mem_limit: 1g
     restart: unless-stopped
 

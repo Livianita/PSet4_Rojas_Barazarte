@@ -1,0 +1,1311 @@
+﻿LOTE,PASO,FECHA_PASO,EJECUCION,PETICIONES,PRODUCTOS,ERRORES_CLIENTE,ERRORES_SERVIDOR,TASA_ERRORES_CLIENTE,TASA_ERRORES_SERVIDOR,LATENCIA_P50_MS,LATENCIA_P95_MS,VERSION_MODELO,PEDIDO_MEDIO,PEDIDO_P50,PEDIDO_P95,TASA_REPONER,USO_RESPALDO_PCT,FILAS_LOTE,FALTANTES_MAX,FALTANTES_OBLIGATORIOS,FUERA_DE_RANGO_TOTAL,CATEGORIAS_NO_VISTAS_TOTAL,PSI_MAX,FEATURE_PSI_MAX,PSI,PRUEBAS,CALIDAD,EVALUADO_EN_PASO,PERDIDA_CUANTIL,PERDIDA_CUANTIL_RELATIVA,AHORRO_VS_REGLA_PCT,COSTO,COSTO_REGLA,DIAGNOSTICO
+1,1,2017-05-29,2gNaEu37eTxs1Tv2Sjp2vi,7,13983,0,0,0.0,0.0,196.724,243.18429999999998,3,9.870968032611028,4.835,33.61959999999998,0.900737,0.0,13983,0.017879,0,0,0,0.0243,frac_ceros_28_desde_16,"{
+  ""DAY_OF_WEEK_ISO"": 0.0004,
+  ""FAMILY"": 0.0009,
+  ""STORE_TYPE"": 0.0011,
+  ""frac_ceros_28_desde_16"": 0.0243,
+  ""media_28_desde_16"": 0.022,
+  ""media_7_desde_16"": 0.0215,
+  ""media_mismo_dia_4"": 0.0179,
+  ""nivel_serie_16"": 0.0069,
+  ""transacciones_lag_16"": 0.0058,
+  ""venta_lag_16"": 0.0129
+}","{
+  ""DAY_OF_WEEK_ISO"": {
+    ""estadistico"": 2.7673,
+    ""p_valor"": 0.8374351842329371,
+    ""prueba"": ""chi2""
+  },
+  ""FAMILY"": {
+    ""estadistico"": 15.7466,
+    ""p_valor"": 0.04615444823641263,
+    ""prueba"": ""chi2""
+  },
+  ""STORE_TYPE"": {
+    ""estadistico"": 9.9192,
+    ""p_valor"": 0.04181144816305016,
+    ""prueba"": ""chi2""
+  },
+  ""frac_ceros_28_desde_16"": {
+    ""estadistico"": 0.0603,
+    ""p_valor"": 4.818529994113741e-26,
+    ""prueba"": ""ks""
+  },
+  ""media_28_desde_16"": {
+    ""estadistico"": 0.0473,
+    ""p_valor"": 3.331161930475221e-16,
+    ""prueba"": ""ks""
+  },
+  ""media_7_desde_16"": {
+    ""estadistico"": 0.0536,
+    ""p_valor"": 9.030687389002556e-21,
+    ""prueba"": ""ks""
+  },
+  ""media_mismo_dia_4"": {
+    ""estadistico"": 0.0441,
+    ""p_valor"": 3.488805406658152e-14,
+    ""prueba"": ""ks""
+  },
+  ""nivel_serie_16"": {
+    ""estadistico"": 0.0321,
+    ""p_valor"": 9.883197455534562e-08,
+    ""prueba"": ""ks""
+  },
+  ""transacciones_lag_16"": {
+    ""estadistico"": 0.0315,
+    ""p_valor"": 1.975102693430391e-07,
+    ""prueba"": ""ks""
+  },
+  ""venta_lag_16"": {
+    ""estadistico"": 0.0513,
+    ""p_valor"": 4.932837590006107e-19,
+    ""prueba"": ""ks""
+  }
+}","{
+  ""categorias_no_vistas"": {
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0
+  },
+  ""categorias_no_vistas_total"": 0,
+  ""faltantes"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0,
+    ""dias_sin_venta_16"": 0.003075,
+    ""frac_ceros_28_desde_16"": 0.011013,
+    ""media_28_desde_16"": 0.011013,
+    ""media_7_desde_16"": 0.004362,
+    ""media_mismo_dia_4"": 0.006651,
+    ""nivel_serie_16"": 0.00708,
+    ""std_28_desde_16"": 0.011013,
+    ""transacciones_lag_16"": 0.003075,
+    ""venta_lag_16"": 0.003075,
+    ""venta_lag_21"": 0.006651,
+    ""venta_lag_28"": 0.01037,
+    ""venta_lag_35"": 0.014446,
+    ""venta_lag_42"": 0.017879
+  },
+  ""faltantes_max"": 0.017879,
+  ""faltantes_obligatorios"": 0,
+  ""filas"": 13983,
+  ""fuera_de_rango"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""fuera_de_rango_total"": 0
+}",3,1.6156793785310735,0.21082280453964278,24.34102063583772,90368.179,119441.44602458792,sin deriva
+2,2,2017-06-05,7TGj5Ulml9xQ3xeDypJkid,7,13998,0,0,0.0,0.0,186.849,233.42700000000002,3,9.774328118302616,4.757,32.50815,0.902486,0.0,13998,0.015502,0,0,0,0.0319,transacciones_lag_16,"{
+  ""DAY_OF_WEEK_ISO"": 0.0004,
+  ""FAMILY"": 0.0009,
+  ""STORE_TYPE"": 0.0012,
+  ""frac_ceros_28_desde_16"": 0.0278,
+  ""media_28_desde_16"": 0.0224,
+  ""media_7_desde_16"": 0.0301,
+  ""media_mismo_dia_4"": 0.0187,
+  ""nivel_serie_16"": 0.0071,
+  ""transacciones_lag_16"": 0.0319,
+  ""venta_lag_16"": 0.0106
+}","{
+  ""DAY_OF_WEEK_ISO"": {
+    ""estadistico"": 2.7124,
+    ""p_valor"": 0.8439771833905905,
+    ""prueba"": ""chi2""
+  },
+  ""FAMILY"": {
+    ""estadistico"": 16.0602,
+    ""p_valor"": 0.04152661760338374,
+    ""prueba"": ""chi2""
+  },
+  ""STORE_TYPE"": {
+    ""estadistico"": 10.6064,
+    ""p_valor"": 0.03136241820311589,
+    ""prueba"": ""chi2""
+  },
+  ""frac_ceros_28_desde_16"": {
+    ""estadistico"": 0.0637,
+    ""p_valor"": 4.977290905517981e-29,
+    ""prueba"": ""ks""
+  },
+  ""media_28_desde_16"": {
+    ""estadistico"": 0.0532,
+    ""p_valor"": 2.124447229518064e-20,
+    ""prueba"": ""ks""
+  },
+  ""media_7_desde_16"": {
+    ""estadistico"": 0.0559,
+    ""p_valor"": 1.240888966922916e-22,
+    ""prueba"": ""ks""
+  },
+  ""media_mismo_dia_4"": {
+    ""estadistico"": 0.0465,
+    ""p_valor"": 8.859249712125636e-16,
+    ""prueba"": ""ks""
+  },
+  ""nivel_serie_16"": {
+    ""estadistico"": 0.0341,
+    ""p_valor"": 1.111389128801003e-08,
+    ""prueba"": ""ks""
+  },
+  ""transacciones_lag_16"": {
+    ""estadistico"": 0.0408,
+    ""p_valor"": 3.303138373376010e-12,
+    ""prueba"": ""ks""
+  },
+  ""venta_lag_16"": {
+    ""estadistico"": 0.0487,
+    ""p_valor"": 2.999979883318085e-17,
+    ""prueba"": ""ks""
+  }
+}","{
+  ""categorias_no_vistas"": {
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0
+  },
+  ""categorias_no_vistas_total"": 0,
+  ""faltantes"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0,
+    ""dias_sin_venta_16"": 0.002072,
+    ""frac_ceros_28_desde_16"": 0.008144,
+    ""media_28_desde_16"": 0.008144,
+    ""media_7_desde_16"": 0.002357,
+    ""media_mismo_dia_4"": 0.003,
+    ""nivel_serie_16"": 0.003572,
+    ""std_28_desde_16"": 0.008144,
+    ""transacciones_lag_16"": 0.002072,
+    ""venta_lag_16"": 0.002072,
+    ""venta_lag_21"": 0.003,
+    ""venta_lag_28"": 0.007715,
+    ""venta_lag_35"": 0.01143,
+    ""venta_lag_42"": 0.015502
+  },
+  ""faltantes_max"": 0.015502,
+  ""faltantes_obligatorios"": 0,
+  ""filas"": 13998,
+  ""fuera_de_rango"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""fuera_de_rango_total"": 0
+}",4,1.5946338048292614,0.2107867993545009,23.28129114773738,89286.736,116381.95863272369,sin deriva
+3,3,2017-06-12,82n2y6HQkhlphInkeMGSZ,11,14000,3,0,0.2727272727272727,0.0,174.374,239.06849999999997,3,9.617482142857142,4.651,32.673999999999985,0.903857,0.0,14003,0.011569,1,1,1,2.3992,transacciones_lag_16,"{
+  ""DAY_OF_WEEK_ISO"": 0.0004,
+  ""FAMILY"": 0.0009,
+  ""STORE_TYPE"": 0.0012,
+  ""frac_ceros_28_desde_16"": 0.0308,
+  ""media_28_desde_16"": 0.028,
+  ""media_7_desde_16"": 0.0333,
+  ""media_mismo_dia_4"": 0.0213,
+  ""nivel_serie_16"": 0.0072,
+  ""transacciones_lag_16"": 2.3992,
+  ""venta_lag_16"": 0.0114
+}","{
+  ""DAY_OF_WEEK_ISO"": {
+    ""estadistico"": 2.7894,
+    ""p_valor"": 0.8347829494453162,
+    ""prueba"": ""chi2""
+  },
+  ""FAMILY"": {
+    ""estadistico"": 17.5333,
+    ""p_valor"": 0.040990819392881316,
+    ""prueba"": ""chi2""
+  },
+  ""STORE_TYPE"": {
+    ""estadistico"": 10.7334,
+    ""p_valor"": 0.02972928661267253,
+    ""prueba"": ""chi2""
+  },
+  ""frac_ceros_28_desde_16"": {
+    ""estadistico"": 0.0599,
+    ""p_valor"": 8.724123941502047e-26,
+    ""prueba"": ""ks""
+  },
+  ""media_28_desde_16"": {
+    ""estadistico"": 0.0556,
+    ""p_valor"": 2.432718427471954e-22,
+    ""prueba"": ""ks""
+  },
+  ""media_7_desde_16"": {
+    ""estadistico"": 0.055,
+    ""p_valor"": 6.024893857680592e-22,
+    ""prueba"": ""ks""
+  },
+  ""media_mismo_dia_4"": {
+    ""estadistico"": 0.0522,
+    ""p_valor"": 8.881377716152942e-20,
+    ""prueba"": ""ks""
+  },
+  ""nivel_serie_16"": {
+    ""estadistico"": 0.0314,
+    ""p_valor"": 1.906785965184968e-07,
+    ""prueba"": ""ks""
+  },
+  ""transacciones_lag_16"": {
+    ""estadistico"": 0.5123,
+    ""p_valor"": 0,
+    ""prueba"": ""ks""
+  },
+  ""venta_lag_16"": {
+    ""estadistico"": 0.0491,
+    ""p_valor"": 1.494221944970938e-17,
+    ""prueba"": ""ks""
+  }
+}","{
+  ""categorias_no_vistas"": {
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 1,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0
+  },
+  ""categorias_no_vistas_total"": 1,
+  ""faltantes"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 7.100000000000000e-05,
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0,
+    ""dias_sin_venta_16"": 0.001357,
+    ""frac_ceros_28_desde_16"": 0.003713,
+    ""media_28_desde_16"": 0.003713,
+    ""media_7_desde_16"": 0.001643,
+    ""media_mismo_dia_4"": 0.001857,
+    ""nivel_serie_16"": 0.002,
+    ""std_28_desde_16"": 0.003713,
+    ""transacciones_lag_16"": 0.001357,
+    ""venta_lag_16"": 0.001357,
+    ""venta_lag_21"": 0.001857,
+    ""venta_lag_28"": 0.003142,
+    ""venta_lag_35"": 0.007855,
+    ""venta_lag_42"": 0.011569
+  },
+  ""faltantes_max"": 0.011569,
+  ""faltantes_obligatorios"": 1,
+  ""filas"": 14003,
+  ""fuera_de_rango"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 1,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""fuera_de_rango_total"": 1
+}",5,1.535937714285714,0.20030461620818824,25.982899502920308,86012.51199999999,116206.2704731234,deriva de datos sin impacto
+4,4,2017-06-19,4ezqalIgQxuMh8xcYP491t,7,14000,0,0,0.0,0.0,171.084,257.69659999999993,3,10.286127285714286,4.928,35.01004999999998,0.8985,0.0,14000,0.007857,0,0,0,0.0367,media_7_desde_16,"{
+  ""DAY_OF_WEEK_ISO"": 0.0004,
+  ""FAMILY"": 0.0009,
+  ""STORE_TYPE"": 0.0012,
+  ""frac_ceros_28_desde_16"": 0.0353,
+  ""media_28_desde_16"": 0.0344,
+  ""media_7_desde_16"": 0.0367,
+  ""media_mismo_dia_4"": 0.0247,
+  ""nivel_serie_16"": 0.007,
+  ""transacciones_lag_16"": 0.0254,
+  ""venta_lag_16"": 0.0143
+}","{
+  ""DAY_OF_WEEK_ISO"": {
+    ""estadistico"": 2.773,
+    ""p_valor"": 0.8367474517121144,
+    ""prueba"": ""chi2""
+  },
+  ""FAMILY"": {
+    ""estadistico"": 16.0969,
+    ""p_valor"": 0.04101340873857622,
+    ""prueba"": ""chi2""
+  },
+  ""STORE_TYPE"": {
+    ""estadistico"": 10.7198,
+    ""p_valor"": 0.029900709056319953,
+    ""prueba"": ""chi2""
+  },
+  ""frac_ceros_28_desde_16"": {
+    ""estadistico"": 0.0618,
+    ""p_valor"": 1.608122287289846e-27,
+    ""prueba"": ""ks""
+  },
+  ""media_28_desde_16"": {
+    ""estadistico"": 0.0599,
+    ""p_valor"": 8.011919149744223e-26,
+    ""prueba"": ""ks""
+  },
+  ""media_7_desde_16"": {
+    ""estadistico"": 0.061,
+    ""p_valor"": 6.488574042608114e-27,
+    ""prueba"": ""ks""
+  },
+  ""media_mismo_dia_4"": {
+    ""estadistico"": 0.0545,
+    ""p_valor"": 1.641276791785309e-21,
+    ""prueba"": ""ks""
+  },
+  ""nivel_serie_16"": {
+    ""estadistico"": 0.0334,
+    ""p_valor"": 2.388264347128679e-08,
+    ""prueba"": ""ks""
+  },
+  ""transacciones_lag_16"": {
+    ""estadistico"": 0.0374,
+    ""p_valor"": 2.391707008344732e-10,
+    ""prueba"": ""ks""
+  },
+  ""venta_lag_16"": {
+    ""estadistico"": 0.0554,
+    ""p_valor"": 3.454700963251024e-22,
+    ""prueba"": ""ks""
+  }
+}","{
+  ""categorias_no_vistas"": {
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0
+  },
+  ""categorias_no_vistas_total"": 0,
+  ""faltantes"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0,
+    ""dias_sin_venta_16"": 0.000429,
+    ""frac_ceros_28_desde_16"": 0.002,
+    ""media_28_desde_16"": 0.002,
+    ""media_7_desde_16"": 0.000714,
+    ""media_mismo_dia_4"": 0.001214,
+    ""nivel_serie_16"": 0.001286,
+    ""std_28_desde_16"": 0.002,
+    ""transacciones_lag_16"": 0.000429,
+    ""venta_lag_16"": 0.000429,
+    ""venta_lag_21"": 0.001214,
+    ""venta_lag_28"": 0.001857,
+    ""venta_lag_35"": 0.003143,
+    ""venta_lag_42"": 0.007857
+  },
+  ""faltantes_max"": 0.007857,
+  ""faltantes_obligatorios"": 0,
+  ""filas"": 14000,
+  ""fuera_de_rango"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""fuera_de_rango_total"": 0
+}",6,1.557986142857143,0.19900797310839335,29.60910658688174,87247.224,123946.74903180067,sin deriva
+5,5,2017-06-26,kgoStrzt6XnLgf7LXyl4F,7,14000,0,0,0.0,0.0,237.688,1909.7031999999986,3,10.207282214285714,4.9375,33.815449999999984,0.896643,0.0,14000,0.003143,0,0,0,0.0415,frac_ceros_28_desde_16,"{
+  ""DAY_OF_WEEK_ISO"": 0.0004,
+  ""FAMILY"": 0.0009,
+  ""STORE_TYPE"": 0.0012,
+  ""frac_ceros_28_desde_16"": 0.0415,
+  ""media_28_desde_16"": 0.035,
+  ""media_7_desde_16"": 0.038,
+  ""media_mismo_dia_4"": 0.0309,
+  ""nivel_serie_16"": 0.008,
+  ""transacciones_lag_16"": 0.0137,
+  ""venta_lag_16"": 0.0153
+}","{
+  ""DAY_OF_WEEK_ISO"": {
+    ""estadistico"": 2.773,
+    ""p_valor"": 0.8367474517121144,
+    ""prueba"": ""chi2""
+  },
+  ""FAMILY"": {
+    ""estadistico"": 16.0969,
+    ""p_valor"": 0.04101340873857622,
+    ""prueba"": ""chi2""
+  },
+  ""STORE_TYPE"": {
+    ""estadistico"": 10.7198,
+    ""p_valor"": 0.029900709056319953,
+    ""prueba"": ""chi2""
+  },
+  ""frac_ceros_28_desde_16"": {
+    ""estadistico"": 0.0648,
+    ""p_valor"": 3.755583411519125e-30,
+    ""prueba"": ""ks""
+  },
+  ""media_28_desde_16"": {
+    ""estadistico"": 0.0617,
+    ""p_valor"": 2.051111630160282e-27,
+    ""prueba"": ""ks""
+  },
+  ""media_7_desde_16"": {
+    ""estadistico"": 0.0624,
+    ""p_valor"": 4.222038195006068e-28,
+    ""prueba"": ""ks""
+  },
+  ""media_mismo_dia_4"": {
+    ""estadistico"": 0.0589,
+    ""p_valor"": 4.397855474193547e-25,
+    ""prueba"": ""ks""
+  },
+  ""nivel_serie_16"": {
+    ""estadistico"": 0.0349,
+    ""p_valor"": 4.200587348598992e-09,
+    ""prueba"": ""ks""
+  },
+  ""transacciones_lag_16"": {
+    ""estadistico"": 0.0318,
+    ""p_valor"": 1.341952250098987e-07,
+    ""prueba"": ""ks""
+  },
+  ""venta_lag_16"": {
+    ""estadistico"": 0.0568,
+    ""p_valor"": 2.511012588539065e-23,
+    ""prueba"": ""ks""
+  }
+}","{
+  ""categorias_no_vistas"": {
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0
+  },
+  ""categorias_no_vistas_total"": 0,
+  ""faltantes"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0.001286,
+    ""media_28_desde_16"": 0.001286,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0.000143,
+    ""nivel_serie_16"": 0.000286,
+    ""std_28_desde_16"": 0.001286,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0.000143,
+    ""venta_lag_28"": 0.001214,
+    ""venta_lag_35"": 0.001857,
+    ""venta_lag_42"": 0.003143
+  },
+  ""faltantes_max"": 0.003143,
+  ""faltantes_obligatorios"": 0,
+  ""filas"": 14000,
+  ""fuera_de_rango"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""fuera_de_rango_total"": 0
+}",7,3.1859390446428573,0.26872168479116265,23.837410437577468,178412.58649999998,234252.25891744893,deriva conceptual
+6,6,2017-07-03,1r25AD7rIYQ66XsPbWrsTK,7,14000,0,0,0.0,0.0,270.917,3181.336299999997,3,9.642640642857144,4.6065000000000005,32.250099999999996,0.894929,0.0,14000,0.001857,0,0,0,0.0433,frac_ceros_28_desde_16,"{
+  ""DAY_OF_WEEK_ISO"": 0.0004,
+  ""FAMILY"": 0.0009,
+  ""STORE_TYPE"": 0.0012,
+  ""frac_ceros_28_desde_16"": 0.0433,
+  ""media_28_desde_16"": 0.0371,
+  ""media_7_desde_16"": 0.0384,
+  ""media_mismo_dia_4"": 0.0324,
+  ""nivel_serie_16"": 0.0081,
+  ""transacciones_lag_16"": 0.0214,
+  ""venta_lag_16"": 0.0173
+}","{
+  ""DAY_OF_WEEK_ISO"": {
+    ""estadistico"": 2.773,
+    ""p_valor"": 0.8367474517121144,
+    ""prueba"": ""chi2""
+  },
+  ""FAMILY"": {
+    ""estadistico"": 16.0969,
+    ""p_valor"": 0.04101340873857622,
+    ""prueba"": ""chi2""
+  },
+  ""STORE_TYPE"": {
+    ""estadistico"": 10.7198,
+    ""p_valor"": 0.029900709056319953,
+    ""prueba"": ""chi2""
+  },
+  ""frac_ceros_28_desde_16"": {
+    ""estadistico"": 0.0676,
+    ""p_valor"": 7.867839055508290e-33,
+    ""prueba"": ""ks""
+  },
+  ""media_28_desde_16"": {
+    ""estadistico"": 0.0653,
+    ""p_valor"": 1.178904634273675e-30,
+    ""prueba"": ""ks""
+  },
+  ""media_7_desde_16"": {
+    ""estadistico"": 0.0654,
+    ""p_valor"": 7.034161882629473e-31,
+    ""prueba"": ""ks""
+  },
+  ""media_mismo_dia_4"": {
+    ""estadistico"": 0.0593,
+    ""p_valor"": 2.128995508964832e-25,
+    ""prueba"": ""ks""
+  },
+  ""nivel_serie_16"": {
+    ""estadistico"": 0.0347,
+    ""p_valor"": 5.164249364144255e-09,
+    ""prueba"": ""ks""
+  },
+  ""transacciones_lag_16"": {
+    ""estadistico"": 0.0576,
+    ""p_valor"": 5.674012763905094e-24,
+    ""prueba"": ""ks""
+  },
+  ""venta_lag_16"": {
+    ""estadistico"": 0.0591,
+    ""p_valor"": 3.125723892146088e-25,
+    ""prueba"": ""ks""
+  }
+}","{
+  ""categorias_no_vistas"": {
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0
+  },
+  ""categorias_no_vistas_total"": 0,
+  ""faltantes"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0.000286,
+    ""media_28_desde_16"": 0.000286,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0.000286,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0.000143,
+    ""venta_lag_35"": 0.001214,
+    ""venta_lag_42"": 0.001857
+  },
+  ""faltantes_max"": 0.001857,
+  ""faltantes_obligatorios"": 0,
+  ""filas"": 14000,
+  ""fuera_de_rango"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""fuera_de_rango_total"": 0
+}",8,2.916999535714286,0.26327014919660596,21.781268643227303,163351.974,208839.96859386022,deriva conceptual
+7,7,2017-07-10,6f52AVBEgXelqTxhX0wEPa,7,14000,0,0,0.0,0.0,205.042,236.9775,3,9.984542214285714,4.816,33.4601,0.901286,0.0,14000,0.001214,0,0,0,0.1228,venta_lag_16,"{
+  ""DAY_OF_WEEK_ISO"": 0.0004,
+  ""FAMILY"": 0.0009,
+  ""STORE_TYPE"": 0.0012,
+  ""frac_ceros_28_desde_16"": 0.042,
+  ""media_28_desde_16"": 0.0345,
+  ""media_7_desde_16"": 0.0343,
+  ""media_mismo_dia_4"": 0.0336,
+  ""nivel_serie_16"": 0.0078,
+  ""transacciones_lag_16"": 0.008,
+  ""venta_lag_16"": 0.1228
+}","{
+  ""DAY_OF_WEEK_ISO"": {
+    ""estadistico"": 2.773,
+    ""p_valor"": 0.8367474517121144,
+    ""prueba"": ""chi2""
+  },
+  ""FAMILY"": {
+    ""estadistico"": 16.0969,
+    ""p_valor"": 0.04101340873857622,
+    ""prueba"": ""chi2""
+  },
+  ""STORE_TYPE"": {
+    ""estadistico"": 10.7198,
+    ""p_valor"": 0.029900709056319953,
+    ""prueba"": ""chi2""
+  },
+  ""frac_ceros_28_desde_16"": {
+    ""estadistico"": 0.0657,
+    ""p_valor"": 4.954727844089628e-31,
+    ""prueba"": ""ks""
+  },
+  ""media_28_desde_16"": {
+    ""estadistico"": 0.0633,
+    ""p_valor"": 8.048508031366839e-29,
+    ""prueba"": ""ks""
+  },
+  ""media_7_desde_16"": {
+    ""estadistico"": 0.0519,
+    ""p_valor"": 1.292847834312082e-19,
+    ""prueba"": ""ks""
+  },
+  ""media_mismo_dia_4"": {
+    ""estadistico"": 0.0619,
+    ""p_valor"": 1.201320574521559e-27,
+    ""prueba"": ""ks""
+  },
+  ""nivel_serie_16"": {
+    ""estadistico"": 0.034,
+    ""p_valor"": 1.114323286331871e-08,
+    ""prueba"": ""ks""
+  },
+  ""transacciones_lag_16"": {
+    ""estadistico"": 0.0453,
+    ""p_valor"": 5.764813355130877e-15,
+    ""prueba"": ""ks""
+  },
+  ""venta_lag_16"": {
+    ""estadistico"": 0.0847,
+    ""p_valor"": 2.397889734131432e-51,
+    ""prueba"": ""ks""
+  }
+}","{
+  ""categorias_no_vistas"": {
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0
+  },
+  ""categorias_no_vistas_total"": 0,
+  ""faltantes"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0.000143,
+    ""venta_lag_42"": 0.001214
+  },
+  ""faltantes_max"": 0.001214,
+  ""faltantes_obligatorios"": 0,
+  ""filas"": 14000,
+  ""fuera_de_rango"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""fuera_de_rango_total"": 0
+}",9,2.7754224285714284,0.2531139135187915,20.835823211884485,155423.65600000002,196330.79292417137,deriva conceptual
+8,8,2017-07-17,3vyOpm2N3JxiU9a7bkcNqb,7,14000,0,0,0.0,0.0,185.525,213.76049999999998,3,10.510026071428571,5.0825,35.111699999999985,0.904643,0.0,14000,0.000143,0,0,0,0.2461,venta_lag_16,"{
+  ""DAY_OF_WEEK_ISO"": 0.0004,
+  ""FAMILY"": 0.0009,
+  ""STORE_TYPE"": 0.0012,
+  ""frac_ceros_28_desde_16"": 0.0395,
+  ""media_28_desde_16"": 0.032,
+  ""media_7_desde_16"": 0.0818,
+  ""media_mismo_dia_4"": 0.0303,
+  ""nivel_serie_16"": 0.0068,
+  ""transacciones_lag_16"": 0.0149,
+  ""venta_lag_16"": 0.2461
+}","{
+  ""DAY_OF_WEEK_ISO"": {
+    ""estadistico"": 2.773,
+    ""p_valor"": 0.8367474517121144,
+    ""prueba"": ""chi2""
+  },
+  ""FAMILY"": {
+    ""estadistico"": 16.0969,
+    ""p_valor"": 0.04101340873857622,
+    ""prueba"": ""chi2""
+  },
+  ""STORE_TYPE"": {
+    ""estadistico"": 10.7198,
+    ""p_valor"": 0.029900709056319953,
+    ""prueba"": ""chi2""
+  },
+  ""frac_ceros_28_desde_16"": {
+    ""estadistico"": 0.0625,
+    ""p_valor"": 4.013536725638006e-28,
+    ""prueba"": ""ks""
+  },
+  ""media_28_desde_16"": {
+    ""estadistico"": 0.0614,
+    ""p_valor"": 3.569036884767464e-27,
+    ""prueba"": ""ks""
+  },
+  ""media_7_desde_16"": {
+    ""estadistico"": 0.0766,
+    ""p_valor"": 3.786195057321670e-42,
+    ""prueba"": ""ks""
+  },
+  ""media_mismo_dia_4"": {
+    ""estadistico"": 0.0575,
+    ""p_valor"": 6.451494886233783e-24,
+    ""prueba"": ""ks""
+  },
+  ""nivel_serie_16"": {
+    ""estadistico"": 0.0325,
+    ""p_valor"": 6.322372865010590e-08,
+    ""prueba"": ""ks""
+  },
+  ""transacciones_lag_16"": {
+    ""estadistico"": 0.0335,
+    ""p_valor"": 2.186469511462979e-08,
+    ""prueba"": ""ks""
+  },
+  ""venta_lag_16"": {
+    ""estadistico"": 0.0964,
+    ""p_valor"": 1.736797469874326e-66,
+    ""prueba"": ""ks""
+  }
+}","{
+  ""categorias_no_vistas"": {
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0
+  },
+  ""categorias_no_vistas_total"": 0,
+  ""faltantes"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0.000143
+  },
+  ""faltantes_max"": 0.000143,
+  ""faltantes_obligatorios"": 0,
+  ""filas"": 14000,
+  ""fuera_de_rango"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""fuera_de_rango_total"": 0
+}",10,2.6119392321428574,0.24233132057406184,18.70690681085636,146268.597,179927.45910120392,deriva de datos con impacto
+9,9,2017-07-24,3mUtHk7wo0Il3YMIxSJf7w,7,14000,0,0,0.0,0.0,221.359,852.1509999999998,3,12.055912285714285,5.821,40.855849999999975,0.905,0.0,14000,0.0,0,0,0,0.2486,venta_lag_16,"{
+  ""DAY_OF_WEEK_ISO"": 0.0004,
+  ""FAMILY"": 0.0009,
+  ""STORE_TYPE"": 0.0012,
+  ""frac_ceros_28_desde_16"": 0.0337,
+  ""media_28_desde_16"": 0.0393,
+  ""media_7_desde_16"": 0.0751,
+  ""media_mismo_dia_4"": 0.0304,
+  ""nivel_serie_16"": 0.006,
+  ""transacciones_lag_16"": 0.0095,
+  ""venta_lag_16"": 0.2486
+}","{
+  ""DAY_OF_WEEK_ISO"": {
+    ""estadistico"": 2.773,
+    ""p_valor"": 0.8367474517121144,
+    ""prueba"": ""chi2""
+  },
+  ""FAMILY"": {
+    ""estadistico"": 16.0969,
+    ""p_valor"": 0.04101340873857622,
+    ""prueba"": ""chi2""
+  },
+  ""STORE_TYPE"": {
+    ""estadistico"": 10.7198,
+    ""p_valor"": 0.029900709056319953,
+    ""prueba"": ""chi2""
+  },
+  ""frac_ceros_28_desde_16"": {
+    ""estadistico"": 0.0619,
+    ""p_valor"": 1.282348071776562e-27,
+    ""prueba"": ""ks""
+  },
+  ""media_28_desde_16"": {
+    ""estadistico"": 0.06,
+    ""p_valor"": 5.574999148946931e-26,
+    ""prueba"": ""ks""
+  },
+  ""media_7_desde_16"": {
+    ""estadistico"": 0.0675,
+    ""p_valor"": 7.265518230347960e-33,
+    ""prueba"": ""ks""
+  },
+  ""media_mismo_dia_4"": {
+    ""estadistico"": 0.0534,
+    ""p_valor"": 9.812586902410522e-21,
+    ""prueba"": ""ks""
+  },
+  ""nivel_serie_16"": {
+    ""estadistico"": 0.0297,
+    ""p_valor"": 1.048262375455606e-06,
+    ""prueba"": ""ks""
+  },
+  ""transacciones_lag_16"": {
+    ""estadistico"": 0.0384,
+    ""p_valor"": 6.792904220139632e-11,
+    ""prueba"": ""ks""
+  },
+  ""venta_lag_16"": {
+    ""estadistico"": 0.0924,
+    ""p_valor"": 4.644441698563794e-61,
+    ""prueba"": ""ks""
+  }
+}","{
+  ""categorias_no_vistas"": {
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0
+  },
+  ""categorias_no_vistas_total"": 0,
+  ""faltantes"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""faltantes_max"": 0,
+  ""faltantes_obligatorios"": 0,
+  ""filas"": 14000,
+  ""fuera_de_rango"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""fuera_de_rango_total"": 0
+}",11,2.5286581428571426,0.21952680251585951,22.29967896659717,141604.85599999997,182244.87893573183,deriva de datos sin impacto
+10,10,2017-07-31,4T1u5SmTtOTMwq4Gh7WogY,7,14000,0,0,0.0,0.0,159.087,255.4106999999999,3,12.026288714285714,5.725,40.94614999999999,0.902,0.0,14000,0.0,0,0,0,0.2319,venta_lag_16,"{
+  ""DAY_OF_WEEK_ISO"": 0.0004,
+  ""FAMILY"": 0.0009,
+  ""STORE_TYPE"": 0.0012,
+  ""frac_ceros_28_desde_16"": 0.0351,
+  ""media_28_desde_16"": 0.0645,
+  ""media_7_desde_16"": 0.082,
+  ""media_mismo_dia_4"": 0.0443,
+  ""nivel_serie_16"": 0.0058,
+  ""transacciones_lag_16"": 0.022,
+  ""venta_lag_16"": 0.2319
+}","{
+  ""DAY_OF_WEEK_ISO"": {
+    ""estadistico"": 2.773,
+    ""p_valor"": 0.8367474517121144,
+    ""prueba"": ""chi2""
+  },
+  ""FAMILY"": {
+    ""estadistico"": 16.0969,
+    ""p_valor"": 0.04101340873857622,
+    ""prueba"": ""chi2""
+  },
+  ""STORE_TYPE"": {
+    ""estadistico"": 10.7198,
+    ""p_valor"": 0.029900709056319953,
+    ""prueba"": ""chi2""
+  },
+  ""frac_ceros_28_desde_16"": {
+    ""estadistico"": 0.0618,
+    ""p_valor"": 1.481627092401915e-27,
+    ""prueba"": ""ks""
+  },
+  ""media_28_desde_16"": {
+    ""estadistico"": 0.0601,
+    ""p_valor"": 4.476002952998121e-26,
+    ""prueba"": ""ks""
+  },
+  ""media_7_desde_16"": {
+    ""estadistico"": 0.0641,
+    ""p_valor"": 1.159428794581547e-29,
+    ""prueba"": ""ks""
+  },
+  ""media_mismo_dia_4"": {
+    ""estadistico"": 0.055,
+    ""p_valor"": 5.699602739257456e-22,
+    ""prueba"": ""ks""
+  },
+  ""nivel_serie_16"": {
+    ""estadistico"": 0.0278,
+    ""p_valor"": 6.271172677187269e-06,
+    ""prueba"": ""ks""
+  },
+  ""transacciones_lag_16"": {
+    ""estadistico"": 0.0483,
+    ""p_valor"": 5.522257772684665e-17,
+    ""prueba"": ""ks""
+  },
+  ""venta_lag_16"": {
+    ""estadistico"": 0.0839,
+    ""p_valor"": 1.724105384791352e-50,
+    ""prueba"": ""ks""
+  }
+}","{
+  ""categorias_no_vistas"": {
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0
+  },
+  ""categorias_no_vistas_total"": 0,
+  ""faltantes"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""DAY_OF_WEEK_ISO"": 0,
+    ""FAMILY"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""ITEM_CLASS"": 0,
+    ""STORE_CLUSTER"": 0,
+    ""STORE_TYPE"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""faltantes_max"": 0,
+  ""faltantes_obligatorios"": 0,
+  ""filas"": 14000,
+  ""fuera_de_rango"": {
+    ""APPLICABLE_EVENT_COUNT"": 0,
+    ""DAY_OF_MONTH"": 0,
+    ""HAS_SPECIAL_EVENT"": 0,
+    ""IS_ADDITIONAL_DAY"": 0,
+    ""IS_BRIDGE_DAY"": 0,
+    ""IS_HOLIDAY"": 0,
+    ""IS_MONTH_END"": 0,
+    ""IS_PAYDAY_PROXY"": 0,
+    ""IS_TRANSFER_DAY"": 0,
+    ""IS_WORK_DAY"": 0,
+    ""dias_sin_venta_16"": 0,
+    ""frac_ceros_28_desde_16"": 0,
+    ""media_28_desde_16"": 0,
+    ""media_7_desde_16"": 0,
+    ""media_mismo_dia_4"": 0,
+    ""nivel_serie_16"": 0,
+    ""std_28_desde_16"": 0,
+    ""transacciones_lag_16"": 0,
+    ""venta_lag_16"": 0,
+    ""venta_lag_21"": 0,
+    ""venta_lag_28"": 0,
+    ""venta_lag_35"": 0,
+    ""venta_lag_42"": 0
+  },
+  ""fuera_de_rango_total"": 0
+}",12,2.2568370357142857,0.21625019653372954,15.000209137230192,126382.87400000001,148686.0999505778,deriva de datos sin impacto

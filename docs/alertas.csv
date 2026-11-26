@@ -1,0 +1,15 @@
+﻿PASO,FECHA_PASO,LOTE,ALERTA,METRICA,VALOR,UMBRAL,SEVERIDAD,RECIBE,ACCION,REGISTRADA_EN
+3,2017-06-12,3,calidad_datos,faltantes en campos obligatorios + valores fuera de rango + categorías no vistas,3.0,> 0,media,equipo de datos,revisar la fuente; la API ya rechazó esas filas (422) y no tienen pedido,2026-11-22 19:20:55.306
+3,2017-06-12,3,deriva_datos,PSI máximo de las features vigiladas,2.3992,> 0.2,alta,equipo de datos,"revisar la fuente; si el desempeño también cae, evaluar reentrenamiento",2026-11-22 19:20:55.306
+3,2017-06-12,3,errores_cliente,tasa de errores 4xx,0.2727272727272727,> 1%,media,equipo de datos,revisar qué campos rechaza el contrato y la fuente que los produce,2026-11-22 19:20:55.306
+5,2017-06-26,5,latencia,latencia p95 del servicio (ms por petición),1909.7031999999986,> 500,media,equipo de plataforma,revisar recursos del contenedor; el lote puede repetirse,2026-11-23 05:23:35.641
+6,2017-07-03,6,latencia,latencia p95 del servicio (ms por petición),3181.336299999997,> 500,media,equipo de plataforma,revisar recursos del contenedor; el lote puede repetirse,2026-11-23 05:24:20.091
+7,2017-07-10,5,desempeno,pérdida cuantil relativa (pérdida / venta media),0.26872168479116265,> media CV + 2 desv.,alta,equipo de ciencia de datos,diagnosticar la deriva; con 2 lotes seguidos se dispara el reentrenamiento,2026-11-23 05:24:59.552
+7,2017-07-10,7,deriva_datos_moderada,PSI máximo de las features vigiladas,0.1228,0.1 a 0.2,baja,equipo de datos,aviso: vigilar el lote siguiente,2026-11-23 05:24:59.552
+8,2017-07-17,6,desempeno,pérdida cuantil relativa (pérdida / venta media),0.26327014919660596,> media CV + 2 desv.,alta,equipo de ciencia de datos,diagnosticar la deriva; con 2 lotes seguidos se dispara el reentrenamiento,2026-11-23 05:25:38.967
+8,2017-07-17,8,deriva_datos,PSI máximo de las features vigiladas,0.2461,> 0.2,alta,equipo de datos,"revisar la fuente; si el desempeño también cae, evaluar reentrenamiento",2026-11-23 05:25:38.967
+9,2017-07-24,7,desempeno,pérdida cuantil relativa (pérdida / venta media),0.2531139135187915,> media CV + 2 desv.,alta,equipo de ciencia de datos,diagnosticar la deriva; con 2 lotes seguidos se dispara el reentrenamiento,2026-11-23 05:37:25.971
+9,2017-07-24,9,deriva_datos,PSI máximo de las features vigiladas,0.2486,> 0.2,alta,equipo de datos,"revisar la fuente; si el desempeño también cae, evaluar reentrenamiento",2026-11-23 05:37:25.971
+9,2017-07-24,9,latencia,latencia p95 del servicio (ms por petición),852.1509999999998,> 500,media,equipo de plataforma,revisar recursos del contenedor; el lote puede repetirse,2026-11-23 05:37:25.971
+10,2017-07-31,8,desempeno,pérdida cuantil relativa (pérdida / venta media),0.24233132057406184,> media CV + 2 desv.,alta,equipo de ciencia de datos,diagnosticar la deriva; con 2 lotes seguidos se dispara el reentrenamiento,2026-11-23 05:38:05.235
+10,2017-07-31,10,deriva_datos,PSI máximo de las features vigiladas,0.2319,> 0.2,alta,equipo de datos,"revisar la fuente; si el desempeño también cae, evaluar reentrenamiento",2026-11-23 05:38:05.235

@@ -1,0 +1,8 @@
+# Tablero de monitoreo (tablero/app.py). Versiones fijadas tras la primera construcción.
+streamlit==1.67.0
+altair==6.3.0
+pandas==3.1.1
+pyarrow==26.0.1
+snowflake-connector-python[pandas]==5.2.0
+cryptography==50.0.2
+python-dotenv==1.2.4
